@@ -9,165 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <!-- Подключение иконок для меток -->
+   
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Сброс отступов и выбор основных шрифтов */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #5a4c3e;
-            background-color: #fdfaf6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            color: #8b7355;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        h1 { font-size: 3.5rem; margin-top: 1rem; }
-        h2 { font-size: 2.5rem; margin-top: 2.5rem; }
-        p { margin-bottom: 1rem; }
-
-        /* Стили для главного баннера */
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-            border-bottom: 1px dashed #e0d5c3;
-        }
-        .hero-names {
-            font-size: 4rem;
-            letter-spacing: 0.3rem;
-            margin: 1rem 0;
-        }
-        .hero-date {
-            font-size: 1.8rem;
-            font-style: italic;
-        }
-
-        /* Стили для раздела с таймером */
-        .countdown {
-            text-align: center;
-            padding: 3rem 1rem;
-            background-color: #f8f4ef;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-        #timer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .timer-unit {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            min-width: 100px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        .timer-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #b08d6e;
-            display: block;
-            line-height: 1;
-        }
-        .timer-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-            color: #7a6852;
-        }
-
-        /* Стили для разделов с деталями */
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .detail-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-        }
-        .icon {
-            font-size: 2.5rem;
-            color: #b08d6e;
-            margin-bottom: 1rem;
-        }
-
-        /* Стили для формы подтверждения */
-        #rsvp-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-            max-width: 600px;
-            margin: 3rem auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        textarea { min-height: 100px; resize: vertical; }
-        button {
-            background-color: #b08d6e;
-            color: white;
-            border: none;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-        button:hover { background-color: #9a7a5d; }
-
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .hero-names { font-size: 2.8rem; letter-spacing: 0.2rem; }
-            #timer { gap: 0.8rem; }
-            .timer-unit { min-width: 70px; padding: 1rem; }
-            .timer-number { font-size: 2.2rem; }
-            .details-grid { grid-template-columns: 1fr; }
-            #rsvp-form { padding: 1.5rem; }
-        }
-    </style>
+   
 </head>
 <body>
     <!-- Главный баннер с именами и датой -->
     <section class="hero">
         <h1>Дорогие друзья и родные!</h1>
-        <div class="hero-names">Анна <span style="margin:0 1rem;">&</span> Михаил</div>
+        <div class="hero-names">Игорь <span style="margin:0 1rem;">&</span> Марина</div>
         <p class="hero-date">приглашают вас разделить с ними радость своего бракосочетания</p>
-        <p class="hero-date">15 августа 2026 года</p>
+        <p class="hero-date">11 июня 2026 года</p>
     </section>
 
     <!-- Таймер обратного отсчета -->
@@ -188,9 +41,9 @@
             <div class="detail-card">
                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                 <h3>Церемония и банкет</h3>
-                <p><strong>Ресторан "Сады Эдема"</strong></p>
-                <p>г. Москва, ул. Цветочная, д. 15</p>
-                <p>Начало: 16:00</p>
+                <p><strong>Банкетный зал Cronwell Парк Ника</strong></p>
+                <p>г. Омск, ул. Суворова, д. 110</p>
+                <p>Начало: 17:00</p>
             </div>
             <div class="detail-card">
                 <div class="icon"><i class="fas fa-bus"></i></div>
@@ -223,6 +76,7 @@
                     <option value="1">1 (только я)</option>
                     <option value="2">2 (я + пара/друг)</option>
                     <option value="3">3 (я с детьми/друзьями)</option>
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -244,16 +98,16 @@
 
     <!-- Футер с контактами -->
     <footer style="text-align: center; padding: 3rem 1rem; border-top: 1px dashed #e0d5c3; margin-top: 2rem; color: #8b7355;">
-        <p>С любовью, Анна и Михаил</p>
+        <p>С любовью, Игорь и Марина</p>
         <p style="margin-top: 1rem;">
-            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i> По всем вопросам: +7 (XXX) XXX-XX-XX (Анна)
+            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i> По всем вопросам: +7 (913) 944-52-05 (Марина); +7 (999) 453-47-69 (Игорь)
         </p>
     </footer>
 
     <script>
         // ========== Таймер обратного отсчета ==========
         // Укажите дату вашей свадьбы (год, месяц-1, день, час, минута)
-        const weddingDate = new Date('August 15, 2026 16:00:00').getTime();
+        const weddingDate = new Date('June 11, 2026 17:00:00').getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
@@ -303,5 +157,4 @@
         });
     </script>
 </body>
-
 </html>
