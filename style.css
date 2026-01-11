@@ -60,7 +60,16 @@ a:hover {
     border-bottom: 1px dashed #e0d5c3;
     margin-bottom: 2rem;
 }
-
+.main-photo {
+    text-align: center;
+    margin: 2rem 0;
+}
+.rounded-photo {
+    width: 80%; /* Фото займет 80% ширины родителя */
+    max-width: 500px; /* Но не больше 500px */
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Легкая тень */
+}
 .hero-names {
     font-family: 'Cormorant Garamond', serif;
     font-size: 4rem;
@@ -349,4 +358,5 @@ footer {
 .details-grid > *:nth-child(1) { animation-delay: 0.4s; }
 .details-grid > *:nth-child(2) { animation-delay: 0.6s; }
 .details-grid > *:nth-child(3) { animation-delay: 0.8s; }
+
 #rsvp-form { animation-delay: 1s; }
