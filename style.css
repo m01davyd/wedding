@@ -1,0 +1,352 @@
+/* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #5a4c3e;
+    background-color: #fdfaf6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: #8b7355;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    margin-top: 1rem; 
+}
+
+h2 { 
+    font-size: 2.5rem; 
+    margin-top: 2.5rem; 
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+p { 
+    margin-bottom: 1rem; 
+}
+
+a {
+    color: #b08d6e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #8b7355;
+    text-decoration: underline;
+}
+
+/* ==================== ГЛАВНЫЙ БАННЕР ==================== */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom: 1px dashed #e0d5c3;
+    margin-bottom: 2rem;
+}
+
+.hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    margin: 1.5rem 0;
+    color: #8b7355;
+}
+
+.hero-date {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #7a6852;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #5a4c3e;
+}
+
+/* ==================== ТАЙМЕР ==================== */
+.countdown {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f8f4ef;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.timer-unit {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 100px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.timer-unit:hover {
+    transform: translateY(-5px);
+}
+
+.timer-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #b08d6e;
+    display: block;
+    line-height: 1;
+}
+
+.timer-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    color: #7a6852;
+}
+
+/* ==================== КАРТОЧКИ С ДЕТАЛЯМИ ==================== */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.detail-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.detail-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #b08d6e;
+    margin-bottom: 1rem;
+}
+
+.detail-card p {
+    margin-bottom: 0.5rem;
+}
+
+.detail-card strong {
+    color: #8b7355;
+}
+
+/* ==================== ФОРМА RSVP ==================== */
+#rsvp-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #5a4c3e;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #b08d6e;
+    box-shadow: 0 0 0 2px rgba(176, 141, 110, 0.2);
+}
+
+textarea { 
+    min-height: 100px; 
+    resize: vertical; 
+}
+
+button {
+    background-color: #b08d6e;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+button:hover { 
+    background-color: #9a7a5d; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(154, 122, 93, 0.3);
+}
+
+button:disabled {
+    background-color: #95a595;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#form-feedback {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* ==================== ФУТЕР ==================== */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-top: 1px dashed #e0d5c3;
+    margin-top: 2rem;
+    color: #8b7355;
+}
+
+.footer-contacts {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.footer-contacts i {
+    margin-right: 0.5rem;
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    h2 { 
+        font-size: 2rem; 
+    }
+    
+    .hero-names { 
+        font-size: 2.8rem; 
+        letter-spacing: 0.2rem; 
+    }
+    
+    .hero-date {
+        font-size: 1.5rem;
+    }
+    
+    #timer { 
+        gap: 0.8rem; 
+    }
+    
+    .timer-unit { 
+        min-width: 70px; 
+        padding: 1rem; 
+    }
+    
+    .timer-number { 
+        font-size: 2.2rem; 
+    }
+    
+    .details-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    
+    #rsvp-form { 
+        padding: 1.5rem; 
+    }
+    
+    .detail-card, #rsvp-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { 
+        font-size: 2rem; 
+    }
+    
+    .hero-names { 
+        font-size: 2.2rem; 
+        letter-spacing: 0.1rem; 
+    }
+    
+    .timer-unit { 
+        min-width: 60px; 
+        padding: 0.8rem; 
+    }
+    
+    .timer-number { 
+        font-size: 1.8rem; 
+    }
+    
+    .timer-label { 
+        font-size: 0.7rem; 
+    }
+}
+
+/* ==================== АНИМАЦИИ ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .countdown, .detail-card, #rsvp-form {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Задержки для последовательного появления */
+.countdown { animation-delay: 0.2s; }
+.details-grid > *:nth-child(1) { animation-delay: 0.4s; }
+.details-grid > *:nth-child(2) { animation-delay: 0.6s; }
+.details-grid > *:nth-child(3) { animation-delay: 0.8s; }
+#rsvp-form { animation-delay: 1s; }
