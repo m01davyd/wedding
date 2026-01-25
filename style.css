@@ -745,6 +745,685 @@ footer {
         height: 65px;
     }
 }
+
+/* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ ==================== */
+.rsvp-section {
+    background-color: #f8f4ef;
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+}
+
+.rsvp-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7a6852;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* ==================== ФОРМА ==================== */
+#rsvp-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    margin-bottom: 2.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #5a4c3e;
+    font-size: 1.1rem;
+}
+
+.form-group label i {
+    color: #b08d6e;
+    width: 20px;
+    text-align: center;
+}
+
+/* Поля ввода */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fdfaf6;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b08d6e;
+    box-shadow: 0 0 0 3px rgba(176, 141, 110, 0.15);
+    background-color: white;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #a38f7c;
+    opacity: 0.7;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* ==================== RADIO КНОПКИ ==================== */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: #fdfaf6;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.radio-option:hover {
+    border-color: #d4b6a0;
+    background-color: #fcf7f0;
+}
+
+.radio-option input[type="radio"] {
+    display: none; /* Скрываем стандартный radio */
+}
+
+.radio-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #b08d6e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-custom:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #b08d6e;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: #8b7355;
+    background-color: #f8f4ef;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom:after {
+    opacity: 1;
+}
+
+.radio-label {
+    font-weight: 500;
+    color: #5a4c3e;
+    font-size: 1.05rem;
+}
+
+/* ==================== CHECKBOX (множественный выбор) ==================== */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: #fdfaf6;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option:hover {
+    border-color: #d4b6a0;
+    background-color: #fcf7f0;
+}
+
+.checkbox-option input[type="checkbox"] {
+    display: none; /* Скрываем стандартный checkbox */
+}
+
+.checkbox-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #b08d6e;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-custom:after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #b08d6e;
+    border-color: #8b7355;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
+    opacity: 1;
+}
+
+.checkbox-label {
+    font-weight: 500;
+    color: #5a4c3e;
+    font-size: 1.05rem;
+}
+
+/* ==================== КНОПКА ОТПРАВКИ ==================== */
+.submit-btn {
+    background: linear-gradient(135deg, #b08d6e 0%, #9a7a5d 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(176, 141, 110, 0.3);
+    background: linear-gradient(135deg, #9a7a5d 0%, #8b7355 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
+.form-feedback {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-feedback.success {
+    display: block;
+    background-color: rgba(72, 187, 120, 0.1);
+    color: #2e8b57;
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.form-feedback.error {
+    display: block;
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.form-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f4ef;
+    border-radius: 8px;
+    color: #7a6852;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid #d4b6a0;
+}
+
+.form-note i {
+    color: #8b7355;
+    flex-shrink: 0;
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 768px) {
+    .rsvp-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    #rsvp-form {
+        padding: 1.8rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        gap: 10px;
+    }
+    
+    .radio-option,
+    .checkbox-option {
+        padding: 12px 15px;
+    }
+    
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #rsvp-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        font-size: 1rem;
+    }
+}
+
+/* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ ==================== */
+.rsvp-section {
+    background-color: #f8f4ef;
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+}
+
+.rsvp-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7a6852;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* ==================== ФОРМА ==================== */
+#rsvp-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    margin-bottom: 2.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #5a4c3e;
+    font-size: 1.1rem;
+}
+
+.form-group label i {
+    color: #b08d6e;
+    width: 20px;
+    text-align: center;
+}
+
+/* Поля ввода */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fdfaf6;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b08d6e;
+    box-shadow: 0 0 0 3px rgba(176, 141, 110, 0.15);
+    background-color: white;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #a38f7c;
+    opacity: 0.7;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* ==================== RADIO КНОПКИ ==================== */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: #fdfaf6;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.radio-option:hover {
+    border-color: #d4b6a0;
+    background-color: #fcf7f0;
+}
+
+.radio-option input[type="radio"] {
+    display: none; /* Скрываем стандартный radio */
+}
+
+.radio-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #b08d6e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-custom:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #b08d6e;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: #8b7355;
+    background-color: #f8f4ef;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom:after {
+    opacity: 1;
+}
+
+.radio-label {
+    font-weight: 500;
+    color: #5a4c3e;
+    font-size: 1.05rem;
+}
+
+/* ==================== CHECKBOX (множественный выбор) ==================== */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: #fdfaf6;
+    border: 2px solid #e8d5c4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option:hover {
+    border-color: #d4b6a0;
+    background-color: #fcf7f0;
+}
+
+.checkbox-option input[type="checkbox"] {
+    display: none; /* Скрываем стандартный checkbox */
+}
+
+.checkbox-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #b08d6e;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-custom:after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #b08d6e;
+    border-color: #8b7355;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
+    opacity: 1;
+}
+
+.checkbox-label {
+    font-weight: 500;
+    color: #5a4c3e;
+    font-size: 1.05rem;
+}
+
+/* ==================== КНОПКА ОТПРАВКИ ==================== */
+.submit-btn {
+    background: linear-gradient(135deg, #b08d6e 0%, #9a7a5d 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(176, 141, 110, 0.3);
+    background: linear-gradient(135deg, #9a7a5d 0%, #8b7355 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
+.form-feedback {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-feedback.success {
+    display: block;
+    background-color: rgba(72, 187, 120, 0.1);
+    color: #2e8b57;
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.form-feedback.error {
+    display: block;
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.form-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f4ef;
+    border-radius: 8px;
+    color: #7a6852;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid #d4b6a0;
+}
+
+.form-note i {
+    color: #8b7355;
+    flex-shrink: 0;
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 768px) {
+    .rsvp-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    #rsvp-form {
+        padding: 1.8rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        gap: 10px;
+    }
+    
+    .radio-option,
+    .checkbox-option {
+        padding: 12px 15px;
+    }
+    
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #rsvp-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        font-size: 1rem;
+    }
+}
+
 /* ==================== АНИМАЦИИ ==================== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
