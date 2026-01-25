@@ -1,11 +1,10 @@
-/* ==================== ОБНОВЛЕННАЯ ЦВЕТОВАЯ ПАЛИТРА ==================== */
+/* ==================== ИНВЕРТИРОВАННАЯ ЦВЕТОВАЯ ПАЛИТРА ==================== */
 :root {
-    --dark-green:  #d8ccb4;
-        /* Основной тёмно-зелёный */
-    --beige:  #363e2f;           /* Основной бежевый */
-    --light-beige: #f0eadc;     /* Светлый бежевый для фона */
-    --medium-beige: #c4baa4;    /* Средний бежевый для акцентов */
-    --dark-beige: #a89e88;      /* Тёмный бежевый для текста */
+    --dark-green: #363e2f;      /* Основной тёмно-зелёный - для ФОНА */
+    --beige: #d8ccb4;           /* Основной бежевый - для ТЕКСТА */
+    --light-beige: #f0eadc;     /* Светлый бежевый для акцентов */
+    --medium-beige: #c4baa4;    /* Средний бежевый для границ */
+    --dark-beige: #a89e88;      /* Тёмный бежевый для второстепенного текста */
     --accent-gold: #b5a782;     /* Золотистый акцент */
     --white: #ffffff;
     --off-white: #f9f7f2;
@@ -17,22 +16,23 @@
     box-sizing: border-box;
 }
 
-/* Тело сайта */
+/* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
+/* Тело сайта - ТЁМНО-ЗЕЛЁНЫЙ фон, БЕЖЕВЫЙ текст */
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
-    background-color: var(--off-white); /* Светлый фон вместо #fdfaf6 */
+    color: var(--beige);               /* Бежевый текст */
+    background-color: var(--dark-green); /* Тёмно-зелёный фон */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Заголовки */
+/* Заголовки - БЕЖЕВЫЕ */
 h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--beige);               /* Бежевые заголовки */
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -53,16 +53,18 @@ h3 {
 
 p { 
     margin-bottom: 1rem; 
+    color: var(--beige);               /* Бежевый текст */
 }
 
+/* Ссылки - светлый бежевый */
 a {
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--light-beige);         /* Светло-бежевый для ссылок */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #2a3124;                    /* Более тёмный зелёный при наведении */
+    color: var(--white);               /* Белый при наведении */
     text-decoration: underline;
 }
 
@@ -70,7 +72,7 @@ a:hover {
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    border-bottom: 1px dashed var(--medium-beige); /* Средний бежевый вместо #e0d5c3 */
+    border-bottom: 1px solid var(--medium-beige); /* Бежевая граница */
     margin-bottom: 2rem;
 }
 
@@ -79,29 +81,31 @@ a:hover {
     font-size: 4rem;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--light-beige);         /* Светло-бежевые имена */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-date {
     font-size: 1.8rem;
     font-style: italic;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 /* ==================== ТАЙМЕР ==================== */
 .countdown {
     text-align: center;
     padding: 3rem 1rem;
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
     border-radius: 10px;
     margin: 2rem 0;
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
 }
 
 #timer {
@@ -113,11 +117,12 @@ a:hover {
 }
 
 .timer-unit {
-    background: var(--white);
+    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 1.5rem;
     border-radius: 8px;
     min-width: 100px;
-    box-shadow: 0 4px 8px rgba(54, 62, 47, 0.08); /* Тень в зелёных тонах */
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s;
 }
 
@@ -128,7 +133,7 @@ a:hover {
 .timer-number {
     font-size: 3rem;
     font-weight: bold;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--light-beige);         /* Светло-бежевые цифры */
     display: block;
     line-height: 1;
 }
@@ -138,16 +143,17 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.5rem;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 /* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
 .timing-section {
-    background-color: var(--white);
+    background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(54, 62, 47, 0.08); /* Обновлённая тень */
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .timing-section .container {
@@ -160,7 +166,7 @@ a:hover {
     max-width: 600px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
     line-height: 1.6;
 }
 
@@ -174,7 +180,7 @@ a:hover {
     padding-left: 40px; /* Отступ для линии времени */
 }
 
-/* Вертикальная линия */
+/* Вертикальная линия - бежевая */
 .timeline:before {
     content: '';
     position: absolute;
@@ -182,7 +188,7 @@ a:hover {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, var(--dark-green), var(--beige)); /* Новый градиент */
+    background: linear-gradient(to bottom, var(--beige), var(--medium-beige)); /* Бежевый градиент */
     border-radius: 3px;
 }
 
@@ -201,11 +207,11 @@ a:hover {
     top: 5px;
     width: 16px;
     height: 16px;
-    background-color: var(--white);
-    border: 3px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    background-color: var(--dark-green); /* Тёмно-зелёный фон */
+    border: 3px solid var(--beige); /* Бежевая рамка */
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 0 0 0 4px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
+    box-shadow: 0 0 0 4px rgba(216, 204, 180, 0.1); /* Бежевая тень */
 }
 
 /* Время события */
@@ -218,46 +224,47 @@ a:hover {
     font-family: 'Montserrat', monospace;
     font-weight: bold;
     font-size: 1.2rem;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
-    background-color: var(--white);
+    color: var(--light-beige);         /* Светло-бежевый */
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 5px 10px;
     border-radius: 20px;
-    border: 2px solid var(--light-beige); /* Светлый бежевый вместо #f0e6d8 */
+    border: 2px solid var(--medium-beige); /* Бежевая рамка */
 }
 
 /* Контент события */
 .timeline-content {
-    background-color: var(--off-white); /* Светлый фон вместо #fdfaf6 */
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 1.8rem;
     border-radius: 12px;
-    border-left: 4px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
-    box-shadow: 0 5px 15px rgba(54, 62, 47, 0.04); /* Обновлённая тень */
+    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 /* Иконки событий */
 .timeline-icon {
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
+    color: var(--beige);               /* Бежевые иконки */
 }
 
 /* Заголовок события */
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--light-beige);         /* Светло-бежевый заголовок */
     margin: 0 0 0.8rem 0;
     text-align: left;
 }
 
 /* Описание события */
 .timeline-content p {
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -268,24 +275,24 @@ a:hover {
     align-items: center;
     gap: 8px;
     font-size: 0.95rem;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
-    background-color: rgba(54, 62, 47, 0.08); /* Обновлённый фон */
+    color: var(--beige);               /* Бежевый текст */
+    background-color: rgba(216, 204, 180, 0.1); /* Полупрозрачный бежевый */
     padding: 0.6rem 1rem;
     border-radius: 8px;
-    border-left: 3px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    border-left: 3px solid var(--beige); /* Бежевая акцентная линия */
 }
 
 .timeline-location i {
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--beige);               /* Бежевая иконка */
 }
 
 /* Важное примечание */
 .timing-note {
     margin-top: 3rem;
     padding: 1.5rem;
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     border-radius: 10px;
-    border-left: 4px solid var(--dark-green); /* Тёмно-зелёный вместо #8b7355 */
+    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
     font-size: 0.95rem;
 }
 
@@ -294,101 +301,13 @@ a:hover {
     align-items: flex-start;
     gap: 10px;
     margin: 0;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 .timing-note i {
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--beige);               /* Бежевая иконка */
     margin-top: 3px;
 }
-
-/* ==================== АДАПТИВНОСТЬ ==================== */
-@media (max-width: 768px) {
-    .timing-section {
-        padding: 2.5rem 1rem;
-        margin: 2rem 0;
-    }
-    
-    .timeline {
-        padding-left: 30px;
-    }
-    
-    .timeline:before {
-        left: 18px;
-    }
-    
-    .timeline-item:before {
-        left: 12px;
-        width: 14px;
-        height: 14px;
-    }
-    
-    .timeline-time {
-        position: relative;
-        left: 0;
-        top: 0;
-        width: auto;
-        text-align: left;
-        margin-bottom: 0.8rem;
-        display: inline-block;
-        background-color: var(--light-beige); /* Светлый бежевый вместо #f0e6d8 */
-        padding: 0.4rem 1.2rem;
-    }
-    
-    .timeline-content {
-        padding: 1.4rem;
-    }
-    
-    .timeline-content h3 {
-        font-size: 1.6rem;
-    }
-    
-    .timeline-item {
-        padding-left: 0;
-        margin-bottom: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .timeline-content {
-        padding: 1.2rem;
-    }
-    
-    .timeline-icon {
-        font-size: 1.5rem;
-    }
-    
-    .timeline-content h3 {
-        font-size: 1.4rem;
-    }
-    
-    .timing-note {
-        padding: 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* ==================== АНИМАЦИЯ ПОЯВЛЕНИЯ ==================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.timeline-item {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.3s; }
-.timeline-item:nth-child(3) { animation-delay: 0.5s; }
-.timeline-item:nth-child(4) { animation-delay: 0.7s; }
 
 /* ==================== КАРТОЧКИ С ДЕТАЛЯМИ ==================== */
 .details-grid {
@@ -399,137 +318,44 @@ a:hover {
 }
 
 .detail-card {
-    background: var(--white);
+    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(54, 62, 47, 0.07); /* Обновлённая тень */
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
     height: 100%;
 }
 
 .detail-card:hover {
-    box-shadow: 0 10px 25px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transform: translateY(-5px);
 }
 
 .icon {
     font-size: 2.5rem;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--beige);               /* Бежевые иконки */
     margin-bottom: 1rem;
 }
 
 .detail-card p {
     margin-bottom: 0.5rem;
+    color: var(--beige);               /* Бежевый текст */
 }
 
 .detail-card strong {
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
-}
-
-/* ==================== ФОРМА RSVP (ОСНОВНАЯ) ==================== */
-#rsvp-form {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(54, 62, 47, 0.07); /* Обновлённая тень */
-    max-width: 600px;
-    margin: 3rem auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--medium-beige); /* Средний бежевый вместо #ddd */
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #b08d6e */
-    box-shadow: 0 0 0 2px rgba(54, 62, 47, 0.2); /* Обновлённая тень */
-}
-
-textarea { 
-    min-height: 100px; 
-    resize: vertical; 
-}
-
-button {
-    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
-    color: var(--white);
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-button:hover { 
-    background-color: #2a3124;          /* Более тёмный зелёный вместо #9a7a5d */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(54, 62, 47, 0.3); /* Обновлённая тень */
-}
-
-button:disabled {
-    background-color: var(--medium-beige); /* Средний бежевый вместо #95a595 */
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-#form-feedback {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9em;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #666 */
-}
-
-/* ==================== ФУТЕР ==================== */
-footer {
-    text-align: center;
-    padding: 3rem 1rem;
-    border-top: 1px dashed var(--medium-beige); /* Средний бежевый вместо #e0d5c3 */
-    margin-top: 2rem;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
-}
-
-.footer-contacts {
-    margin-top: 1rem;
-    font-size: 1rem;
-}
-
-.footer-contacts i {
-    margin-right: 0.5rem;
-    color: var(--dark-green);          /* Тёмно-зелёный */
+    color: var(--light-beige);         /* Светло-бежевый акцент */
 }
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
     text-align: center;
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
 }
 
 .dress-code-section .container {
@@ -546,7 +372,7 @@ footer {
 
 .dress-code-text p {
     margin-bottom: 1rem;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 /* ==================== ЦВЕТОВАЯ ПАЛИТРА (6 в ряд) ==================== */
@@ -568,40 +394,42 @@ footer {
     width: 60px; /* Еще меньше */
     height: 60px;
     border-radius: 50%;
-    border: 2px solid var(--white);
-    box-shadow: 0 3px 8px rgba(54, 62, 47, 0.08); /* Обновлённая тень */
+    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 .color-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 .color-hex {
     font-family: 'Montserrat', monospace;
     font-size: 0.75rem;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #666 */
+    color: var(--beige);               /* Бежевый текст */
     padding: 0.1rem 0.3rem;
-    background-color: var(--white);
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     border-radius: 3px;
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
 }
 
 /* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
 .dress-tips {
-    background-color: var(--white);
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 2rem;
     border-radius: 10px;
     max-width: 700px;
     margin: 3rem auto 0;
     text-align: left;
-    box-shadow: 0 5px 15px rgba(54, 62, 47, 0.05); /* Обновлённая тень */
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .dress-tips h3 {
     text-align: center;
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--light-beige);         /* Светло-бежевый заголовок */
     margin-bottom: 1.5rem;
 }
 
@@ -614,12 +442,12 @@ footer {
     margin-bottom: 1rem;
     padding-left: 2rem;
     position: relative;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    color: var(--beige);               /* Бежевый текст */
 }
 
 .dress-tips li:before {
     content: "•";
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--beige);               /* Бежевая точка */
     font-size: 1.5rem;
     position: absolute;
     left: 0;
@@ -651,10 +479,11 @@ footer {
 
 /* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ (RSVP) ==================== */
 .rsvp-section {
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
 }
 
 .rsvp-section .container {
@@ -664,61 +493,294 @@ footer {
 
 .section-subtitle {
     text-align: center;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    color: var(--beige);               /* Бежевый текст */
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
 
-/* ==================== ФОРМА RSVP (ДЕТАЛЬНАЯ) ==================== */
-/* Форма уже определена выше, это дублирующие стили - оставляем только уникальные */
+/* ==================== ФОРМА RSVP ==================== */
+#rsvp-form {
+    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.form-group {
+    margin-bottom: 2.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--beige);               /* Бежевый текст */
+    font-size: 1.1rem;
+}
+
+.form-group label i {
+    color: var(--beige);               /* Бежевые иконки */
+    width: 20px;
+    text-align: center;
+}
+
+/* Поля ввода */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(54, 62, 47, 0.7); /* Тёмно-зелёный фон */
+    color: var(--beige);               /* Бежевый текст */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--light-beige);  /* Светло-бежевая рамка при фокусе */
+    box-shadow: 0 0 0 3px rgba(240, 234, 220, 0.15);
+    background-color: rgba(54, 62, 47, 0.9);
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: var(--medium-beige);        /* Средний бежевый для placeholder */
+    opacity: 0.7;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* ==================== RADIO КНОПКИ ==================== */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: rgba(54, 62, 47, 0.7); /* Тёмно-зелёный фон */
+    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.radio-option:hover {
+    border-color: var(--light-beige);  /* Светло-бежевая при наведении */
+    background-color: rgba(54, 62, 47, 0.9);
+}
+
+.radio-option input[type="radio"] {
+    display: none; /* Скрываем стандартный radio */
+}
 
 .radio-custom {
-    border: 2px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--beige);    /* Бежевая рамка */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .radio-custom:after {
-    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--beige);    /* Бежевая точка */
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom {
-    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #8b7355 */
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    border-color: var(--light-beige);  /* Светло-бежевая рамка */
+    background-color: rgba(54, 62, 47, 0.9);
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom:after {
+    opacity: 1;
+}
+
+.radio-label {
+    font-weight: 500;
+    color: var(--beige);               /* Бежевый текст */
+    font-size: 1.05rem;
+}
+
+/* ==================== CHECKBOX (множественный выбор) ==================== */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: rgba(54, 62, 47, 0.7); /* Тёмно-зелёный фон */
+    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option:hover {
+    border-color: var(--light-beige);  /* Светло-бежевая при наведении */
+    background-color: rgba(54, 62, 47, 0.9);
+}
+
+.checkbox-option input[type="checkbox"] {
+    display: none; /* Скрываем стандартный checkbox */
 }
 
 .checkbox-custom {
-    border: 2px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--beige);    /* Бежевая рамка */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-custom:after {
+    content: '✓';
+    color: var(--dark-green);          /* Тёмно-зелёная галочка */
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
-    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
-    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #8b7355 */
+    background-color: var(--beige);    /* Бежевый фон */
+    border-color: var(--light-beige);  /* Светло-бежевая рамка */
 }
 
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
+    opacity: 1;
+}
+
+.checkbox-label {
+    font-weight: 500;
+    color: var(--beige);               /* Бежевый текст */
+    font-size: 1.05rem;
+}
+
+/* ==================== КНОПКА ОТПРАВКИ ==================== */
 .submit-btn {
-    background: linear-gradient(135deg, var(--dark-green) 0%, #2a3124 100%); /* Новый градиент */
+    background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%); /* Бежевый градиент */
+    color: var(--dark-green);          /* Тёмно-зелёный текст */
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #2a3124 0%, #1f241a 100%);
-    box-shadow: 0 10px 25px rgba(54, 62, 47, 0.3); /* Обновлённая тень */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(216, 204, 180, 0.3);
+    background: linear-gradient(135deg, var(--light-beige) 0%, #f5f0e4 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
+.form-feedback {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-feedback.success {
+    display: block;
+    background-color: rgba(72, 187, 120, 0.2);
+    color: #98d8b2;                    /* Светло-зелёный текст */
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.form-feedback.error {
+    display: block;
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #f5b7b7;                    /* Светло-красный текст */
+    border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
 .form-note {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     border-radius: 8px;
-    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    color: var(--beige);               /* Бежевый текст */
     font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 10px;
-    border-left: 4px solid var(--medium-beige); /* Средний бежевый вместо #d4b6a0 */
+    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
 }
 
 .form-note i {
-    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    color: var(--beige);               /* Бежевая иконка */
     flex-shrink: 0;
+}
+
+/* ==================== ФУТЕР ==================== */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-top: 1px solid var(--medium-beige); /* Бежевая граница */
+    margin-top: 2rem;
+    color: var(--beige);               /* Бежевый текст */
+}
+
+.footer-contacts {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.footer-contacts i {
+    margin-right: 0.5rem;
+    color: var(--beige);               /* Бежевые иконки */
 }
 
 /* ==================== АДАПТИВНОСТЬ ==================== */
@@ -762,11 +824,52 @@ footer {
         gap: 1.5rem;
     }
     
-    #rsvp-form, 
-    .detail-card {
-        padding: 1.5rem;
+    /* Тайминг адаптивность */
+    .timing-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
     }
     
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline:before {
+        left: 18px;
+    }
+    
+    .timeline-item:before {
+        left: 12px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .timeline-time {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: auto;
+        text-align: left;
+        margin-bottom: 0.8rem;
+        display: inline-block;
+        background-color: rgba(54, 62, 47, 0.9);
+        padding: 0.4rem 1.2rem;
+    }
+    
+    .timeline-content {
+        padding: 1.4rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+    
+    /* Форма RSVP адаптивность */
     .rsvp-section {
         padding: 2.5rem 1rem;
         margin: 2rem 0;
@@ -794,6 +897,10 @@ footer {
         padding: 1rem 2rem;
         font-size: 1.1rem;
     }
+    
+    .detail-card, #rsvp-form {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -817,6 +924,23 @@ footer {
     
     .timer-label { 
         font-size: 0.7rem; 
+    }
+    
+    .timeline-content {
+        padding: 1.2rem;
+    }
+    
+    .timeline-icon {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .timing-note {
+        padding: 1.2rem;
+        font-size: 0.9rem;
     }
     
     #rsvp-form {
@@ -848,7 +972,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.hero, .countdown, .detail-card, #rsvp-form {
+.hero, .countdown, .detail-card, #rsvp-form, .timing-section, .dress-code-section {
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -858,3 +982,5 @@ footer {
 .details-grid > *:nth-child(2) { animation-delay: 0.6s; }
 .details-grid > *:nth-child(3) { animation-delay: 0.8s; }
 #rsvp-form { animation-delay: 1s; }
+.timing-section { animation-delay: 0.5s; }
+.dress-code-section { animation-delay: 0.7s; }
