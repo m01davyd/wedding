@@ -1,4 +1,3 @@
-/* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
 /* ==================== ОБНОВЛЕННАЯ ЦВЕТОВАЯ ПАЛИТРА ==================== */
 :root {
     --dark-green: #363e2f;      /* Основной тёмно-зелёный */
@@ -10,6 +9,7 @@
     --white: #ffffff;
     --off-white: #f9f7f2;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +20,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: var(--dark-beige);          /* Был #5a4c3e */
-    background-color: var(--off-white); /* Был #fdfaf6 */
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+    background-color: var(--off-white); /* Светлый фон вместо #fdfaf6 */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -31,7 +31,7 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    color: var(--dark-green);          /* Был #8b7355 */
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -55,23 +55,21 @@ p {
 }
 
 a {
-    color: #b08d6e;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #8b7355;
+    color: #2a3124;                    /* Более тёмный зелёный при наведении */
     text-decoration: underline;
 }
 
 /* ==================== ГЛАВНЫЙ БАННЕР ==================== */
-
-
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    border-bottom: 1px dashed var(--medium-beige); /* Был #e0d5c3 */
+    border-bottom: 1px dashed var(--medium-beige); /* Средний бежевый вместо #e0d5c3 */
     margin-bottom: 2rem;
 }
 
@@ -80,27 +78,27 @@ a:hover {
     font-size: 4rem;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-    color: var(--dark-green);          /* Был #8b7355 */
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
 }
 
 .hero-date {
     font-size: 1.8rem;
     font-style: italic;
-    color: #7a6852;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
-    color: #5a4c3e;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
 }
 
 /* ==================== ТАЙМЕР ==================== */
 .countdown {
     text-align: center;
     padding: 3rem 1rem;
-    background-color: #f8f4ef;
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
     border-radius: 10px;
     margin: 2rem 0;
 }
@@ -114,11 +112,11 @@ a:hover {
 }
 
 .timer-unit {
-    background: white;
+    background: var(--white);
     padding: 1.5rem;
     border-radius: 8px;
     min-width: 100px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(54, 62, 47, 0.08); /* Тень в зелёных тонах */
     transition: transform 0.3s;
 }
 
@@ -129,7 +127,7 @@ a:hover {
 .timer-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #b08d6e;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
     display: block;
     line-height: 1;
 }
@@ -139,16 +137,16 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.5rem;
-    color: #7a6852;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
 }
 
 /* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
 .timing-section {
-    background-color: white;
+    background-color: var(--white);
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(54, 62, 47, 0.08); /* Обновлённая тень */
 }
 
 .timing-section .container {
@@ -161,7 +159,7 @@ a:hover {
     max-width: 600px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: #5a4c3e;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
     line-height: 1.6;
 }
 
@@ -183,7 +181,7 @@ a:hover {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, #b08d6e, #e8d5c4);
+    background: linear-gradient(to bottom, var(--dark-green), var(--beige)); /* Новый градиент */
     border-radius: 3px;
 }
 
@@ -202,11 +200,11 @@ a:hover {
     top: 5px;
     width: 16px;
     height: 16px;
-    background-color: white;
-    border: 3px solid #b08d6e;
+    background-color: var(--white);
+    border: 3px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 0 0 0 4px rgba(176, 141, 110, 0.1);
+    box-shadow: 0 0 0 4px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
 }
 
 /* Время события */
@@ -219,26 +217,26 @@ a:hover {
     font-family: 'Montserrat', monospace;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #b08d6e;
-    background-color: white;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    background-color: var(--white);
     padding: 5px 10px;
     border-radius: 20px;
-    border: 2px solid #f0e6d8;
+    border: 2px solid var(--light-beige); /* Светлый бежевый вместо #f0e6d8 */
 }
 
 /* Контент события */
 .timeline-content {
-    background-color: #fdfaf6;
+    background-color: var(--off-white); /* Светлый фон вместо #fdfaf6 */
     padding: 1.8rem;
     border-radius: 12px;
-    border-left: 4px solid #b08d6e;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    border-left: 4px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    box-shadow: 0 5px 15px rgba(54, 62, 47, 0.04); /* Обновлённая тень */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(176, 141, 110, 0.1);
+    box-shadow: 0 8px 20px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
 }
 
 /* Иконки событий */
@@ -251,14 +249,14 @@ a:hover {
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: #8b7355;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
     margin: 0 0 0.8rem 0;
     text-align: left;
 }
 
 /* Описание события */
 .timeline-content p {
-    color: #5a4c3e;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -269,24 +267,24 @@ a:hover {
     align-items: center;
     gap: 8px;
     font-size: 0.95rem;
-    color: #7a6852;
-    background-color: rgba(176, 141, 110, 0.08);
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    background-color: rgba(54, 62, 47, 0.08); /* Обновлённый фон */
     padding: 0.6rem 1rem;
     border-radius: 8px;
-    border-left: 3px solid #b08d6e;
+    border-left: 3px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
 }
 
 .timeline-location i {
-    color: #b08d6e;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
 }
 
 /* Важное примечание */
 .timing-note {
     margin-top: 3rem;
     padding: 1.5rem;
-    background-color: #f8f4ef;
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
     border-radius: 10px;
-    border-left: 4px solid #8b7355;
+    border-left: 4px solid var(--dark-green); /* Тёмно-зелёный вместо #8b7355 */
     font-size: 0.95rem;
 }
 
@@ -295,11 +293,11 @@ a:hover {
     align-items: flex-start;
     gap: 10px;
     margin: 0;
-    color: #5a4c3e;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
 }
 
 .timing-note i {
-    color: #8b7355;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
     margin-top: 3px;
 }
 
@@ -332,7 +330,7 @@ a:hover {
         text-align: left;
         margin-bottom: 0.8rem;
         display: inline-block;
-        background-color: #f0e6d8;
+        background-color: var(--light-beige); /* Светлый бежевый вместо #f0e6d8 */
         padding: 0.4rem 1.2rem;
     }
     
@@ -400,23 +398,23 @@ a:hover {
 }
 
 .detail-card {
-    background: white;
+    background: var(--white);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 6px 15px rgba(54, 62, 47, 0.07); /* Обновлённая тень */
     transition: all 0.3s ease;
     height: 100%;
 }
 
 .detail-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(54, 62, 47, 0.1); /* Обновлённая тень */
     transform: translateY(-5px);
 }
 
 .icon {
     font-size: 2.5rem;
-    color: #b08d6e;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
     margin-bottom: 1rem;
 }
 
@@ -425,15 +423,15 @@ a:hover {
 }
 
 .detail-card strong {
-    color: #8b7355;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
 }
 
-/* ==================== ФОРМА RSVP ==================== */
+/* ==================== ФОРМА RSVP (ОСНОВНАЯ) ==================== */
 #rsvp-form {
-    background: white;
+    background: var(--white);
     padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 6px 15px rgba(54, 62, 47, 0.07); /* Обновлённая тень */
     max-width: 600px;
     margin: 3rem auto;
 }
@@ -446,13 +444,13 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #5a4c3e;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
 }
 
 input, select, textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--medium-beige); /* Средний бежевый вместо #ddd */
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -461,8 +459,8 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #b08d6e;
-    box-shadow: 0 0 0 2px rgba(176, 141, 110, 0.2);
+    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #b08d6e */
+    box-shadow: 0 0 0 2px rgba(54, 62, 47, 0.2); /* Обновлённая тень */
 }
 
 textarea { 
@@ -471,8 +469,8 @@ textarea {
 }
 
 button {
-    background-color: #b08d6e;
-    color: white;
+    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    color: var(--white);
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -486,13 +484,13 @@ button {
 }
 
 button:hover { 
-    background-color: #9a7a5d; 
+    background-color: #2a3124;          /* Более тёмный зелёный вместо #9a7a5d */
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(154, 122, 93, 0.3);
+    box-shadow: 0 4px 12px rgba(54, 62, 47, 0.3); /* Обновлённая тень */
 }
 
 button:disabled {
-    background-color: #95a595;
+    background-color: var(--medium-beige); /* Средний бежевый вместо #95a595 */
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
@@ -502,16 +500,16 @@ button:disabled {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.9em;
-    color: #666;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #666 */
 }
 
 /* ==================== ФУТЕР ==================== */
 footer {
     text-align: center;
     padding: 3rem 1rem;
-    border-top: 1px dashed #e0d5c3;
+    border-top: 1px dashed var(--medium-beige); /* Средний бежевый вместо #e0d5c3 */
     margin-top: 2rem;
-    color: #8b7355;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
 }
 
 .footer-contacts {
@@ -521,6 +519,205 @@ footer {
 
 .footer-contacts i {
     margin-right: 0.5rem;
+    color: var(--dark-green);          /* Тёмно-зелёный */
+}
+
+/* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
+.dress-code-section {
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.dress-code-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dress-code-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.dress-code-text p {
+    margin-bottom: 1rem;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+}
+
+/* ==================== ЦВЕТОВАЯ ПАЛИТРА (6 в ряд) ==================== */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Фиксированно 6 колонок */
+    gap: 0.8rem; /* Еще меньше расстояние */
+    margin: 2rem 0;
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.color-circle {
+    width: 60px; /* Еще меньше */
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    box-shadow: 0 3px 8px rgba(54, 62, 47, 0.08); /* Обновлённая тень */
+}
+
+.color-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+}
+
+.color-hex {
+    font-family: 'Montserrat', monospace;
+    font-size: 0.75rem;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #666 */
+    padding: 0.1rem 0.3rem;
+    background-color: var(--white);
+    border-radius: 3px;
+}
+
+/* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
+.dress-tips {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 3rem auto 0;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(54, 62, 47, 0.05); /* Обновлённая тень */
+}
+
+.dress-tips h3 {
+    text-align: center;
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    margin-bottom: 1.5rem;
+}
+
+.dress-tips ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.dress-tips li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #5a4c3e */
+}
+
+.dress-tips li:before {
+    content: "•";
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #b08d6e */
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+/* Адаптивность для Grid */
+@media (max-width: 1024px) {
+    .color-palette {
+        grid-template-columns: repeat(3, 1fr); /* На планшетах 3 в ряд */
+        gap: 1.2rem;
+    }
+    .color-circle {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr); /* На мобильных 2 в ряд */
+        gap: 1rem;
+    }
+    .color-circle {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ (RSVP) ==================== */
+.rsvp-section {
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+}
+
+.rsvp-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* ==================== ФОРМА RSVP (ДЕТАЛЬНАЯ) ==================== */
+/* Форма уже определена выше, это дублирующие стили - оставляем только уникальные */
+
+.radio-custom {
+    border: 2px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+}
+
+.radio-custom:after {
+    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #8b7355 */
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+}
+
+.checkbox-custom {
+    border: 2px solid var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: var(--dark-green); /* Тёмно-зелёный вместо #b08d6e */
+    border-color: var(--dark-green);   /* Тёмно-зелёный вместо #8b7355 */
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--dark-green) 0%, #2a3124 100%); /* Новый градиент */
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #2a3124 0%, #1f241a 100%);
+    box-shadow: 0 10px 25px rgba(54, 62, 47, 0.3); /* Обновлённая тень */
+}
+
+.form-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--light-beige); /* Светлый бежевый вместо #f8f4ef */
+    border-radius: 8px;
+    color: var(--dark-beige);          /* Тёмный бежевый вместо #7a6852 */
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid var(--medium-beige); /* Средний бежевый вместо #d4b6a0 */
+}
+
+.form-note i {
+    color: var(--dark-green);          /* Тёмно-зелёный вместо #8b7355 */
+    flex-shrink: 0;
 }
 
 /* ==================== АДАПТИВНОСТЬ ==================== */
@@ -564,12 +761,37 @@ footer {
         gap: 1.5rem;
     }
     
-    #rsvp-form { 
-        padding: 1.5rem; 
+    #rsvp-form, 
+    .detail-card {
+        padding: 1.5rem;
     }
     
-    .detail-card, #rsvp-form {
-        padding: 1.5rem;
+    .rsvp-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    #rsvp-form {
+        padding: 1.8rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        gap: 10px;
+    }
+    
+    .radio-option,
+    .checkbox-option {
+        padding: 12px 15px;
+    }
+    
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -595,825 +817,7 @@ footer {
     .timer-label { 
         font-size: 0.7rem; 
     }
-}
-/* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
-.dress-code-section {
-    background-color: #f8f4ef;
-    padding: 4rem 1rem;
-    margin: 3rem 0;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.dress-code-section .container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.dress-code-text {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.dress-code-text p {
-    margin-bottom: 1rem;
-    color: #5a4c3e;
-}
-
-/* ==================== ЦВЕТОВАЯ ПАЛИТРА ==================== */
-.color-palette {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.color-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.color-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.color-circle:hover {
-    transform: scale(1.05);
-}
-
-.color-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #8b7355;
-}
-
-.color-hex {
-    font-family: 'Montserrat', monospace;
-    font-size: 0.9rem;
-    color: #666;
-    padding: 0.2rem 0.5rem;
-    background-color: white;
-    border-radius: 3px;
-}
-
-/* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
-.dress-tips {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 700px;
-    margin: 3rem auto 0;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.dress-tips h3 {
-    text-align: center;
-    color: #8b7355;
-    margin-bottom: 1.5rem;
-}
-
-.dress-tips ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.dress-tips li {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    position: relative;
-    color: #5a4c3e;
-}
-
-.dress-tips li:before {
-    content: "•";
-    color: #b08d6e;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -0.2rem;
-}
-
-/* Вариант с Grid - 6 цветов всегда в один ряд */
-.color-palette {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Фиксированно 6 колонок */
-    gap: 0.8rem; /* Еще меньше расстояние */
-    margin: 2rem 0;
-}
-
-.color-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.color-circle {
-    width: 60px; /* Еще меньше */
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-}
-
-.color-name {
-    font-size: 0.85rem;
-}
-
-.color-hex {
-    font-size: 0.75rem;
-    padding: 0.1rem 0.3rem;
-}
-
-/* Адаптивность для Grid */
-@media (max-width: 1024px) {
-    .color-palette {
-        grid-template-columns: repeat(3, 1fr); /* На планшетах 3 в ряд */
-        gap: 1.2rem;
-    }
-    .color-circle {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-@media (max-width: 600px) {
-    .color-palette {
-        grid-template-columns: repeat(2, 1fr); /* На мобильных 2 в ряд */
-        gap: 1rem;
-    }
-    .color-circle {
-        width: 65px;
-        height: 65px;
-    }
-}
-
-/* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ ==================== */
-.rsvp-section {
-    background-color: #f8f4ef;
-    padding: 4rem 1rem;
-    margin: 3rem 0;
-    border-radius: 15px;
-}
-
-.rsvp-section .container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #7a6852;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-
-/* ==================== ФОРМА ==================== */
-#rsvp-form {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
-
-.form-group {
-    margin-bottom: 2.2rem;
-    position: relative;
-}
-
-.form-group label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: #5a4c3e;
-    font-size: 1.1rem;
-}
-
-.form-group label i {
-    color: #b08d6e;
-    width: 20px;
-    text-align: center;
-}
-
-/* Поля ввода */
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #fdfaf6;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: #b08d6e;
-    box-shadow: 0 0 0 3px rgba(176, 141, 110, 0.15);
-    background-color: white;
-}
-
-input[type="text"]::placeholder,
-textarea::placeholder {
-    color: #a38f7c;
-    opacity: 0.7;
-}
-
-textarea {
-    min-height: 120px;
-    resize: vertical;
-    line-height: 1.5;
-}
-
-/* ==================== RADIO КНОПКИ ==================== */
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background-color: #fdfaf6;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.radio-option:hover {
-    border-color: #d4b6a0;
-    background-color: #fcf7f0;
-}
-
-.radio-option input[type="radio"] {
-    display: none; /* Скрываем стандартный radio */
-}
-
-.radio-custom {
-    width: 22px;
-    height: 22px;
-    border: 2px solid #b08d6e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.radio-custom:after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #b08d6e;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.radio-option input[type="radio"]:checked + .radio-custom {
-    border-color: #8b7355;
-    background-color: #f8f4ef;
-}
-
-.radio-option input[type="radio"]:checked + .radio-custom:after {
-    opacity: 1;
-}
-
-.radio-label {
-    font-weight: 500;
-    color: #5a4c3e;
-    font-size: 1.05rem;
-}
-
-/* ==================== CHECKBOX (множественный выбор) ==================== */
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 12px;
-}
-
-.checkbox-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background-color: #fdfaf6;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.checkbox-option:hover {
-    border-color: #d4b6a0;
-    background-color: #fcf7f0;
-}
-
-.checkbox-option input[type="checkbox"] {
-    display: none; /* Скрываем стандартный checkbox */
-}
-
-.checkbox-custom {
-    width: 22px;
-    height: 22px;
-    border: 2px solid #b08d6e;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.checkbox-custom:after {
-    content: '✓';
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
-    background-color: #b08d6e;
-    border-color: #8b7355;
-}
-
-.checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
-    opacity: 1;
-}
-
-.checkbox-label {
-    font-weight: 500;
-    color: #5a4c3e;
-    font-size: 1.05rem;
-}
-
-/* ==================== КНОПКА ОТПРАВКИ ==================== */
-.submit-btn {
-    background: linear-gradient(135deg, #b08d6e 0%, #9a7a5d 100%);
-    color: white;
-    border: none;
-    padding: 1.2rem 3rem;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 1.5rem;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(176, 141, 110, 0.3);
-    background: linear-gradient(135deg, #9a7a5d 0%, #8b7355 100%);
-}
-
-.submit-btn:active {
-    transform: translateY(-1px);
-}
-
-/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
-.form-feedback {
-    text-align: center;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    display: none;
-}
-
-.form-feedback.success {
-    display: block;
-    background-color: rgba(72, 187, 120, 0.1);
-    color: #2e8b57;
-    border: 1px solid rgba(72, 187, 120, 0.3);
-}
-
-.form-feedback.error {
-    display: block;
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-    border: 1px solid rgba(220, 53, 69, 0.3);
-}
-
-.form-note {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f8f4ef;
-    border-radius: 8px;
-    color: #7a6852;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-left: 4px solid #d4b6a0;
-}
-
-.form-note i {
-    color: #8b7355;
-    flex-shrink: 0;
-}
-
-/* ==================== АДАПТИВНОСТЬ ==================== */
-@media (max-width: 768px) {
-    .rsvp-section {
-        padding: 2.5rem 1rem;
-        margin: 2rem 0;
-    }
     
-    #rsvp-form {
-        padding: 1.8rem;
-    }
-    
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-    
-    .radio-group,
-    .checkbox-group {
-        gap: 10px;
-    }
-    
-    .radio-option,
-    .checkbox-option {
-        padding: 12px 15px;
-    }
-    
-    .submit-btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #rsvp-form {
-        padding: 1.5rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1.8rem;
-    }
-    
-    .form-group label {
-        font-size: 1rem;
-        flex-wrap: wrap;
-    }
-    
-    .radio-label,
-    .checkbox-label {
-        font-size: 1rem;
-    }
-    
-    .submit-btn {
-        font-size: 1rem;
-    }
-}
-
-/* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ ==================== */
-.rsvp-section {
-    background-color: #f8f4ef;
-    padding: 4rem 1rem;
-    margin: 3rem 0;
-    border-radius: 15px;
-}
-
-.rsvp-section .container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #7a6852;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-
-/* ==================== ФОРМА ==================== */
-#rsvp-form {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
-
-.form-group {
-    margin-bottom: 2.2rem;
-    position: relative;
-}
-
-.form-group label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: #5a4c3e;
-    font-size: 1.1rem;
-}
-
-.form-group label i {
-    color: #b08d6e;
-    width: 20px;
-    text-align: center;
-}
-
-/* Поля ввода */
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #fdfaf6;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: #b08d6e;
-    box-shadow: 0 0 0 3px rgba(176, 141, 110, 0.15);
-    background-color: white;
-}
-
-input[type="text"]::placeholder,
-textarea::placeholder {
-    color: #a38f7c;
-    opacity: 0.7;
-}
-
-textarea {
-    min-height: 120px;
-    resize: vertical;
-    line-height: 1.5;
-}
-
-/* ==================== RADIO КНОПКИ ==================== */
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background-color: #fdfaf6;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.radio-option:hover {
-    border-color: #d4b6a0;
-    background-color: #fcf7f0;
-}
-
-.radio-option input[type="radio"] {
-    display: none; /* Скрываем стандартный radio */
-}
-
-.radio-custom {
-    width: 22px;
-    height: 22px;
-    border: 2px solid #b08d6e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.radio-custom:after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #b08d6e;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.radio-option input[type="radio"]:checked + .radio-custom {
-    border-color: #8b7355;
-    background-color: #f8f4ef;
-}
-
-.radio-option input[type="radio"]:checked + .radio-custom:after {
-    opacity: 1;
-}
-
-.radio-label {
-    font-weight: 500;
-    color: #5a4c3e;
-    font-size: 1.05rem;
-}
-
-/* ==================== CHECKBOX (множественный выбор) ==================== */
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 12px;
-}
-
-.checkbox-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background-color: #fdfaf6;
-    border: 2px solid #e8d5c4;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.checkbox-option:hover {
-    border-color: #d4b6a0;
-    background-color: #fcf7f0;
-}
-
-.checkbox-option input[type="checkbox"] {
-    display: none; /* Скрываем стандартный checkbox */
-}
-
-.checkbox-custom {
-    width: 22px;
-    height: 22px;
-    border: 2px solid #b08d6e;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.checkbox-custom:after {
-    content: '✓';
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
-    background-color: #b08d6e;
-    border-color: #8b7355;
-}
-
-.checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
-    opacity: 1;
-}
-
-.checkbox-label {
-    font-weight: 500;
-    color: #5a4c3e;
-    font-size: 1.05rem;
-}
-
-/* ==================== КНОПКА ОТПРАВКИ ==================== */
-.submit-btn {
-    background: linear-gradient(135deg, #b08d6e 0%, #9a7a5d 100%);
-    color: white;
-    border: none;
-    padding: 1.2rem 3rem;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 1.5rem;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(176, 141, 110, 0.3);
-    background: linear-gradient(135deg, #9a7a5d 0%, #8b7355 100%);
-}
-
-.submit-btn:active {
-    transform: translateY(-1px);
-}
-
-/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
-.form-feedback {
-    text-align: center;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    display: none;
-}
-
-.form-feedback.success {
-    display: block;
-    background-color: rgba(72, 187, 120, 0.1);
-    color: #2e8b57;
-    border: 1px solid rgba(72, 187, 120, 0.3);
-}
-
-.form-feedback.error {
-    display: block;
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-    border: 1px solid rgba(220, 53, 69, 0.3);
-}
-
-.form-note {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f8f4ef;
-    border-radius: 8px;
-    color: #7a6852;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-left: 4px solid #d4b6a0;
-}
-
-.form-note i {
-    color: #8b7355;
-    flex-shrink: 0;
-}
-
-/* ==================== АДАПТИВНОСТЬ ==================== */
-@media (max-width: 768px) {
-    .rsvp-section {
-        padding: 2.5rem 1rem;
-        margin: 2rem 0;
-    }
-    
-    #rsvp-form {
-        padding: 1.8rem;
-    }
-    
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-    
-    .radio-group,
-    .checkbox-group {
-        gap: 10px;
-    }
-    
-    .radio-option,
-    .checkbox-option {
-        padding: 12px 15px;
-    }
-    
-    .submit-btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
     #rsvp-form {
         padding: 1.5rem;
     }
