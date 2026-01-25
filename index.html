@@ -229,19 +229,19 @@
 
              <div class="form-group">
                 <label>
-                    <i class="fas fa-map-marker-alt"></i> Планируете присутствовать на:
+                    <i class="fas fa-map-marker-alt"></i> Планируете присутствовать на Росписи+Прогулке:
                 </label>
                 <div class="checkbox-group">
                     <label class="checkbox-option">
                         <input type="checkbox" name="events" value="registry-office">
                         <span class="checkbox-custom"></span>
-                        <span class="checkbox-label">Роспись в ЗАГС + Прогулка</span>
+                        <span class="checkbox-label">Да</span>
                     </label>
 
                     <label class="checkbox-option">
                         <input type="checkbox" name="events" value="banquet">
                         <span class="checkbox-custom"></span>
-                        <span class="checkbox-label">Банкет (17:00)</span>
+                        <span class="checkbox-label">Нет</span>
                     </label>
                 </div>
             </div>
@@ -313,6 +313,72 @@
             submitButton.disabled = true;
             submitButton.style.backgroundColor = '#95a595';
         });
+
+        // Обработка формы RSVP
+document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Отменяем стандартную отправку
+    
+    // Получаем все элементы формы
+    const formData = {
+        name: document.getElementById('guest-name').value,
+        attendance: document.querySelector('input[name="attendance"]:checked')?.value,
+        alcohol: Array.from(document.querySelectorAll('input[name="alcohol"]:checked')).map(cb => cb.value),
+        events: Array.from(document.querySelectorAll('input[name="events"]:checked')).map(cb => cb.value),
+        message: document.getElementById('message').value
+    };
+    
+    // Валидация обязательных полей
+    const feedbackElement = document.getElementById('form-feedback');
+    
+    if (!formData.name.trim()) {
+        showFeedback('Пожалуйста, введите ваше имя и фамилию', 'error');
+        return;
+    }
+    
+    if (!formData.attendance) {
+        showFeedback('Пожалуйста, выберите, придете ли вы на свадьбу', 'error');
+        return;
+    }
+    
+    // Если пользователь не придет, не требуем остальные поля
+    if (formData.attendance === 'no') {
+        showFeedback('Спасибо за честный ответ! Очень жаль, что вы не сможете быть с нами в этот день.', 'success');
+        // В реальном проекте здесь отправка данных на сервер
+        resetForm();
+        return;
+    }
+    
+    // Если придет, показываем успешное сообщение
+    showFeedback('Спасибо! Ваш ответ успешно отправлен. Мы учтём ваши предпочтения и с нетерпением ждём встречи!', 'success');
+    
+    // В реальном проекте здесь должна быть отправка данных на сервер
+    // Например, через Fetch API на Formspree или ваш бэкенд
+    // sendToServer(formData);
+    
+    // Очистка формы
+    resetForm();
+});
+
+function showFeedback(message, type) {
+    const feedbackElement = document.getElementById('form-feedback');
+    feedbackElement.textContent = message;
+    feedbackElement.className = `form-feedback ${type}`;
+    
+    // Автоматически скрываем сообщение через 5 секунд
+    setTimeout(() => {
+        feedbackElement.className = 'form-feedback';
+        feedbackElement.textContent = '';
+    }, 5000);
+}
+
+function resetForm() {
+    document.getElementById('rsvp-form').reset();
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.innerHTML = '<i class="fas fa-check"></i> Ответ отправлен!';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.style.cursor = 'not-allowed';
+}
     </script>
 </body>
 </html>
