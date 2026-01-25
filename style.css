@@ -1,29 +1,40 @@
 /* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
+/* ==================== ОБНОВЛЕННАЯ ЦВЕТОВАЯ ПАЛИТРА ==================== */
+:root {
+    --dark-green: #363e2f;      /* Основной тёмно-зелёный */
+    --beige: #d8ccb4;           /* Основной бежевый */
+    --light-beige: #f0eadc;     /* Светлый бежевый для фона */
+    --medium-beige: #c4baa4;    /* Средний бежевый для акцентов */
+    --dark-beige: #a89e88;      /* Тёмный бежевый для текста */
+    --accent-gold: #b5a782;     /* Золотистый акцент */
+    --white: #ffffff;
+    --off-white: #f9f7f2;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Тело сайта */
 body {
-    
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: #5a4c3e;
-    background-color: #fdfaf6;
+    color: var(--dark-beige);          /* Был #5a4c3e */
+    background-color: var(--off-white); /* Был #fdfaf6 */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-h1, h2, h3 {
+/* Заголовки */
+h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    color: #8b7355;
+    color: var(--dark-green);          /* Был #8b7355 */
     text-align: center;
     margin-bottom: 1rem;
 }
-
 h1 { 
     font-size: 3.5rem; 
     margin-top: 1rem; 
@@ -55,10 +66,12 @@ a:hover {
 }
 
 /* ==================== ГЛАВНЫЙ БАННЕР ==================== */
+
+
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    border-bottom: 1px dashed #e0d5c3;
+    border-bottom: 1px dashed var(--medium-beige); /* Был #e0d5c3 */
     margin-bottom: 2rem;
 }
 
@@ -67,7 +80,7 @@ a:hover {
     font-size: 4rem;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-    color: #8b7355;
+    color: var(--dark-green);          /* Был #8b7355 */
 }
 
 .hero-date {
