@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Dancing Script', cursive, 'Apple Chancery', serif;
- /*   font-family: 'Montserrat', sans-serif;*/
+    
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #5a4c3e;
     background-color: #fdfaf6;
@@ -129,6 +129,255 @@ a:hover {
     color: #7a6852;
 }
 
+/* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
+.timing-section {
+    background-color: white;
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.timing-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timing-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #5a4c3e;
+    line-height: 1.6;
+}
+
+.timing-intro p {
+    margin-bottom: 0;
+}
+
+/* ==================== ВЕРТИКАЛЬНАЯ ЛИНИЯ ВРЕМЕНИ ==================== */
+.timeline {
+    position: relative;
+    padding-left: 40px; /* Отступ для линии времени */
+}
+
+/* Вертикальная линия */
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 25px; /* Позиция линии */
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #b08d6e, #e8d5c4);
+    border-radius: 3px;
+}
+
+/* Элемент таймлайна */
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 30px;
+}
+
+/* Круг на линии времени */
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 18px; /* Центрируем на линии */
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 3px solid #b08d6e;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 4px rgba(176, 141, 110, 0.1);
+}
+
+/* Время события */
+.timeline-time {
+    position: absolute;
+    left: -90px;
+    top: 0;
+    width: 70px;
+    text-align: right;
+    font-family: 'Montserrat', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #b08d6e;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid #f0e6d8;
+}
+
+/* Контент события */
+.timeline-content {
+    background-color: #fdfaf6;
+    padding: 1.8rem;
+    border-radius: 12px;
+    border-left: 4px solid #b08d6e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(176, 141, 110, 0.1);
+}
+
+/* Иконки событий */
+.timeline-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Заголовок события */
+.timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #8b7355;
+    margin: 0 0 0.8rem 0;
+    text-align: left;
+}
+
+/* Описание события */
+.timeline-content p {
+    color: #5a4c3e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Локация события */
+.timeline-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #7a6852;
+    background-color: rgba(176, 141, 110, 0.08);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #b08d6e;
+}
+
+.timeline-location i {
+    color: #b08d6e;
+}
+
+/* Важное примечание */
+.timing-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #f8f4ef;
+    border-radius: 10px;
+    border-left: 4px solid #8b7355;
+    font-size: 0.95rem;
+}
+
+.timing-note p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+    color: #5a4c3e;
+}
+
+.timing-note i {
+    color: #8b7355;
+    margin-top: 3px;
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 768px) {
+    .timing-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline:before {
+        left: 18px;
+    }
+    
+    .timeline-item:before {
+        left: 12px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .timeline-time {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: auto;
+        text-align: left;
+        margin-bottom: 0.8rem;
+        display: inline-block;
+        background-color: #f0e6d8;
+        padding: 0.4rem 1.2rem;
+    }
+    
+    .timeline-content {
+        padding: 1.4rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-content {
+        padding: 1.2rem;
+    }
+    
+    .timeline-icon {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .timing-note {
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==================== АНИМАЦИЯ ПОЯВЛЕНИЯ ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
 /* ==================== КАРТОЧКИ С ДЕТАЛЯМИ ==================== */
 .details-grid {
     display: grid;
@@ -192,7 +441,7 @@ input, select, textarea {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Dancing Script', cursive, 'Apple Chancery', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s;
 }
@@ -396,7 +645,7 @@ footer {
 }
 
 .color-hex {
-    font-family: 'Dancing Script', cursive, 'Apple Chancery', serif;
+    font-family: 'Montserrat', monospace;
     font-size: 0.9rem;
     color: #666;
     padding: 0.2rem 0.5rem;
