@@ -748,9 +748,7 @@ textarea {
 }
 
 /* ==================== КНОПКА ОТПРАВКИ ==================== */
-#rsvp-form .submit-btn,
-form .submit-btn,
-.rsvp-section .submit-btn  {
+ .submit-btn  {
     background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%); /* Бежевый градиент */
     color: var(--dark-green);          /* Тёмно-зелёный текст */
     border: none;
@@ -769,17 +767,13 @@ form .submit-btn,
     margin-top: 1.5rem;
 }
 
-#rsvp-form .submit-btn:hover,
-form .submit-btn:hover,
-.rsvp-section .submit-btn:hover  {
+.submit-btn:hover  {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(216, 204, 180, 0.3);
     background: linear-gradient(135deg, var(--light-beige) 0%, #f5f0e4 100%);
 }
 
-#rsvp-form .submit-btn:active,
-form .submit-btn:active,
-.rsvp-section .submit-btn:active {
+ .submit-btn:active {
     transform: translateY(-1px);
 }
 
