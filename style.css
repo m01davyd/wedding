@@ -379,15 +379,15 @@ a:hover {
 .color-palette {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Фиксированно 6 колонок */
-    gap: 0.8rem; /* Еще меньше расстояние */
-    margin: 2rem 0;
+    gap: 0.4rem; /* Еще меньше расстояние */
+    margin: 1.5rem 0;
 }
 
 .color-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .color-circle {
@@ -396,14 +396,21 @@ a:hover {
     border-radius: 50%;
     border: 2px solid var(--medium-beige); /* Бежевая рамка */
     box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
 }
-
+.color-circle:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
 .color-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);                   /* Бежевый текст */
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 0.2rem; /* Небольшие отступы по бокам */
 }
+
 
 .color-hex {
     font-family: 'Montserrat', monospace;
@@ -426,7 +433,51 @@ a:hover {
     border: 1px solid var(--medium-beige); /* Бежевая рамка */
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .color-palette {
+        grid-template-columns: repeat(3, 1fr); /* На планшетах 3 в ряд */
+        gap: 1rem; /* Чуть больше расстояние для планшетов */
+    }
+    .color-circle {
+        width: 85px; /* Ещё больше на планшетах */
+        height: 85px; /* Ещё больше на планшетах */
+    }
+    .color-name {
+        font-size: 1.1rem; /* Чуть больше на планшетах */
+    }
+}
 
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr); /* На мобильных 2 в ряд */
+        gap: 1.2rem; /* Больше расстояние для мобильных */
+    }
+    .color-circle {
+        width: 90px; /* Крупные круги на мобильных */
+        height: 90px; /* Крупные круги на мобильных */
+    }
+    .color-name {
+        font-size: 1.15rem; /* Чуть больше на мобильных */
+        font-weight: 500; /* Немного легче начертание */
+    }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .color-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .color-name {
+        font-size: 1rem;
+    }
+}
 .dress-tips h3 {
     text-align: center;
     color: var(--light-beige);         /* Светло-бежевый заголовок */
