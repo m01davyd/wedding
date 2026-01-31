@@ -391,8 +391,8 @@ a:hover {
 }
 
 .color-circle {
-    width: 60px; /* Еще меньше */
-    height: 60px;
+    width: 75px; /* Еще меньше */
+    height: 75px;
     border-radius: 50%;
     border: 2px solid var(--medium-beige); /* Бежевая рамка */
     box-shadow: 0 3px 8px rgba(0,0,0,0.3);
@@ -400,7 +400,7 @@ a:hover {
 
 .color-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--beige);               /* Бежевый текст */
 }
@@ -461,8 +461,8 @@ a:hover {
         gap: 1.2rem;
     }
     .color-circle {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
     }
 }
 
@@ -472,8 +472,8 @@ a:hover {
         gap: 1rem;
     }
     .color-circle {
-        width: 65px;
-        height: 65px;
+        width: 75px;
+        height: 75px;
     }
 }
 
@@ -693,7 +693,9 @@ textarea {
 }
 
 /* ==================== КНОПКА ОТПРАВКИ ==================== */
-.submit-btn {
+#rsvp-form .submit-btn,
+form .submit-btn,
+.rsvp-section .submit-btn  {
     background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%); /* Бежевый градиент */
     color: var(--dark-green);          /* Тёмно-зелёный текст */
     border: none;
@@ -712,13 +714,17 @@ textarea {
     margin-top: 1.5rem;
 }
 
-.submit-btn:hover {
+#rsvp-form .submit-btn:hover,
+form .submit-btn:hover,
+.rsvp-section .submit-btn:hover  {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(216, 204, 180, 0.3);
     background: linear-gradient(135deg, var(--light-beige) 0%, #f5f0e4 100%);
 }
 
-.submit-btn:active {
+#rsvp-form .submit-btn:active,
+form .submit-btn:active,
+.rsvp-section .submit-btn:active {
     transform: translateY(-1px);
 }
 
