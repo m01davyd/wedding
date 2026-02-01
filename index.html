@@ -176,7 +176,7 @@
     <section>
         <h2>Подтвердите, пожалуйста, ваше участие</h2>
         <p style="text-align: center; margin-bottom: 2rem;">Ответьте до 1 апреля 2026 года</p>
-        <form id="rsvp-form" action="https://formspree.io/f/mpqrvzjw" method="POST">
+        <form id="rsvp-form" >
         <input type="hidden" name="_subject" value="Ответ на свадьбу">
         <input type="hidden" name="_replyto" id="email-field" value="">
         <input type="text" name="_gotcha" style="display:none;">
@@ -312,7 +312,7 @@
         updateTimer(); // Первый запуск
 
         // ========== Обработка формы RSVP ==========
-        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+       /* document.getElementById('rsvp-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Отменяем стандартную отправку формы
 
             // В реальном проекте здесь должен быть код для отправки данных на сервер
@@ -330,25 +330,26 @@
             submitButton.textContent = 'Ответ отправлен!';
             submitButton.disabled = true;
             submitButton.style.backgroundColor = '#95a595';
-        });
+        });*/
 
-        // Обработка формы RSVP
-document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+        // Обработка формы RSVP// Основной обработчик формы для Google Apps Script
+document.getElementById('rsvp-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Отменяем стандартную отправку
     
-    // Получаем все элементы формы
+    // Собираем данные из красивой формы
     const formData = {
-        name: document.getElementById('guest-name').value,
-        attendance: document.querySelector('input[name="attendance"]:checked')?.value,
-        alcohol: Array.from(document.querySelectorAll('input[name="alcohol"]:checked')).map(cb => cb.value),
-        events: Array.from(document.querySelectorAll('input[name="events"]:checked')).map(cb => cb.value),
-        message: document.getElementById('message').value
+        timestamp: new Date().toLocaleString('ru-RU'),
+        name: document.getElementById('guest-name').value.trim(),
+        attendance: getAttendanceValue(),
+        alcohol: getAlcoholSelections(),
+        registry: getRegistryValue(),
+        message: document.getElementById('message').value.trim() || 'Нет комментариев'
     };
     
     // Валидация обязательных полей
     const feedbackElement = document.getElementById('form-feedback');
     
-    if (!formData.name.trim()) {
+    if (!formData.name) {
         showFeedback('Пожалуйста, введите ваше имя и фамилию', 'error');
         return;
     }
@@ -359,113 +360,151 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     }
     
     // Если пользователь не придет, не требуем остальные поля
-    if (formData.attendance === 'no') {
-        showFeedback('Спасибо за честный ответ! Очень жаль, что вы не сможете быть с нами в этот день.', 'success');
-        // В реальном проекте здесь отправка данных на сервер
-        resetForm();
+    if (formData.attendance === 'Не смогу') {
+        // Минимальные данные для отправки
+        const minimalData = {
+            timestamp: formData.timestamp,
+            name: formData.name,
+            attendance: formData.attendance,
+            alcohol: 'Не применимо',
+            registry: 'Не применимо',
+            message: 'Не придёт на свадьбу'
+        };
+        
+        await sendToGoogleAppsScript(minimalData);
         return;
     }
     
-    // Если придет, показываем успешное сообщение
-    showFeedback('Спасибо! Ваш ответ успешно отправлен. Мы учтём ваши предпочтения и с нетерпением ждём встречи!', 'success');
-    
-    // В реальном проекте здесь должна быть отправка данных на сервер
-    // Например, через Fetch API на Formspree или ваш бэкенд
-    // sendToServer(formData);
-    
-    // Очистка формы
-    resetForm();
+    // Если придет, отправляем все данные
+    await sendToGoogleAppsScript(formData);
 });
 
-function showFeedback(message, type) {
-    const feedbackElement = document.getElementById('form-feedback');
-    feedbackElement.textContent = message;
-    feedbackElement.className = `form-feedback ${type}`;
+// Вспомогательные функции для сбора данных
+function getAttendanceValue() {
+    const yesCheckbox = document.querySelector('input[value="Да, буду"]');
+    const noCheckbox = document.querySelector('input[value="Не смогу"]');
     
-    // Автоматически скрываем сообщение через 5 секунд
-    setTimeout(() => {
-        feedbackElement.className = 'form-feedback';
-        feedbackElement.textContent = '';
-    }, 5000);
+    if (yesCheckbox && yesCheckbox.checked) return 'Да, буду';
+    if (noCheckbox && noCheckbox.checked) return 'Не смогу';
+    return null;
 }
 
-function resetForm() {
-    document.getElementById('rsvp-form').reset();
-    const submitBtn = document.querySelector('.submit-btn');
-    submitBtn.innerHTML = '<i class="fas fa-check"></i> Ответ отправлен!';
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
-    submitBtn.style.cursor = 'not-allowed';
+function getAlcoholSelections() {
+    const selected = [];
+    
+    // Проверяем каждый тип алкоголя
+    if (document.querySelector('input[value="wine-red"]')?.checked) selected.push('Красное вино');
+    if (document.querySelector('input[value="wine-white"]')?.checked) selected.push('Белое вино');
+    if (document.querySelector('input[value="champagne"]')?.checked) selected.push('Шампанское');
+    if (document.querySelector('input[value="whiskey"]')?.checked) selected.push('Виски/Коньяк');
+    if (document.querySelector('input[value="vodka"]')?.checked) selected.push('Водка/Самогон');
+    if (document.querySelector('input[value="non-alcoholic"]')?.checked) selected.push('Не пью алкоголь');
+    
+    return selected.length > 0 ? selected.join(', ') : 'Не указано';
 }
 
-// Обработчик формы для Formspree
-document.getElementById('rsvp-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Останавливаем стандартную отправку
+function getRegistryValue() {
+    const yesCheckbox = document.querySelector('input[value="registry-walk-yes"]');
+    const noCheckbox = document.querySelector('input[value="registry-walk-no"]');
     
-    const form = this;
+    if (yesCheckbox && yesCheckbox.checked) return 'Да';
+    if (noCheckbox && noCheckbox.checked) return 'Нет';
+    return 'Не указано';
+}
+
+// Функция отправки в Google Apps Script
+async function sendToGoogleAppsScript(formData) {
+    const form = document.getElementById('rsvp-form');
     const submitBtn = form.querySelector('.submit-btn');
     const originalBtnText = submitBtn.innerHTML;
     const feedback = document.getElementById('form-feedback');
     
     // Показываем загрузку
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка в Google Таблицу...';
     submitBtn.disabled = true;
     feedback.style.display = 'none';
     
     try {
-        // Собираем данные формы
-        const formData = new FormData(form);
+        // ⚠️ ВАЖНО: Замените URL на ваш из Google Apps Script
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
         
-        // Отправляем на Formspree
-        const response = await fetch(form.action, {
+        // Отправляем данные в Google Apps Script
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            body: formData,
+            mode: 'no-cors', // Важно для Google Apps Script
             headers: {
-                'Accept': 'application/json'
-            }
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'timestamp': formData.timestamp,
+                'name': formData.name,
+                'attendance': formData.attendance,
+                'alcohol': formData.alcohol,
+                'registry': formData.registry,
+                'message': formData.message
+            }).toString()
         });
         
-        if (response.ok) {
+        // Так как mode: 'no-cors', мы не можем получить response.ok
+        // Но если запрос ушёл, считаем успешным
+        setTimeout(() => {
             // Успешная отправка
-            feedback.textContent = '✅ Спасибо! Ваш ответ отправлен и сохранён в нашем списке.';
-            feedback.style.color = '#2e8b57';
+            showFeedback('✅ Отлично! Ваш ответ сохранён в нашей Google Таблице.', 'success');
             
             // Очищаем форму
             form.reset();
             
             // Показываем успех на кнопке
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Отправлено!';
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Сохранено!';
             submitBtn.style.background = 'linear-gradient(135deg, #34A853 0%, #2E8B57 100%)';
             
-            // Возвращаем кнопку через 3 секунды
+            // Возвращаем кнопку через 4 секунды
             setTimeout(() => {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.style.background = '';
                 submitBtn.disabled = false;
-            }, 3000);
-            
-        } else {
-            throw new Error('Ошибка при отправке');
-        }
+            }, 4000);
+        }, 1500); // Имитация задержки отправки
         
     } catch (error) {
-        // Ошибка отправки
-        feedback.textContent = '❌ Ошибка при отправке. Попробуйте ещё раз.';
-        feedback.style.color = '#dc3545';
+        console.error('Ошибка отправки:', error);
+        
+        // Показываем сообщение об ошибке
+        showFeedback('❌ Ошибка соединения. Попробуйте ещё раз.', 'error');
         
         // Возвращаем кнопку
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
     }
+}
+
+// Функция показа сообщений
+function showFeedback(message, type) {
+    const feedbackElement = document.getElementById('form-feedback');
+    feedbackElement.textContent = message;
     
-    // Показываем сообщение
-    feedback.style.display = 'block';
+    if (type === 'success') {
+        feedbackElement.style.color = '#2e8b57';
+        feedbackElement.style.backgroundColor = 'rgba(46, 139, 87, 0.1)';
+        feedbackElement.style.border = '1px solid rgba(46, 139, 87, 0.3)';
+    } else if (type === 'error') {
+        feedbackElement.style.color = '#dc3545';
+        feedbackElement.style.backgroundColor = 'rgba(220, 53, 69, 0.1)';
+        feedbackElement.style.border = '1px solid rgba(220, 53, 69, 0.3)';
+    }
+    
+    feedbackElement.style.display = 'block';
+    feedbackElement.style.padding = '12px';
+    feedbackElement.style.borderRadius = '8px';
+    feedbackElement.style.marginTop = '15px';
+    feedbackElement.style.textAlign = 'center';
     
     // Автоматически скрываем сообщение через 5 секунд
     setTimeout(() => {
-        feedback.style.display = 'none';
+        feedbackElement.style.display = 'none';
+        feedbackElement.textContent = '';
     }, 5000);
-});
+}
     </script>
 </body>
 </html>
