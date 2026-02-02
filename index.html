@@ -338,7 +338,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('rsvp-form');
   const feedback = document.getElementById('form-feedback');
-  
+     let formInteracted = false;
   // URL вашего Google Apps Script веб-приложения
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
   const presenceRadio = form.querySelector('[name="Присутствие"]:checked');
@@ -357,7 +357,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    
+          if (!formInteracted) {
+            feedback.textContent = 'Пожалуйста, заполните все обязательные поля';
+            feedback.style.color = '#f44336';
+            return;
+        }
     // Показываем загрузку
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
