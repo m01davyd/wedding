@@ -334,127 +334,165 @@
 
         // Обработка формы RSVP// Основной обработчик формы для Google Apps Script
 // Основной обработчик формы для Google Apps Script
-
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('rsvp-form');
-  const feedback = document.getElementById('form-feedback');
-     let formInteracted = false;
-  // URL вашего Google Apps Script веб-приложения
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
-  const presenceRadio = form.querySelector('[name="Присутствие"]:checked');
-    if (!presenceRadio) {
-        feedback.textContent = 'Пожалуйста, выберите, придете ли вы на свадьбу';
-        feedback.style.color = '#f44336';
-        return;
-    }
+    const form = document.getElementById('rsvp-form');
+    const feedback = document.getElementById('form-feedback');
+    let formInteracted = false;
     
-    // Проверяем, выбрана ли радиокнопка "Роспись и прогулка"
-    const registrationRadio = form.querySelector('[name="Роспись и прогулка"]:checked');
-    if (!registrationRadio) {
-        feedback.textContent = 'Пожалуйста, выберите, будете ли вы на росписи';
-        feedback.style.color = '#f44336';
-        return;
-    }
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-          if (!formInteracted) {
+    // URL вашего Google Apps Script веб-приложения
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
+    
+    // Отслеживаем взаимодействие с формой
+    form.addEventListener('change', function() {
+        formInteracted = true;
+    });
+    
+    form.addEventListener('input', function() {
+        formInteracted = true;
+    });
+    
+    // Обработчик отправки формы
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Сбрасываем предыдущее сообщение
+        feedback.textContent = '';
+        feedback.style.color = '';
+        
+        // Проверяем, было ли взаимодействие с формой
+        if (!formInteracted) {
             feedback.textContent = 'Пожалуйста, заполните все обязательные поля';
             feedback.style.color = '#f44336';
             return;
         }
-    // Показываем загрузку
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-    submitBtn.disabled = true;
-    
-    // Собираем данные формы
-    const formData = new FormData(form);
-    const data = {};
-    
-    // Обрабатываем все поля кроме скрытых
-    for (let [key, value] of formData.entries()) {
-      if (key !== '_subject' && key !== '_replyto' && key !== '_gotcha') {
-        if (data[key]) {
-          // Если поле уже есть (чекбоксы с одинаковым name), объединяем
-          if (Array.isArray(data[key])) {
-            data[key].push(value);
-          } else {
-            data[key] = [data[key], value];
-          }
-        } else {
-          data[key] = value;
+        
+        // Проверяем радиокнопки ТОЛЬКО при отправке
+        const presenceRadio = form.querySelector('[name="Присутствие"]:checked');
+        if (!presenceRadio) {
+            feedback.textContent = 'Пожалуйста, выберите, придете ли вы на свадьбу';
+            feedback.style.color = '#f44336';
+            return;
         }
-      }
-    }
-    
-    // Обрабатываем чекбоксы "Присутствие" и "Роспись" - берем только выбранный
-     const alcoholChecks = form.querySelectorAll('[name^="Алкоголь:"]:checked');
-    alcoholChecks.forEach(check => {
-        if (data[check.name]) {
-            if (!Array.isArray(data[check.name])) {
-                data[check.name] = [data[check.name]];
+        
+        const registrationRadio = form.querySelector('[name="Роспись и прогулка"]:checked');
+        if (!registrationRadio) {
+            feedback.textContent = 'Пожалуйста, выберите, будете ли вы на росписи';
+            feedback.style.color = '#f44336';
+            return;
+        }
+        
+        // Проверяем имя (обязательное поле)
+        const nameInput = form.querySelector('#guest-name');
+        if (!nameInput.value.trim()) {
+            feedback.textContent = 'Пожалуйста, введите ваше имя и фамилию';
+            feedback.style.color = '#f44336';
+            nameInput.focus();
+            return;
+        }
+        
+        // Показываем загрузку
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+        submitBtn.disabled = true;
+        
+        // Собираем данные формы
+        const formData = new FormData(form);
+        const data = {};
+        
+        // Обрабатываем все поля кроме скрытых
+        for (let [key, value] of formData.entries()) {
+            if (key !== '_subject' && key !== '_replyto' && key !== '_gotcha') {
+                if (data[key]) {
+                    // Если поле уже есть (чекбоксы с одинаковым name), объединяем
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
             }
-        } else {
-            data[check.name] = check.value;
+        }
+        
+        // Обрабатываем чекбоксы алкоголя
+        const alcoholChecks = form.querySelectorAll('[name^="Алкоголь:"]:checked');
+        alcoholChecks.forEach(check => {
+            if (data[check.name]) {
+                if (!Array.isArray(data[check.name])) {
+                    data[check.name] = [data[check.name]];
+                }
+            } else {
+                data[check.name] = check.value;
+            }
+        });
+        
+        // Отправляем данные
+        try {
+            console.log('Отправляемые данные:', data);
+            
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            console.log('Ответ сервера:', result);
+            
+            if (result.status === 'success') {
+                feedback.textContent = '✅ Спасибо! Ваш ответ успешно сохранен. Ждём вас на свадьбе!';
+                feedback.style.color = '#4CAF50';
+                form.reset(); // Очищаем форму
+                formInteracted = false; // Сбрасываем флаг взаимодействия
+            } else {
+                throw new Error(result.message || 'Ошибка сервера');
+            }
+            
+        } catch (error) {
+            console.error('Ошибка:', error);
+            feedback.textContent = '❌ Произошла ошибка при отправке. Пожалуйста, напишите нам сообщение напрямую.';
+            feedback.style.color = '#f44336';
+        } finally {
+            // Восстанавливаем кнопку
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         }
     });
     
+    // УБЕРИТЕ этот код - он больше не нужен для радиокнопок
+    // Радиокнопки сами управляются браузером
     
-    // Отправляем данные
-    try {
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-      
-      const result = await response.json();
-      
-      if (result.status === 'success') {
-        feedback.textContent = '✅ Спасибо! Ваш ответ успешно сохранен. Ждём вас на свадьбе!';
-        feedback.style.color = '#4CAF50';
-        form.reset(); // Очищаем форму
-      } else {
-        throw new Error(result.message || 'Ошибка сервера');
-      }
-      
-    } catch (error) {
-      console.error('Ошибка:', error);
-      feedback.textContent = '❌ Произошла ошибка при отправке. Пожалуйста, напишите нам сообщение напрямую.';
-      feedback.style.color = '#f44336';
-    } finally {
-      // Восстанавливаем кнопку
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-    }
-  });
-  
-  // Обработка чекбоксов "Присутствие" - только один можно выбрать
-  const presenceCheckboxes = form.querySelectorAll('[name="Присутствие"]');
-  presenceCheckboxes.forEach(cb => {
-    cb.addEventListener('change', function() {
-      if (this.checked) {
-        presenceCheckboxes.forEach(other => {
-          if (other !== this) other.checked = false;
+    // Обработка чекбоксов "Присутствие" - УДАЛИТЬ или ЗАКОММЕНТИРОВАТЬ
+    /*
+    const presenceCheckboxes = form.querySelectorAll('[name="Присутствие"]');
+    presenceCheckboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+            if (this.checked) {
+                presenceCheckboxes.forEach(other => {
+                    if (other !== this) other.checked = false;
+                });
+            }
         });
-      }
     });
-  });
-  
-  // Обработка чекбоксов "Роспись и прогулка" - только один можно выбрать
-  const registrationCheckboxes = form.querySelectorAll('[name="Роспись и прогулка"]');
-  registrationCheckboxes.forEach(cb => {
-    cb.addEventListener('change', function() {
-      if (this.checked) {
-        registrationCheckboxes.forEach(other => {
-          if (other !== this) other.checked = false;
+    */
+    
+    // Обработка чекбоксов "Роспись и прогулка" - УДАЛИТЬ или ЗАКОММЕНТИРОВАТЬ
+    /*
+    const registrationCheckboxes = form.querySelectorAll('[name="Роспись и прогулка"]');
+    registrationCheckboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+            if (this.checked) {
+                registrationCheckboxes.forEach(other => {
+                    if (other !== this) other.checked = false;
+                });
+            }
         });
-      }
     });
-  });
+    */
 });
     </script>
 </body>
