@@ -192,13 +192,13 @@
                 </label>
                 <div class="checkbox-group">
                     <label class="checkbox-option">
-                        <input type="checkbox" name="Присутствие" value="Да, я буду">
+                        <input type="radio" name="Присутствие" value="Да, я буду">
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-label">Да, я буду</span>
                     </label>
 
                     <label class="checkbox-option">
-                        <input type="checkbox" name="Присутствие" value="К сожалению, не смогу">
+                        <input type="radio" name="Присутствие" value="К сожалению, не смогу">
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-label">К сожалению, не смогу</span>
                     </label>
@@ -249,13 +249,13 @@
                 </label>
                 <div class="checkbox-group">
                     <label class="checkbox-option">
-                        <input type="checkbox" name="Роспись и прогулка" value="Роспись:Да">
+                        <input type="radio" name="Роспись и прогулка" value="Роспись:Да">
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-label">Да</span>
                     </label>
 
                     <label class="checkbox-option">
-                        <input type="checkbox" name="Роспись и прогулка" value="Роспись:Нет">
+                        <input type="radio" name="Роспись и прогулка" value="Роспись:Нет">
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-label">Нет</span>
                     </label>
@@ -334,203 +334,110 @@
 
         // Обработка формы RSVP// Основной обработчик формы для Google Apps Script
 // Основной обработчик формы для Google Apps Script
-document.getElementById('rsvp-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Отменяем стандартную отправку
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('rsvp-form');
+  const feedback = document.getElementById('form-feedback');
+  
+  // URL вашего Google Apps Script веб-приложения
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
     
-    console.log('Начало обработки формы...');
+    // Показываем загрузку
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+    submitBtn.disabled = true;
     
-    // Собираем данные из красивой формы
-    const formData = {
-        timestamp: new Date().toLocaleString('ru-RU'),
-        name: document.getElementById('guest-name').value.trim(),
-        attendance: getAttendanceValue(),
-        alcohol: getAlcoholSelections(),
-        registry: getRegistryValue(),
-        message: document.getElementById('message').value.trim() || 'Нет комментариев'
-    };
+    // Собираем данные формы
+    const formData = new FormData(form);
+    const data = {};
     
-    console.log('Собранные данные:', formData);
-    
-    // Валидация обязательных полей
-    const feedbackElement = document.getElementById('form-feedback');
-    
-    if (!formData.name) {
-        showFeedback('Пожалуйста, введите ваше имя и фамилию', 'error');
-        return;
+    // Обрабатываем все поля кроме скрытых
+    for (let [key, value] of formData.entries()) {
+      if (key !== '_subject' && key !== '_replyto' && key !== '_gotcha') {
+        if (data[key]) {
+          // Если поле уже есть (чекбоксы с одинаковым name), объединяем
+          if (Array.isArray(data[key])) {
+            data[key].push(value);
+          } else {
+            data[key] = [data[key], value];
+          }
+        } else {
+          data[key] = value;
+        }
+      }
     }
     
-    if (!formData.attendance) {
-        showFeedback('Пожалуйста, выберите, придете ли вы на свадьбу', 'error');
-        return;
+    // Обрабатываем чекбоксы "Присутствие" и "Роспись" - берем только выбранный
+    const presenceCheckbox = form.querySelector('[name="Присутствие"]:checked');
+    const registrationCheckbox = form.querySelector('[name="Роспись и прогулка"]:checked');
+    
+    if (presenceCheckbox) {
+      data['Присутствие'] = presenceCheckbox.value;
+    }
+    
+    if (registrationCheckbox) {
+      data['Роспись и прогулка'] = registrationCheckbox.value;
     }
     
     // Отправляем данные
-    await sendToGoogleAppsScript(formData);
-});
-
-// Вспомогательные функции для сбора данных
-function getAttendanceValue() {
-    // Ищем чекбоксы с name="Присутствие"
-    const checkboxes = document.querySelectorAll('input[name="Присутствие"]');
-    console.log('Найдено чекбоксов присутствия:', checkboxes.length);
-    
-    for (let checkbox of checkboxes) {
-        console.log('Чекбокс присутствия:', checkbox.value, 'checked:', checkbox.checked);
-        if (checkbox.checked) {
-            return checkbox.value; // "Да, я буду" или "К сожалению, не смогу"
-        }
-    }
-    
-    return null;
-}
-
-function getAlcoholSelections() {
-    const selected = [];
-    
-    // Ищем ВСЕ чекбоксы с именем начинающимся на "Алкоголь:"
-    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-    
-    allCheckboxes.forEach(checkbox => {
-        if (checkbox.name && checkbox.name.startsWith('Алкоголь:') && checkbox.checked) {
-            selected.push(checkbox.value);
-        }
-    });
-    
-    console.log('Выбранные напитки:', selected);
-    return selected.length > 0 ? selected.join(', ') : 'Не указано';
-}
-
-function getRegistryValue() {
-    // Ищем чекбоксы с name="Роспись и прогулка"
-    const registryCheckboxes = document.querySelectorAll('input[name="Роспись и прогулка"]');
-    console.log('Найдено чекбоксов росписи:', registryCheckboxes.length);
-    
-    for (let checkbox of registryCheckboxes) {
-        console.log('Чекбокс росписи:', checkbox.value, 'checked:', checkbox.checked);
-        if (checkbox.checked) {
-            // Преобразуем значение для удобства
-            return checkbox.value.includes('Да') ? 'Да' : 'Нет';
-        }
-    }
-    
-    return 'Не указано';
-}
-
-// Функция отправки в Google Apps Script
-async function sendToGoogleAppsScript(formData) {
-    const form = document.getElementById('rsvp-form');
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.innerHTML;
-    const feedback = document.getElementById('form-feedback');
-    
-    // Показываем загрузку
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-    submitBtn.disabled = true;
-    feedback.style.display = 'none';
-    
     try {
-        // ⚠️ ВАЖНО: Замените URL на ваш из Google Apps Script
-        
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
-        
-        console.log('Отправка данных на:', GOOGLE_SCRIPT_URL);
-        console.log('Данные для отправки:', formData);
-        
-        // Отправляем данные в Google Apps Script
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Важно для Google Apps Script
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                'timestamp': formData.timestamp,
-                'name': formData.name,
-                'attendance': formData.attendance,
-                'alcohol': formData.alcohol,
-                'registry': formData.registry,
-                'message': formData.message
-            }).toString()
-        });
-        
-        console.log('Запрос отправлен, ожидание ответа...');
-        
-        // Успешная отправка (после небольшой задержки)
-        setTimeout(() => {
-            showFeedback('✅ Отлично! Ваш ответ сохранён в нашей Google Таблице.', 'success');
-            console.log('Форма успешно отправлена');
-            
-            // Очищаем форму
-            form.reset();
-            
-            // Показываем успех на кнопке
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Сохранено!';
-            submitBtn.style.background = 'linear-gradient(135deg, #34A853 0%, #2E8B57 100%)';
-            
-            // Возвращаем кнопку через 4 секунды
-            setTimeout(() => {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-            }, 4000);
-            
-        }, 1500); // Имитация задержки отправки
-        
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        feedback.textContent = '✅ Спасибо! Ваш ответ успешно сохранен. Ждём вас на свадьбе!';
+        feedback.style.color = '#4CAF50';
+        form.reset(); // Очищаем форму
+      } else {
+        throw new Error(result.message || 'Ошибка сервера');
+      }
+      
     } catch (error) {
-        console.error('Ошибка отправки:', error);
-        
-        // Показываем сообщение об ошибке
-        showFeedback('❌ Ошибка соединения. Попробуйте ещё раз.', 'error');
-        
-        // Возвращаем кнопку
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
+      console.error('Ошибка:', error);
+      feedback.textContent = '❌ Произошла ошибка при отправке. Пожалуйста, напишите нам сообщение напрямую.';
+      feedback.style.color = '#f44336';
+    } finally {
+      // Восстанавливаем кнопку
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
     }
-}
-
-// Функция показа сообщений
-function showFeedback(message, type) {
-    const feedbackElement = document.getElementById('form-feedback');
-    feedbackElement.textContent = message;
-    
-    if (type === 'success') {
-        feedbackElement.style.color = '#2e8b57';
-        feedbackElement.style.backgroundColor = 'rgba(46, 139, 87, 0.1)';
-        feedbackElement.style.border = '1px solid rgba(46, 139, 87, 0.3)';
-    } else if (type === 'error') {
-        feedbackElement.style.color = '#dc3545';
-        feedbackElement.style.backgroundColor = 'rgba(220, 53, 69, 0.1)';
-        feedbackElement.style.border = '1px solid rgba(220, 53, 69, 0.3)';
-    }
-    
-    feedbackElement.style.display = 'block';
-    feedbackElement.style.padding = '12px';
-    feedbackElement.style.borderRadius = '8px';
-    feedbackElement.style.marginTop = '15px';
-    feedbackElement.style.textAlign = 'center';
-    
-    console.log('Показано сообщение:', message, type);
-    
-    // Автоматически скрываем сообщение через 5 секунд
-    setTimeout(() => {
-        feedbackElement.style.display = 'none';
-        feedbackElement.textContent = '';
-    }, 5000);
-}
-
-// Удаляем лишние скрытые поля Formspree перед отправкой в Google Apps Script
-document.getElementById('rsvp-form').addEventListener('submit', function() {
-    // Удаляем скрытые поля Formspree, если они есть
-    const formspreeFields = document.querySelectorAll('input[name="_subject"], input[name="_replyto"], input[name="_gotcha"]');
-    formspreeFields.forEach(field => {
-        if (field.parentNode) {
-            field.parentNode.removeChild(field);
-        }
+  });
+  
+  // Обработка чекбоксов "Присутствие" - только один можно выбрать
+  const presenceCheckboxes = form.querySelectorAll('[name="Присутствие"]');
+  presenceCheckboxes.forEach(cb => {
+    cb.addEventListener('change', function() {
+      if (this.checked) {
+        presenceCheckboxes.forEach(other => {
+          if (other !== this) other.checked = false;
+        });
+      }
     });
+  });
+  
+  // Обработка чекбоксов "Роспись и прогулка" - только один можно выбрать
+  const registrationCheckboxes = form.querySelectorAll('[name="Роспись и прогулка"]');
+  registrationCheckboxes.forEach(cb => {
+    cb.addEventListener('change', function() {
+      if (this.checked) {
+        registrationCheckboxes.forEach(other => {
+          if (other !== this) other.checked = false;
+        });
+      }
+    });
+  });
 });
-
-console.log('Скрипт формы загружен');
-console.log('Найдена форма:', document.getElementById('rsvp-form'));
     </script>
 </body>
 </html>
