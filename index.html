@@ -192,7 +192,7 @@
                 </label>
                 <div class="radio-group">
                     <label class="radio-option">
-                        <input type="radio" name="Присутствие" value="Да, я буду">
+                        <input type="radio" name="Присутствие" value="Да, я буду" required >
                         <span class="radio-custom"></span>
                         <span class="radio-label">Да, я буду</span>
                     </label>
@@ -341,7 +341,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // URL вашего Google Apps Script веб-приложения
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
-  
+  const presenceRadio = form.querySelector('[name="Присутствие"]:checked');
+    if (!presenceRadio) {
+        feedback.textContent = 'Пожалуйста, выберите, придете ли вы на свадьбу';
+        feedback.style.color = '#f44336';
+        return;
+    }
+    
+    // Проверяем, выбрана ли радиокнопка "Роспись и прогулка"
+    const registrationRadio = form.querySelector('[name="Роспись и прогулка"]:checked');
+    if (!registrationRadio) {
+        feedback.textContent = 'Пожалуйста, выберите, будете ли вы на росписи';
+        feedback.style.color = '#f44336';
+        return;
+    }
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -372,16 +385,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Обрабатываем чекбоксы "Присутствие" и "Роспись" - берем только выбранный
-    const presenceCheckbox = form.querySelector('[name="Присутствие"]:checked');
-    const registrationCheckbox = form.querySelector('[name="Роспись и прогулка"]:checked');
+     const alcoholChecks = form.querySelectorAll('[name^="Алкоголь:"]:checked');
+    alcoholChecks.forEach(check => {
+        if (data[check.name]) {
+            if (!Array.isArray(data[check.name])) {
+                data[check.name] = [data[check.name]];
+            }
+        } else {
+            data[check.name] = check.value;
+        }
+    });
     
-    if (presenceCheckbox) {
-      data['Присутствие'] = presenceCheckbox.value;
-    }
-    
-    if (registrationCheckbox) {
-      data['Роспись и прогулка'] = registrationCheckbox.value;
-    }
     
     // Отправляем данные
     try {
