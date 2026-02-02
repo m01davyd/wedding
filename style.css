@@ -943,7 +943,10 @@ footer {
     
     .radio-group,
     .checkbox-group {
-        gap: 10px;
+         display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
     }
     
     .radio-option,
@@ -1013,7 +1016,10 @@ footer {
         font-size: 1rem;
         flex-wrap: wrap;
     }
-    
+    .form-group label[required]::after {
+    content: " *";
+    color: #e74c3c;
+}
     .radio-label,
     .checkbox-label {
         font-size: 1rem;
