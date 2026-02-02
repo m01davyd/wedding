@@ -280,172 +280,115 @@
         </p>
     </footer>
 
-   <script>
-    // ========== ТАЙМЕР ОБРАТНОГО ОТСЧЕТА ==========
-    document.addEventListener('DOMContentLoaded', function() {
-        const weddingDate = new Date('June 11, 2026 17:00:00').getTime();
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const timeLeft = weddingDate - now;
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            if (timeLeft < 0) {
-                clearInterval(timerInterval);
-                document.getElementById('timer').innerHTML = "<p style='font-size: 2rem;'>Свадебный день настал! Спасибо, что с нами!</p>";
-            }
+  <script>
+// ========== ТАЙМЕР ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // Таймер (ваш существующий код)
+    const weddingDate = new Date('June 11, 2026 17:00:00').getTime();
+    
+    function updateTimer() {
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        
+        if (timeLeft < 0) {
+            clearInterval(timerInterval);
+            document.getElementById('timer').innerHTML = "<p style='font-size: 2rem;'>Свадебный день настал! Спасибо, что с нами!</p>";
         }
-
-        const timerInterval = setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // ========== ОБРАБОТКА ФОРМЫ RSVP (GET ЗАПРОС) ==========
-        const form = document.getElementById('rsvp-form');
-        const feedback = document.getElementById('form-feedback');
+    }
+    
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+    
+    // ========== ФОРМА (ПРОСТОЙ GET ЗАПРОС) ==========
+    const form = document.getElementById('rsvp-form');
+    const feedback = document.getElementById('form-feedback');
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
+    
+    if (!form) return;
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // URL вашего Google Apps Script
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaz1e73900XIU4iucCkh3lmEQwxsujiSgpiGyWJT4e4aeSpIPiUaVWUF8S4-_-ne3XzQ/exec';
+        // Проверка обязательных полей
+        const name = document.getElementById('guest-name').value.trim();
+        const presence = document.querySelector('[name="Присутствие"]:checked');
+        const registration = document.querySelector('[name="Роспись и прогулка"]:checked');
         
-        if (!form || !feedback) {
-            console.error('Форма не найдена!');
+        if (!name) {
+            feedback.textContent = 'Введите имя и фамилию';
+            feedback.style.color = '#f44336';
             return;
         }
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Сбрасываем предыдущее сообщение
-            feedback.textContent = '';
-            feedback.style.color = '';
-            
-            // Проверяем обязательные поля
-            const nameInput = form.querySelector('#guest-name');
-            const presenceRadio = form.querySelector('[name="Присутствие"]:checked');
-            const registrationRadio = form.querySelector('[name="Роспись и прогулка"]:checked');
-            
-            if (!nameInput.value.trim()) {
-                feedback.textContent = 'Пожалуйста, введите ваше имя и фамилию';
-                feedback.style.color = '#f44336';
-                nameInput.focus();
-                return;
-            }
-            
-            if (!presenceRadio) {
-                feedback.textContent = 'Пожалуйста, выберите, придете ли вы на свадьбу';
-                feedback.style.color = '#f44336';
-                return;
-            }
-            
-            if (!registrationRadio) {
-                feedback.textContent = 'Пожалуйста, выберите, будете ли вы на росписи';
-                feedback.style.color = '#f44336';
-                return;
-            }
-            
-            // Показываем загрузку
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-            submitBtn.disabled = true;
-            
-            // Собираем параметры для GET запроса
-            const params = new URLSearchParams();
-            
-            // Основные поля
-            params.append('guest-name', nameInput.value.trim());
-            params.append('Присутствие', presenceRadio.value);
-            params.append('Роспись и прогулка', registrationRadio.value);
-            
-            // Алкогольные предпочтения (можно несколько)
-            const alcoholChecks = form.querySelectorAll('[name^="Алкоголь:"]:checked');
-            if (alcoholChecks.length > 0) {
-                alcoholChecks.forEach(check => {
-                    params.append(check.name, check.value);
-                });
-            } else {
-                params.append('Алкоголь', 'Не указано');
-            }
-            
-            // Пожелания и комментарии
-            const wishes = form.querySelector('#message').value;
-            if (wishes.trim()) {
-                params.append('Пожелания и комментарии', wishes.trim());
-            }
-            
-            // Добавляем timestamp для уникальности
-            params.append('timestamp', new Date().getTime());
-            
-            // Формируем URL для GET запроса
-            const url = `${SCRIPT_URL}?${params.toString()}`;
-            console.log('Отправка по URL:', url);
-            
-            // Открываем в новом окне (GET запрос не имеет CORS ограничений)
-            const newWindow = window.open(
-                url, 
-                'rsvp_response', 
-                'width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes'
-            );
-            
-            // Показываем сообщение пользователю
-            feedback.textContent = '✅ Ваш ответ отправляется... Откроется новое окно.';
-            feedback.style.color = '#4CAF50';
-            
-            // Проверяем, открылось ли окно
-            if (!newWindow) {
-                feedback.textContent = '❌ Блокировщик всплывающих окон заблокировал отправку. Пожалуйста, разрешите всплывающие окна для этого сайта.';
-                feedback.style.color = '#f44336';
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                return;
-            }
-            
-            // Фокусируемся на новом окне
-            newWindow.focus();
-            
-            // Через 3 секунды закрываем окно и показываем успех
-            setTimeout(() => {
-                if (newWindow && !newWindow.closed) {
-                    newWindow.close();
-                }
-                
-                feedback.textContent = '✅ Спасибо! Ваш ответ успешно сохранен. Ждём вас на свадьбе!';
-                feedback.style.color = '#4CAF50';
-                
-                // Очищаем форму
-                form.reset();
-                
-                // Восстанавливаем кнопку
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-            
-            // Альтернативный вариант: если пользователь закроет окно раньше
-            const checkWindow = setInterval(() => {
-                if (newWindow.closed) {
-                    clearInterval(checkWindow);
-                    feedback.textContent = '✅ Спасибо! Ваш ответ успешно сохранен. Ждём вас на свадьбе!';
-                    feedback.style.color = '#4CAF50';
-                    form.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }
-            }, 500);
+        if (!presence) {
+            feedback.textContent = 'Выберите, придете ли вы';
+            feedback.style.color = '#f44336';
+            return;
+        }
+        if (!registration) {
+            feedback.textContent = 'Выберите, будете ли на росписи';
+            feedback.style.color = '#f44336';
+            return;
+        }
+        
+        // Собираем алкоголь
+        let alcohol = [];
+        document.querySelectorAll('[name^="Алкоголь:"]:checked').forEach(cb => {
+            alcohol.push(cb.value);
         });
         
-        // Опционально: обработка закрытия окна пользователем
-        window.addEventListener('beforeunload', function() {
-            // Можно добавить подтверждение, если нужно
-        });
+        // Собираем пожелания
+        const wishes = document.getElementById('message').value.trim();
+        
+        // Формируем URL с параметрами
+        let url = SCRIPT_URL + '?';
+        url += 'guest-name=' + encodeURIComponent(name);
+        url += '&Присутствие=' + encodeURIComponent(presence.value);
+        url += '&Роспись и прогулка=' + encodeURIComponent(registration.value);
+        
+        if (alcohol.length > 0) {
+            url += '&Алкоголь=' + encodeURIComponent(alcohol.join(', '));
+        }
+        
+        if (wishes) {
+            url += '&Пожелания=' + encodeURIComponent(wishes);
+        }
+        
+        // Добавляем timestamp для уникальности
+        url += '&timestamp=' + Date.now();
+        
+        console.log('Отправляем GET запрос на:', url);
+        
+        // Открываем в новом окне - БЕЗ CORS ОШИБОК!
+        const newWindow = window.open(url, '_blank', 'width=600,height=400');
+        
+        // Меняем кнопку
+        const btn = form.querySelector('button[type="submit"]');
+        btn.innerHTML = '<i class="fas fa-check"></i> Отправлено!';
+        btn.disabled = true;
+        
+        // Показываем сообщение
+        feedback.textContent = '✅ Ответ отправлен! Проверьте новое окно.';
+        feedback.style.color = '#4CAF50';
+        
+        // Через 5 секунд сбрасываем форму
+        setTimeout(() => {
+            form.reset();
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить ответ';
+            btn.disabled = false;
+            feedback.textContent = 'Можете отправить еще один ответ';
+            feedback.style.color = '#666';
+        }, 5000);
     });
+});
 </script>
 </body>
 </html>
