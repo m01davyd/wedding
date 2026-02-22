@@ -93,109 +93,104 @@ a:hover {
 
 
 .week-calendar {
-    max-width: 500px;
+    width: 100%;
+    max-width: 1000px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 30px;
-    padding: 1.5rem;
+    border-radius: 40px;
+    padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .month-label {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .week-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
 .weekday {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.8rem 0.3rem;
-    border-radius: 15px;
+    padding: 1.5rem 0.5rem;
+    border-radius: 25px;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .day-name {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
 .day-number {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
 }
 
 .weekday.highlight {
-    background: rgba(212, 175, 55, 0.2);
-    border: 1px solid #d4af37;
+    border: 2px solid #d8ccb4;
+    background: rgba(216, 204, 180, 0.1);
 }
 
 .weekday.highlight .day-name {
-    color: #d4af37;
+    color: #d8ccb4;
     font-weight: 600;
 }
 
 .weekday.highlight .day-number {
-    color: #d4af37;
+    color: #d8ccb4;
     font-weight: 600;
-    font-size: 1.8rem;
-}
-
-.event-marker {
-    color: #d4af37;
-    font-size: 0.6rem;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.7;
+    font-size: 3rem;
 }
 
 .weekday:not(.highlight):hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .wedding-day {
-    font-size: 1.8rem !important;
+    font-size: 2.2rem !important;
     font-weight: 300 !important;
-    letter-spacing: 2px;
-    margin-top: 1rem !important;
-    color: #d4af37;
+    letter-spacing: 3px;
+    margin-top: 1.5rem !important;
+    color: #d8ccb4;
 }
 
 /* Адаптация под мобильные */
 @media (max-width: 768px) {
     .week-calendar {
-        max-width: 400px;
+        max-width: 100%;
         padding: 1rem;
     }
     
+    .month-label {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
     .day-number {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
     
     .weekday.highlight .day-number {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     
     .week-grid {
-        gap: 5px;
+        gap: 10px;
     }
 }
 
