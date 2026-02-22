@@ -142,18 +142,8 @@ a:hover {
     font-weight: 400;
     line-height: 1;
 }
-.heart-day {
-    position: relative;
-}
-.heart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.heart {
+/* CSS-сердце с цифрой внутри */
+.heart-shape {
     position: relative;
     width: 80px;
     height: 70px;
@@ -161,10 +151,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     animation: heartbeat 1.5s ease infinite;
+    margin: 10px 0;
 }
 
-.heart::before,
-.heart::after {
+.heart-shape::before,
+.heart-shape::after {
     content: "";
     position: absolute;
     top: 0;
@@ -174,19 +165,19 @@ a:hover {
     background: #d8ccb4;
 }
 
-.heart::before {
+.heart-shape::before {
     left: 40px;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
 }
 
-.heart::after {
+.heart-shape::after {
     left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
 }
 
-.heart-number {
+.heart-text {
     position: relative;
     z-index: 2;
     color: white;
@@ -203,7 +194,7 @@ a:hover {
     70% { transform: scale(1); }
 }
 
-.weekday:not(.heart-day):hover {
+.weekday:hover:not(:has(.heart-shape)) {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
 }
@@ -265,6 +256,25 @@ a:hover {
         font-size: 2rem;
     }
     
+    .heart-shape {
+        width: 60px;
+        height: 52px;
+    }
+    
+    .heart-shape::before,
+    .heart-shape::after {
+        width: 30px;
+        height: 48px;
+    }
+    
+    .heart-shape::before {
+        left: 30px;
+    }
+    
+    .heart-text {
+        font-size: 1.5rem;
+    }
+    
     .week-grid {
         gap: 10px;
     }
@@ -276,27 +286,7 @@ a:hover {
     .hero h1 {
         font-size: 1.5rem;
     }
-    
-    .heart {
-        width: 60px;
-        height: 52px;
-    }
-    
-    .heart::before,
-    .heart::after {
-        width: 30px;
-        height: 48px;
-    }
-    
-    .heart::before {
-        left: 30px;
-    }
-    
-    .heart-number {
-        font-size: 1.5rem;
-    }
 }
-
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
@@ -1069,6 +1059,8 @@ footer {
     .hero-date {
         font-size: 1.5rem;
     }
+
+  
     
     #timer { 
         gap: 0.8rem; 
