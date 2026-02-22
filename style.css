@@ -70,6 +70,7 @@ a:hover {
 
 /* ==================== ГЛАВНЫЙ БАННЕР ==================== */
 .hero {
+     background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
     text-align: center;
     padding: 3rem 1rem;
     border-bottom: 1px solid var(--medium-beige); /* Бежевая граница */
