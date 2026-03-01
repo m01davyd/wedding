@@ -92,6 +92,12 @@ a:hover {
     color: var(--beige);               /* Бежевый текст */
 }
 
+.wedding-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
 
 .week-calendar {
     width: 100%;
