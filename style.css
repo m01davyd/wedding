@@ -31,7 +31,7 @@ body {
 /* Заголовки - БЕЖЕВЫЕ */
 h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+ /*   font-weight: 600;*/
     color: var(--beige);               /* Бежевые заголовки */
     text-align: center;
     margin-bottom: 1rem;
@@ -76,17 +76,18 @@ a:hover {
     border-bottom: 1px solid var(--medium-beige); /* Бежевая граница */
     margin-bottom: 2rem;
 }
-
 .hero-names {
     font-family: 'Cormorant Garamond', serif;
     font-size: 4rem;
+    font-weight: 400;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-     color: var(--beige);      /* Светло-бежевые имена */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: var(--beige);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-date {
+     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2rem;
    /* font-style: italic; */
     color: var(--beige);               /* Бежевый текст */
@@ -101,6 +102,8 @@ a:hover {
 
 .week-calendar {
     width: 100%;
+     font-family: 'Cormorant Garamond', serif;
+
     max-width: 1000px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.1);
@@ -112,6 +115,7 @@ a:hover {
 
 .month-label {
   /*  font-style: italic;*/
+   font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 300;
@@ -127,6 +131,7 @@ a:hover {
 }
 
 .weekday {
+     font-family: 'Cormorant Garamond', serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,6 +143,7 @@ a:hover {
 }
 
 .day-name {
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.2rem;
     font-weight: 500;
@@ -147,6 +153,7 @@ a:hover {
 }
 
 .day-number {
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 2.5rem;
     font-weight: 400;
@@ -169,6 +176,7 @@ a:hover {
 }
 
 .heart-text {
+    font-family: 'Cormorant Garamond', serif;
     position: relative;
     z-index: 2;
     color: white;
@@ -230,13 +238,12 @@ a:hover {
     margin-top: 1.5rem !important;
     color: #d8ccb4;
 }*/
-.hero-date wedding-day {
+.hero-date.wedding-day {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    letter-spacing: 0.3rem;
-    margin: 1.5rem 0;
-     color: var(--beige);        /* Светло-бежевые имена */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    color: var(--beige);
 }
 /* Общие стили для hero секции */
 
@@ -247,13 +254,6 @@ a:hover {
     letter-spacing: 1px;
 }
 
-.hero-names {
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin: 1rem 0;
-    letter-spacing: 4px;
-     color: var(--beige);
-}
 
 .hero-date {
     font-size: 2rem;
@@ -270,6 +270,7 @@ a:hover {
     }
     
     .month-label {
+        font-family: 'Cormorant Garamond', serif;
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
@@ -302,7 +303,9 @@ a:hover {
     }
     
     .hero-names {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Меньше на мобильных */
+        letter-spacing: 0.2rem;
+        margin: 1rem 0;
     }
     
     .hero h1 {
@@ -451,6 +454,7 @@ a:hover {
 
 /* Контент события */
 .timeline-content {
+    font-family: 'Cormorant Garamond', serif;
     background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 1.8rem;
     border-radius: 12px;
@@ -691,6 +695,7 @@ a:hover {
 
 /* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
 .dress-tips {
+     font-family: 'Cormorant Garamond', serif;
     background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 2rem;
     border-radius: 10px;
@@ -793,6 +798,7 @@ a:hover {
     font-weight: 600;
     color: var(--beige);               /* Бежевый текст */
     font-size: 1.1rem;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .form-group label i {
@@ -896,9 +902,11 @@ textarea {
 }
 
 .radio-label {
+     font-size: 1rem;
     font-weight: 500;
     color: var(--beige);               /* Бежевый текст */
     font-size: 1.05rem;
+     font-family: 'Cormorant Garamond', serif;
 }
 
 /* ==================== CHECKBOX (множественный выбор) ==================== */
@@ -984,6 +992,7 @@ textarea {
     justify-content: center;
     gap: 12px;
     margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 #rsvp-form .submit-btn:hover,
@@ -1043,6 +1052,7 @@ textarea {
 /* ==================== ФУТЕР ==================== */
 footer {
     text-align: center;
+     font-family: 'Cormorant Garamond', serif;
     padding: 3rem 1rem;
     border-top: 1px solid var(--medium-beige); /* Бежевая граница */
     margin-top: 2rem;
@@ -1207,9 +1217,7 @@ footer {
         font-size: 0.7rem; 
     }
     
-    .timeline-content {
-        padding: 1.2rem;
-    }
+   
     
     .timeline-icon {
         font-size: 1.5rem;
@@ -1217,6 +1225,7 @@ footer {
     
     .timeline-content h3 {
         font-size: 1.4rem;
+        font-family: 'Cormorant Garamond', serif;
     }
     
     .timing-note {
@@ -1240,7 +1249,7 @@ footer {
     content: " *";
     color: #e74c3c;
 }
-    .radio-label,
+   
     .checkbox-label {
         font-size: 1rem;
     }
