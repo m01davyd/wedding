@@ -93,7 +93,14 @@ a:hover {
    /* font-style: italic; */
     color: var(--beige);               /* Бежевый текст */
 }
-
+.custom-divider {
+    border: none;
+    border-top: 1px solid var(--medium-beige);
+    width: 100%;
+    max-width: 500px;      /* Можно ограничить ширину */
+    margin: 2rem auto;      /* Центрирование */
+    opacity: 0.7;
+}
 .wedding-photo {
     width: 100%;
     max-width: 500px;
@@ -121,7 +128,7 @@ a:hover {
     font-size: 3rem;
     font-weight: 300;
     letter-spacing: 3px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0rem;
    color: var(--beige); 
 }
 
@@ -148,7 +155,7 @@ a:hover {
     font-style: italic;
     font-size: 2.5rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.6);
     height: 30px; /* фиксированная высота для названия дня */
 }
@@ -249,7 +256,7 @@ a:hover {
 /* Общие стили для hero секции */
 
 .hero h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 300;
     margin-bottom: 1rem;
     letter-spacing: 1px;
