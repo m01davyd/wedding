@@ -8,6 +8,7 @@
     --accent-gold: #b5a782;     /* Золотистый акцент */
     --white: #ffffff;
     --off-white: #f9f7f2;
+    
 }
 
 * {
@@ -78,7 +79,7 @@ a:hover {
 }
 .hero-names {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
@@ -117,7 +118,7 @@ a:hover {
   /*  font-style: italic;*/
    font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: 300;
     letter-spacing: 3px;
     margin-bottom: 2.5rem;
@@ -145,7 +146,7 @@ a:hover {
 .day-name {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
@@ -240,7 +241,7 @@ a:hover {
 }*/
 .hero-date.wedding-day {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 5rem;
     letter-spacing: 2px;
     margin-top: 1rem;
     color: var(--beige);
