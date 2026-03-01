@@ -85,14 +85,7 @@ a:hover {
     color: var(--light-beige);         /* Светло-бежевые имена */
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-.hero-date wedding-day {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    letter-spacing: 0.3rem;
-    margin: 1.5rem 0;
-    color: var(--light-beige);         /* Светло-бежевые имена */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
+
 .hero-date {
     font-size: 2.2rem;
    /* font-style: italic; */
@@ -213,15 +206,22 @@ a:hover {
     transform: translateY(-5px);
 }
 
-.wedding-day {
+/*.hero-date wedding-day {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px;
     margin-top: 1.5rem !important;
     color: #d8ccb4;
+}*/
+.hero-date wedding-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    margin: 1.5rem 0;
+    color: var(--light-beige);         /* Светло-бежевые имена */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-
 /* Общие стили для hero секции */
 
 .hero h1 {
@@ -236,6 +236,7 @@ a:hover {
     font-weight: 400;
     margin: 1rem 0;
     letter-spacing: 4px;
+     color: var(--light-beige); 
 }
 
 .hero-date {
