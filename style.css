@@ -19,7 +19,7 @@
 /* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
 /* Тело сайта - ТЁМНО-ЗЕЛЁНЫЙ фон, БЕЖЕВЫЙ текст */
 body {
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Cormorant Garamond', serif;
     line-height: 1.6;
     color: var(--beige);               /* Бежевый текст */
     background-color: var(--dark-green); /* Тёмно-зелёный фон */
@@ -82,7 +82,7 @@ a:hover {
     font-size: 4rem;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-    color: var(--light-beige);         /* Светло-бежевые имена */
+     color: var(--beige);      /* Светло-бежевые имена */
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -130,9 +130,11 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start; /* меняем на flex-start */
     padding: 1.5rem 0.5rem;
     border-radius: 25px;
     transition: all 0.3s ease;
+    min-height: 150px; /* фиксируем минимальную высоту для всех ячеек */
 }
 
 .day-name {
@@ -141,6 +143,7 @@ a:hover {
     font-weight: 500;
     margin-bottom: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
+    height: 30px; /* фиксированная высота для названия дня */
 }
 
 .day-number {
@@ -148,17 +151,31 @@ a:hover {
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px; /* такая же высота как у сердца */
 }
+
 /* CSS-сердце с цифрой внутри */
 .heart-shape {
     position: relative;
     width: 80px;
-    height: 70px;
+    height: 70px; /* та же высота, что у day-number */
     display: flex;
     justify-content: center;
     align-items: center;
     animation: heartbeat 1.5s ease infinite;
-    margin: 10px 0;
+}
+
+.heart-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .heart-shape::before,
@@ -184,15 +201,6 @@ a:hover {
     transform-origin: 100% 100%;
 }
 
-.heart-text {
-    position: relative;
-    z-index: 2;
-    color: white;
-    font-size: 2rem;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 @keyframes heartbeat {
     0% { transform: scale(1); }
     14% { transform: scale(1.1); }
@@ -201,6 +209,14 @@ a:hover {
     70% { transform: scale(1); }
 }
 
+/* Убираем лишние отступы у heart-day */
+.heart-day {
+    padding: 1.5rem 0.5rem; /* такой же padding как у других */
+}
+
+.heart-day .heart-shape {
+    margin: 0; /* убираем отступы */
+}
 .weekday:hover:not(:has(.heart-shape)) {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
@@ -219,7 +235,7 @@ a:hover {
     font-size: 4rem;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
-    color: var(--light-beige);         /* Светло-бежевые имена */
+     color: var(--beige);        /* Светло-бежевые имена */
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 /* Общие стили для hero секции */
@@ -236,7 +252,7 @@ a:hover {
     font-weight: 400;
     margin: 1rem 0;
     letter-spacing: 4px;
-     color: var(--light-beige); 
+     color: var(--beige);
 }
 
 .hero-date {
@@ -335,7 +351,7 @@ a:hover {
 .timer-number {
     font-size: 3rem;
     font-weight: bold;
-    color: var(--light-beige);         /* Светло-бежевые цифры */
+     color: var(--beige);        /* Светло-бежевые цифры */
     display: block;
     line-height: 1;
 }
@@ -423,10 +439,10 @@ a:hover {
     top: 0;
     width: 70px;
     text-align: right;
-    font-family: 'Montserrat', monospace;
+  font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     font-size: 1.2rem;
-    color: var(--light-beige);         /* Светло-бежевый */
+     color: var(--beige);        /* Светло-бежевый */
     background-color: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
     padding: 5px 10px;
     border-radius: 20px;
@@ -459,7 +475,7 @@ a:hover {
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: var(--light-beige);         /* Светло-бежевый заголовок */
+    color: var(--beige);        /* Светло-бежевый заголовок */
     margin: 0 0 0.8rem 0;
     text-align: left;
 }
@@ -547,7 +563,7 @@ a:hover {
 }
 
 .detail-card strong {
-    color: var(--light-beige);         /* Светло-бежевый акцент */
+    color: var(--beige);      /* Светло-бежевый акцент */
 }
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
@@ -664,7 +680,7 @@ a:hover {
 
 
 .color-hex {
-    font-family: 'Montserrat', monospace;
+   font-family: 'Cormorant Garamond', serif;
     font-size: 0.75rem;
     color: var(--beige);               /* Бежевый текст */
     padding: 0.1rem 0.3rem;
@@ -686,7 +702,7 @@ a:hover {
 }
 .dress-tips h3 {
     text-align: center;
-    color: var(--light-beige);         /* Светло-бежевый заголовок */
+     color: var(--beige);         /* Светло-бежевый заголовок */
     margin-bottom: 1.5rem;
 }
 
@@ -792,7 +808,7 @@ textarea {
     padding: 1rem;
     border: 2px solid var(--medium-beige); /* Бежевая рамка */
     border-radius: 8px;
-    font-family: inherit;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: rgba(54, 62, 47, 0.7); /* Тёмно-зелёный фон */
