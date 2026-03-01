@@ -112,12 +112,12 @@ a:hover {
     width: 100%;
      font-family: 'Cormorant Garamond', serif;
 
-    max-width: 1000px;
+    max-width: 1160px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 40px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
@@ -152,7 +152,7 @@ a:hover {
 
 .day-name {
     font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+   
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 2rem;
@@ -162,7 +162,7 @@ a:hover {
 
 .day-number {
     font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
@@ -256,7 +256,7 @@ a:hover {
 /* Общие стили для hero секции */
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1rem;
     letter-spacing: 1px;
@@ -549,7 +549,7 @@ a:hover {
 
 .detail-card {
     background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 10px;
     text-align: center;
     border: 1px solid var(--medium-beige); /* Бежевая рамка */
