@@ -44,11 +44,11 @@ h1 {
 
 h2 { 
     font-size: 2.5rem; 
-    margin-top: 2.5rem; 
+    margin-top: 0rem; 
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -257,7 +257,7 @@ a:hover {
 
 .hero h1 {
     font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 1rem;
     letter-spacing: 1px;
 }
@@ -378,7 +378,7 @@ a:hover {
 /* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
 .timing-section {
     background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
     border: 1px solid var(--medium-beige); /* Бежевая рамка */
@@ -394,7 +394,7 @@ a:hover {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 3rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--beige);               /* Бежевый текст */
     line-height: 1.6;
 }
@@ -504,7 +504,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: var(--beige);               /* Бежевый текст */
     background-color: rgba(216, 204, 180, 0.1); /* Полупрозрачный бежевый */
     padding: 0.6rem 1rem;
@@ -572,16 +572,18 @@ a:hover {
 .detail-card p {
     margin-bottom: 0.5rem;
     color: var(--beige);               /* Бежевый текст */
+    font-size: 1.2rem;
 }
 
 .detail-card strong {
     color: var(--beige);      /* Светло-бежевый акцент */
+    font-size: 1.8rem;
 }
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
     background-color: rgba(54, 62, 47, 0.7); /* Полупрозрачный тёмно-зелёный */
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
     text-align: center;
@@ -594,9 +596,9 @@ a:hover {
 }
 
 .dress-code-text {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 3rem;
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     line-height: 1.6;
 }
 
@@ -805,7 +807,7 @@ a:hover {
     margin-bottom: 1rem;
     font-weight: 600;
     color: var(--beige);               /* Бежевый текст */
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-family: 'Cormorant Garamond', serif;
 }
 
@@ -819,6 +821,7 @@ a:hover {
 input[type="text"],
 textarea {
     width: 100%;
+        font-size: 1.2rem;
     padding: 1rem;
     border: 2px solid var(--medium-beige); /* Бежевая рамка */
     border-radius: 8px;
@@ -844,6 +847,7 @@ textarea::placeholder {
 }
 
 textarea {
+        font-size: 1.2rem;
     min-height: 120px;
     resize: vertical;
     line-height: 1.5;
@@ -910,7 +914,7 @@ textarea {
 }
 
 .radio-label {
-     font-size: 1rem;
+     font-size: 1.2rem;
     font-weight: 500;
     color: var(--beige);               /* Бежевый текст */
     font-size: 1.05rem;
@@ -976,9 +980,10 @@ textarea {
 }
 
 .checkbox-label {
+
     font-weight: 500;
     color: var(--beige);               /* Бежевый текст */
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 }
 
 /* ==================== КНОПКА ОТПРАВКИ ==================== */
@@ -1064,6 +1069,7 @@ footer {
     padding: 3rem 1rem;
     border-top: 1px solid var(--medium-beige); /* Бежевая граница */
     margin-top: 2rem;
+    font-size: 1.3rem;
     color: var(--beige);               /* Бежевый текст */
 }
 
