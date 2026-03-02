@@ -95,7 +95,7 @@ a:hover {
 }
 .custom-divider {
     border: none;
-    border-top: 1px solid var(--medium-beige);
+    border-top: 1.9px solid var(--medium-beige);
     width: 100%;
     max-width: 1160px;      /* Можно ограничить ширину */
     margin: 2rem auto;      /* Центрирование */
@@ -198,7 +198,7 @@ a:hover {
 .heart-shape::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 5px;
     width: 40px;
     height: 65px;
     border-radius: 40px 40px 0 0;
