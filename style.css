@@ -78,7 +78,7 @@ a:hover {
     margin-bottom: 2rem;
 }
 .hero-names {
-    font-family: 'Cormorant Garamond', serif;
+     font-family: 'Atziluth-Script', 'Cormorant Garamond', serif;
     font-size: 5rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
@@ -612,7 +612,7 @@ a:hover {
 /* ==================== ЦВЕТОВАЯ ПАЛИТРА (6 в ряд) ==================== */
 .color-palette {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Фиксированно 6 колонок */
+    grid-template-columns: repeat(5, 1fr); /* Фиксированно 6 колонок */
     gap: 0.2rem; /* Еще меньше расстояние */
     margin: 1rem 0;
 }
