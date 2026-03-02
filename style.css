@@ -97,7 +97,7 @@ a:hover {
     border: none;
     border-top: 1px solid var(--medium-beige);
     width: 100%;
-    max-width: 500px;      /* Можно ограничить ширину */
+    max-width: 1160px;      /* Можно ограничить ширину */
     margin: 2rem auto;      /* Центрирование */
     opacity: 0.7;
 }
@@ -494,6 +494,7 @@ a:hover {
 
 /* Описание события */
 .timeline-content p {
+    font-size: 1.2rem;
     color: var(--beige);               /* Бежевый текст */
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -577,7 +578,8 @@ a:hover {
 
 .detail-card strong {
     color: var(--beige);      /* Светло-бежевый акцент */
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 100;
 }
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
