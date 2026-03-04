@@ -24,6 +24,7 @@ body {
     line-height: 1.6;
     color: var(--beige);               /* Бежевый текст */
     background-color: var(--dark-green); /* Тёмно-зелёный фон */
+    
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -102,6 +103,16 @@ a:hover {
     opacity: 0.7;
 }
 .wedding-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+        transform: rotate(90deg);
+    margin: 4rem auto;
+
+}
+
+.countdown-photo {
     width: 100%;
     max-width: 500px;
     height: auto;
