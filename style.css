@@ -70,7 +70,7 @@ a:hover {
 
 /* ==================== ГЛАВНЫЙ БАННЕР ==================== */
 .hero {
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     text-align: center;
     padding: 3rem 1rem;
     border-bottom: 1px solid var(--medium-beige);
@@ -107,7 +107,7 @@ a:hover {
     max-width: 500px;
     height: auto;
     border-radius: 10px;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     margin: 4rem auto;
 }
 
@@ -328,7 +328,7 @@ a:hover {
 .countdown {
     text-align: center;
     padding: 3rem 1rem;
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     border-radius: 10px;
     margin: 2rem 0;
     border: 1px solid var(--medium-beige);
@@ -340,10 +340,11 @@ a:hover {
     gap: 1.5rem;
     margin-top: 1.5rem;
     flex-wrap: wrap;
+     background: rgbargba(17, 8, 3, 0.9);
 }
 
 .timer-unit {
-    background: rgba(50, 27, 21, 0.9);
+    background: rgbargba(17, 8, 3, 0.9);
     padding: 1.5rem;
     border-radius: 8px;
     min-width: 100px;
@@ -374,7 +375,7 @@ a:hover {
 
 /* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
 .timing-section {
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     padding: 3rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
@@ -447,7 +448,7 @@ a:hover {
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--beige);
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     padding: 5px 10px;
     border-radius: 20px;
     border: 2px solid var(--medium-beige);
@@ -455,7 +456,7 @@ a:hover {
 
 .timeline-content {
     font-family: 'Cormorant Garamond', serif;
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     padding: 1.8rem;
     border-radius: 12px;
     border-left: 4px solid var(--beige);
@@ -508,7 +509,7 @@ a:hover {
 .timing-note {
     margin-top: 3rem;
     padding: 1.5rem;
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     border-radius: 10px;
     border-left: 4px solid var(--beige);
     font-size: 0.95rem;
@@ -536,7 +537,7 @@ a:hover {
 }
 
 .detail-card {
-    background: rgba(50, 27, 21, 0.9);
+    background: rgba(17, 8, 3, 0.9);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -571,7 +572,7 @@ a:hover {
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3,0.7);
     padding: 2rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
@@ -685,7 +686,7 @@ a:hover {
     font-size: 0.75rem;
     color: var(--beige);
     padding: 0.1rem 0.3rem;
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     border-radius: 3px;
     border: 1px solid var(--medium-beige);
 }
@@ -693,7 +694,7 @@ a:hover {
 /* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
 .dress-tips {
     font-family: 'Cormorant Garamond', serif;
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     padding: 2rem;
     border-radius: 10px;
     max-width: 700px;
@@ -732,7 +733,7 @@ a:hover {
 
 /* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ (RSVP) ==================== */
 .rsvp-section {
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
@@ -753,7 +754,7 @@ a:hover {
 
 /* ==================== ФОРМА RSVP ==================== */
 #rsvp-form {
-    background: rgba(50, 27, 21, 0.9);
+    background: rgba(17, 8, 3, 0.9);
     padding: 2.5rem;
     border-radius: 12px;
     border: 1px solid var(--medium-beige);
@@ -791,7 +792,7 @@ textarea {
     border-radius: 8px;
     font-family: 'Cormorant Garamond', serif;
     transition: all 0.3s ease;
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     color: var(--beige);
 }
 
@@ -800,7 +801,7 @@ textarea:focus {
     outline: none;
     border-color: var(--light-beige);
     box-shadow: 0 0 0 3px rgba(240, 234, 220, 0.15);
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3,0.9);
 }
 
 input[type="text"]::placeholder,
@@ -828,7 +829,7 @@ textarea {
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     border: 2px solid var(--medium-beige);
     border-radius: 8px;
     cursor: pointer;
@@ -838,7 +839,7 @@ textarea {
 
 .radio-option:hover {
     border-color: var(--light-beige);
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3,0.9);
 }
 
 .radio-option input[type="radio"] {
@@ -869,7 +870,7 @@ textarea {
 
 .radio-option input[type="radio"]:checked + .radio-custom {
     border-color: var(--light-beige);
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom:after {
@@ -895,7 +896,7 @@ textarea {
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    background-color: rgba(50, 27, 21, 0.7);
+    background-color: rgba(17, 8, 3, 0.7);
     border: 2px solid var(--medium-beige);
     border-radius: 8px;
     cursor: pointer;
@@ -904,7 +905,7 @@ textarea {
 
 .checkbox-option:hover {
     border-color: var(--light-beige);
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
 }
 
 .checkbox-option input[type="checkbox"] {
@@ -1008,7 +1009,7 @@ textarea {
 .form-note {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: rgba(50, 27, 21, 0.9);
+    background-color: rgba(17, 8, 3, 0.9);
     border-radius: 8px;
     color: var(--beige);
     font-size: 0.95rem;
@@ -1112,7 +1113,7 @@ footer {
         text-align: left;
         margin-bottom: 0.8rem;
         display: inline-block;
-        background-color: rgba(50, 27, 21, 0.9);
+        background-color: rgba(17, 8, 3, 0.9);
         padding: 0.4rem 1.2rem;
     }
     
