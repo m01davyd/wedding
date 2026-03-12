@@ -111,11 +111,17 @@ a:hover {
     margin: 0rem auto;
 }
 
-.countdown-photo {
+.photo-hands {
     width: 100%;
     max-width: 500px;
     height: auto;
     border-radius: 10px;
+}
+.hands-section {
+    background-color: rgba(17, 8, 3, 0.7);
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+   
 }
 
 .week-calendar {
