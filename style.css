@@ -112,6 +112,9 @@ a:hover {
 }
 
 .photo-hands {
+        transform: rotate(90deg);
+    margin: 3rem auto;
+    align-items: center;
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -119,8 +122,11 @@ a:hover {
 }
 .hands-section {
     background-color: rgba(17, 8, 3, 0.7);
-    padding: 1rem 1rem;
+    padding: 5rem 1rem;
     margin: 1rem 0;
+        padding: 5rem 1rem;
+    border-radius: 15px;
+    align-items: center;
    
 }
 
@@ -321,6 +327,70 @@ a:hover {
     .hero h1 {
         font-size: 1.5rem;
     }
+
+        .day-name {
+        font-size: 1.2rem !important;  /* Уменьшить с 2.5rem */
+        margin-bottom: 0.5rem;
+    }
+    
+    .day-number {
+        font-size: 1.5rem !important;  /* Уменьшить с 2rem */
+    }
+    
+    .weekday {
+        min-height: 100px;  /* Уменьшить высоту */
+        padding: 0.8rem 0.3rem;
+    }
+        .detail-card p,
+    .detail-card strong {
+        font-size: 1.2rem !important;  /* Уменьшить с 1.8rem */
+    }
+    
+    .icon {
+        font-size: 2rem;  /* Уменьшить иконки */
+    }
+        .dress-code-text {
+        font-size: 1.2rem;  /* Уменьшить с 1.8rem */
+    }
+        .form-group label {
+        font-size: 1rem;  /* Уменьшить с 1.3rem */
+    }
+    
+    input[type="text"],
+    textarea {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+        padding: 0.8rem;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+    }
+        footer {
+        font-size: 1rem;  /* Уменьшить с 1.3rem */
+        padding: 2rem 0.5rem;
+    }
+        .hands-section {
+        padding: 2rem 1rem;  /* Уменьшить отступы */
+    }
+    
+    .photo-hands {
+        max-width: 300px;  /* Уменьшить фото */
+        margin: 1rem auto;
+    }
+     .timeline-content p {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+    }
+    
+    .timeline-location {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .timeline-time {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+        padding: 0.3rem 0.8rem;
+    }
 }
 
 .hero-subtitle {
@@ -350,7 +420,7 @@ a:hover {
 }
 
 .timer-unit {
-    background: rgbargba(17, 8, 3, 0.9);
+    background: rgba(17, 8, 3, 0.9);
     padding: 1.5rem;
     border-radius: 8px;
     min-width: 100px;
