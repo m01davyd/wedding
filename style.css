@@ -17,13 +17,12 @@
 }
 
 /* ==================== ОСНОВНЫЕ НАСТРОЙКИ ==================== */
-/* Тело сайта - ТЁМНО-ЗЕЛЁНЫЙ фон, БЕЖЕВЫЙ текст */
+/* Тело сайта - ШОКОЛАДНЫЙ фон, БЕЖЕВЫЙ текст */
 body {
-   font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     line-height: 1.6;
-    color: var(--beige);               /* Бежевый текст */
-    background-color: var(--chocolate); /* Тёмно-зелёный фон */
-    
+    color: var(--beige);
+    background-color: var(--chocolate);
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -32,11 +31,11 @@ body {
 /* Заголовки - БЕЖЕВЫЕ */
 h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
- /*   font-weight: 600;*/
-    color: var(--beige);               /* Бежевые заголовки */
+    color: var(--beige);
     text-align: center;
     margin-bottom: 1rem;
 }
+
 h1 { 
     font-size: 3.5rem; 
     margin-top: 1rem; 
@@ -54,31 +53,32 @@ h3 {
 
 p { 
     margin-bottom: 1rem; 
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 /* Ссылки - светлый бежевый */
 a {
-    color: var(--light-beige);         /* Светло-бежевый для ссылок */
+    color: var(--light-beige);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--white);               /* Белый при наведении */
+    color: var(--white);
     text-decoration: underline;
 }
 
 /* ==================== ГЛАВНЫЙ БАННЕР ==================== */
 .hero {
-     background-color: rgba(72, 41, 37, 0.7); /* Полупрозрачный тёмно-зелёный */
+    background-color: rgba(72, 41, 37, 0.7);
     text-align: center;
     padding: 3rem 1rem;
-    border-bottom: 1px solid var(--medium-beige); /* Бежевая граница */
+    border-bottom: 1px solid var(--medium-beige);
     margin-bottom: 2rem;
 }
+
 .hero-names {
-     font-family: 'Atziluth-Script', 'Cormorant Garamond', serif;
+    font-family: 'Atziluth-Script', 'Cormorant Garamond', serif;
     font-size: 5rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
@@ -88,27 +88,27 @@ a:hover {
 }
 
 .hero-date {
-     font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 2.2rem;
-   /* font-style: italic; */
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
+
 .custom-divider {
     border: none;
     border-top: 1.9px solid var(--medium-beige);
     width: 100%;
-    max-width: 1160px;      /* Можно ограничить ширину */
-    margin: 2rem auto;      /* Центрирование */
+    max-width: 1160px;
+    margin: 2rem auto;
     opacity: 0.7;
 }
+
 .wedding-photo {
     width: 100%;
     max-width: 500px;
     height: auto;
     border-radius: 10px;
-        transform: rotate(90deg);
+    transform: rotate(90deg);
     margin: 4rem auto;
-
 }
 
 .countdown-photo {
@@ -120,8 +120,7 @@ a:hover {
 
 .week-calendar {
     width: 100%;
-     font-family: 'Cormorant Garamond', serif;
-
+    font-family: 'Cormorant Garamond', serif;
     max-width: 1160px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.1);
@@ -132,14 +131,13 @@ a:hover {
 }
 
 .month-label {
-  /*  font-style: italic;*/
-   font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-size: 3rem;
     font-weight: 300;
     letter-spacing: 3px;
     margin-bottom: 0rem;
-   color: var(--beige); 
+    color: var(--beige);
 }
 
 .week-grid {
@@ -149,44 +147,42 @@ a:hover {
 }
 
 .weekday {
-     font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* меняем на flex-start */
+    justify-content: flex-start;
     padding: 1.5rem 0.5rem;
     border-radius: 25px;
     transition: all 0.3s ease;
-    min-height: 150px; /* фиксируем минимальную высоту для всех ячеек */
+    min-height: 150px;
 }
 
 .day-name {
     font-family: 'Cormorant Garamond', serif;
-   
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.6);
-    height: 30px; /* фиксированная высота для названия дня */
+    height: 30px;
 }
 
 .day-number {
     font-family: 'Cormorant Garamond', serif;
-    
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px; /* такая же высота как у сердца */
+    height: 70px;
 }
 
 /* CSS-сердце с цифрой внутри */
 .heart-shape {
     position: relative;
     width: 80px;
-    height: 70px; /* та же высота, что у day-number */
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,7 +208,7 @@ a:hover {
     width: 40px;
     height: 65px;
     border-radius: 40px 40px 0 0;
-    background: #d8ccb4;
+    background: var(--beige);
 }
 
 .heart-shape::before {
@@ -235,27 +231,19 @@ a:hover {
     70% { transform: scale(1); }
 }
 
-/* Убираем лишние отступы у heart-day */
 .heart-day {
-    padding: 1.5rem 0.5rem; /* такой же padding как у других */
+    padding: 1.5rem 0.5rem;
 }
 
 .heart-day .heart-shape {
-    margin: 0; /* убираем отступы */
+    margin: 0;
 }
+
 .weekday:hover:not(:has(.heart-shape)) {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
 }
 
-/*.hero-date wedding-day {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem !important;
-    font-weight: 300 !important;
-    letter-spacing: 3px;
-    margin-top: 1.5rem !important;
-    color: #d8ccb4;
-}*/
 .hero-date.wedding-day {
     font-family: 'Cormorant Garamond', serif;
     font-size: 6rem;
@@ -263,7 +251,6 @@ a:hover {
     margin-top: 1rem;
     color: var(--beige);
 }
-/* Общие стили для hero секции */
 
 .hero h1 {
     font-size: 2.5rem;
@@ -271,7 +258,6 @@ a:hover {
     margin-bottom: 1rem;
     letter-spacing: 1px;
 }
-
 
 .hero-date {
     font-size: 2rem;
@@ -321,7 +307,7 @@ a:hover {
     }
     
     .hero-names {
-        font-size: 2.5rem; /* Меньше на мобильных */
+        font-size: 2.5rem;
         letter-spacing: 0.2rem;
         margin: 1rem 0;
     }
@@ -330,21 +316,22 @@ a:hover {
         font-size: 1.5rem;
     }
 }
+
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 /* ==================== ТАЙМЕР ==================== */
 .countdown {
     text-align: center;
     padding: 3rem 1rem;
-    background-color: rgba(72, 41, 37, 0.7); /* Полупрозрачный тёмно-зелёный */
+    background-color: rgba(72, 41, 37, 0.7);
     border-radius: 10px;
     margin: 2rem 0;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
 }
 
 #timer {
@@ -356,11 +343,11 @@ a:hover {
 }
 
 .timer-unit {
-    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
+    background: rgba(72, 41, 37, 0.9);
     padding: 1.5rem;
     border-radius: 8px;
     min-width: 100px;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s;
 }
@@ -372,7 +359,7 @@ a:hover {
 .timer-number {
     font-size: 3rem;
     font-weight: bold;
-     color: var(--beige);        /* Светло-бежевые цифры */
+    color: var(--beige);
     display: block;
     line-height: 1;
 }
@@ -382,16 +369,16 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.5rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 /* ==================== СЕКЦИЯ ТАЙМИНГА ==================== */
 .timing-section {
-    background-color: rgba(72, 41, 37, 0.7); /* Полупрозрачный тёмно-зелёный */
+    background-color: rgba(72, 41, 37, 0.7);
     padding: 3rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -405,7 +392,7 @@ a:hover {
     max-width: 600px;
     margin: 0 auto 3rem;
     font-size: 1.5rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     line-height: 1.6;
 }
 
@@ -416,67 +403,62 @@ a:hover {
 /* ==================== ВЕРТИКАЛЬНАЯ ЛИНИЯ ВРЕМЕНИ ==================== */
 .timeline {
     position: relative;
-    padding-left: 40px; /* Отступ для линии времени */
+    padding-left: 40px;
 }
 
-/* Вертикальная линия - бежевая */
 .timeline:before {
     content: '';
     position: absolute;
-    left: 25px; /* Позиция линии */
+    left: 25px;
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, var(--beige), var(--medium-beige)); /* Бежевый градиент */
+    background: linear-gradient(to bottom, var(--beige), var(--medium-beige));
     border-radius: 3px;
 }
 
-/* Элемент таймлайна */
 .timeline-item {
     position: relative;
     margin-bottom: 2.5rem;
     padding-left: 30px;
 }
 
-/* Круг на линии времени */
 .timeline-item:before {
     content: '';
     position: absolute;
-    left: 18px; /* Центрируем на линии */
+    left: 18px;
     top: 5px;
     width: 16px;
     height: 16px;
-    background-color: var(--chocolate); /* Тёмно-зелёный фон */
-    border: 3px solid var(--beige); /* Бежевая рамка */
+    background-color: var(--chocolate);
+    border: 3px solid var(--beige);
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 0 0 0 4px rgba(216, 204, 180, 0.1); /* Бежевая тень */
+    box-shadow: 0 0 0 4px rgba(216, 204, 180, 0.1);
 }
 
-/* Время события */
 .timeline-time {
     position: absolute;
     left: -90px;
     top: 0;
     width: 70px;
     text-align: right;
-  font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
     font-size: 1.2rem;
-     color: var(--beige);        /* Светло-бежевый */
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    color: var(--beige);
+    background-color: rgba(72, 41, 37, 0.9);
     padding: 5px 10px;
     border-radius: 20px;
-    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border: 2px solid var(--medium-beige);
 }
 
-/* Контент события */
 .timeline-content {
     font-family: 'Cormorant Garamond', serif;
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    background-color: rgba(72, 41, 37, 0.9);
     padding: 1.8rem;
     border-radius: 12px;
-    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
+    border-left: 4px solid var(--beige);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -486,54 +468,49 @@ a:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Иконки событий */
 .timeline-icon {
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
-    color: var(--beige);               /* Бежевые иконки */
+    color: var(--beige);
 }
 
-/* Заголовок события */
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: var(--beige);        /* Светло-бежевый заголовок */
+    color: var(--beige);
     margin: 0 0 0.8rem 0;
     text-align: left;
 }
 
-/* Описание события */
 .timeline-content p {
     font-size: 1.2rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-/* Локация события */
 .timeline-location {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 1.2rem;
-    color: var(--beige);               /* Бежевый текст */
-    background-color: rgba(216, 204, 180, 0.1); /* Полупрозрачный бежевый */
+    color: var(--beige);
+    background-color: rgba(216, 204, 180, 0.1);
     padding: 0.6rem 1rem;
     border-radius: 8px;
-    border-left: 3px solid var(--beige); /* Бежевая акцентная линия */
+    border-left: 3px solid var(--beige);
 }
 
 .timeline-location i {
-    color: var(--beige);               /* Бежевая иконка */
+    color: var(--beige);
 }
 
-/* Важное примечание */
 .timing-note {
     margin-top: 3rem;
     padding: 1.5rem;
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    background-color: rgba(72, 41, 37, 0.9);
     border-radius: 10px;
-    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
+    border-left: 4px solid var(--beige);
     font-size: 0.95rem;
 }
 
@@ -542,11 +519,11 @@ a:hover {
     align-items: flex-start;
     gap: 10px;
     margin: 0;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 .timing-note i {
-    color: var(--beige);               /* Бежевая иконка */
+    color: var(--beige);
     margin-top: 3px;
 }
 
@@ -559,11 +536,11 @@ a:hover {
 }
 
 .detail-card {
-    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
+    background: rgba(72, 41, 37, 0.9);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
     height: 100%;
@@ -576,30 +553,30 @@ a:hover {
 
 .icon {
     font-size: 2.5rem;
-    color: var(--beige);               /* Бежевые иконки */
+    color: var(--beige);
     margin-bottom: 1rem;
 }
 
 .detail-card p {
     margin-bottom: 0.5rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     font-size: 1.2rem;
 }
 
 .detail-card strong {
-    color: var(--beige);      /* Светло-бежевый акцент */
+    color: var(--beige);
     font-size: 1.2rem;
     font-weight: 100;
 }
 
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
-    background-color: rgba(72, 41, 37, 0.7); /* Полупрозрачный тёмно-зелёный */
+    background-color: rgba(72, 41, 37, 0.7);
     padding: 2rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
 }
 
 .dress-code-section .container {
@@ -616,14 +593,14 @@ a:hover {
 
 .dress-code-text p {
     margin-bottom: 1rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
-/* ==================== ЦВЕТОВАЯ ПАЛИТРА (6 в ряд) ==================== */
+/* ==================== ЦВЕТОВАЯ ПАЛИТРА ==================== */
 .color-palette {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Фиксированно 6 колонок */
-    gap: 0.2rem; /* Еще меньше расстояние */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.2rem;
     margin: 1rem 0;
 }
 
@@ -635,56 +612,56 @@ a:hover {
 }
 
 .color-circle {
-    width: 95px; /* Еще меньше */
-    height: 95px; 
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
-    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border: 2px solid var(--medium-beige);
     box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
 }
+
 .color-circle:hover {
-    transform: scale(1.05); /* Легкое увеличение при наведении */
+    transform: scale(1.05);
 }
+
 .color-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--beige);                   /* Бежевый текст */
+    color: var(--beige);
     text-align: center;
     line-height: 1.2;
-    padding: 0 0.2rem; /* Небольшие отступы по бокам */
+    padding: 0 0.2rem;
 }
-
-
 
 /* Адаптивность для планшетов */
 @media (max-width: 1024px) {
     .color-palette {
-        grid-template-columns: repeat(3, 1fr); /* На планшетах 3 в ряд */
-        gap: 1rem; /* Чуть больше расстояние для планшетов */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
     .color-circle {
-        width: 85px; /* Ещё больше на планшетах */
-        height: 85px; /* Ещё больше на планшетах */
+        width: 85px;
+        height: 85px;
     }
     .color-name {
-        font-size: 1.1rem; /* Чуть больше на планшетах */
+        font-size: 1.1rem;
     }
 }
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
     .color-palette {
-        grid-template-columns: repeat(2, 1fr); /* На мобильных 2 в ряд */
-        gap: 1.2rem; /* Больше расстояние для мобильных */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
     }
     .color-circle {
-        width: 90px; /* Крупные круги на мобильных */
-        height: 90px; /* Крупные круги на мобильных */
+        width: 90px;
+        height: 90px;
     }
     .color-name {
-        font-size: 1.15rem; /* Чуть больше на мобильных */
-        font-weight: 500; /* Немного легче начертание */
+        font-size: 1.15rem;
+        font-weight: 500;
     }
 }
 
@@ -703,33 +680,32 @@ a:hover {
     }
 }
 
-
-
 .color-hex {
-   font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.75rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     padding: 0.1rem 0.3rem;
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    background-color: rgba(72, 41, 37, 0.9);
     border-radius: 3px;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
 }
 
 /* ==================== СОВЕТЫ ПО ОДЕЖДЕ ==================== */
 .dress-tips {
-     font-family: 'Cormorant Garamond', serif;
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    font-family: 'Cormorant Garamond', serif;
+    background-color: rgba(72, 41, 37, 0.9);
     padding: 2rem;
     border-radius: 10px;
     max-width: 700px;
     margin: 3rem auto 0;
     text-align: left;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
 .dress-tips h3 {
     text-align: center;
-     color: var(--beige);         /* Светло-бежевый заголовок */
+    color: var(--beige);
     margin-bottom: 1.5rem;
 }
 
@@ -742,48 +718,25 @@ a:hover {
     margin-bottom: 1rem;
     padding-left: 2rem;
     position: relative;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 .dress-tips li:before {
     content: "•";
-    color: var(--beige);               /* Бежевая точка */
+    color: var(--beige);
     font-size: 1.5rem;
     position: absolute;
     left: 0;
     top: -0.2rem;
 }
 
-/* Адаптивность для Grid */
-@media (max-width: 1024px) {
-    .color-palette {
-        grid-template-columns: repeat(3, 1fr); /* На планшетах 3 в ряд */
-        gap: 1.2rem;
-    }
-    .color-circle {
-        width: 75px;
-        height: 75px;
-    }
-}
-
-@media (max-width: 600px) {
-    .color-palette {
-        grid-template-columns: repeat(2, 1fr); /* На мобильных 2 в ряд */
-        gap: 1rem;
-    }
-    .color-circle {
-        width: 75px;
-        height: 75px;
-    }
-}
-
 /* ==================== СЕКЦИЯ ПОДТВЕРЖДЕНИЯ (RSVP) ==================== */
 .rsvp-section {
-    background-color: rgba(72, 41, 37, 0.7); /* Полупрозрачный тёмно-зелёный */
+    background-color: rgba(72, 41, 37, 0.7);
     padding: 4rem 1rem;
     margin: 3rem 0;
     border-radius: 15px;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
 }
 
 .rsvp-section .container {
@@ -793,17 +746,17 @@ a:hover {
 
 .section-subtitle {
     text-align: center;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
 
 /* ==================== ФОРМА RSVP ==================== */
 #rsvp-form {
-    background: rgba(54, 62, 47, 0.9); /* Тёмно-зелёный фон */
+    background: rgba(72, 41, 37, 0.9);
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid var(--medium-beige); /* Бежевая рамка */
+    border: 1px solid var(--medium-beige);
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
@@ -818,48 +771,46 @@ a:hover {
     gap: 10px;
     margin-bottom: 1rem;
     font-weight: 600;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     font-size: 1.3rem;
     font-family: 'Cormorant Garamond', serif;
 }
 
 .form-group label i {
-    color: var(--beige);               /* Бежевые иконки */
+    color: var(--beige);
     width: 20px;
     text-align: center;
 }
 
-/* Поля ввода */
 input[type="text"],
 textarea {
     width: 100%;
-        font-size: 1.2rem;
+    font-size: 1.2rem;
     padding: 1rem;
-    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    border: 2px solid var(--medium-beige);
     border-radius: 8px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: rgba(72, 41, 37, 0.7); /* Тёмно-зелёный фон */
-    color: var(--beige);               /* Бежевый текст */
+    background-color: rgba(72, 41, 37, 0.7);
+    color: var(--beige);
 }
 
 input[type="text"]:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--light-beige);  /* Светло-бежевая рамка при фокусе */
+    border-color: var(--light-beige);
     box-shadow: 0 0 0 3px rgba(240, 234, 220, 0.15);
     background-color: rgba(72, 41, 37, 0.9);
 }
 
 input[type="text"]::placeholder,
 textarea::placeholder {
-    color: var(--medium-beige);        /* Средний бежевый для placeholder */
+    color: var(--medium-beige);
     opacity: 0.7;
 }
 
 textarea {
-        font-size: 1.2rem;
+    font-size: 1.2rem;
     min-height: 120px;
     resize: vertical;
     line-height: 1.5;
@@ -877,8 +828,8 @@ textarea {
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    background-color: rgba(72, 41, 37, 0.7); /* Тёмно-зелёный фон */
-    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    background-color: rgba(72, 41, 37, 0.7);
+    border: 2px solid var(--medium-beige);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -886,18 +837,18 @@ textarea {
 }
 
 .radio-option:hover {
-    border-color: var(--light-beige);  /* Светло-бежевая при наведении */
+    border-color: var(--light-beige);
     background-color: rgba(72, 41, 37, 0.9);
 }
 
 .radio-option input[type="radio"] {
-    display: none; /* Скрываем стандартный radio */
+    display: none;
 }
 
 .radio-custom {
     width: 22px;
     height: 22px;
-    border: 2px solid var(--beige);    /* Бежевая рамка */
+    border: 2px solid var(--beige);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -910,14 +861,14 @@ textarea {
     content: '';
     width: 10px;
     height: 10px;
-    background-color: var(--beige);    /* Бежевая точка */
+    background-color: var(--beige);
     border-radius: 50%;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom {
-    border-color: var(--light-beige);  /* Светло-бежевая рамка */
+    border-color: var(--light-beige);
     background-color: rgba(72, 41, 37, 0.9);
 }
 
@@ -926,14 +877,13 @@ textarea {
 }
 
 .radio-label {
-     font-size: 1.2rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    color: var(--beige);               /* Бежевый текст */
-    font-size: 1.05rem;
-     font-family: 'Cormorant Garamond', serif;
+    color: var(--beige);
+    font-family: 'Cormorant Garamond', serif;
 }
 
-/* ==================== CHECKBOX (множественный выбор) ==================== */
+/* ==================== CHECKBOX ==================== */
 .checkbox-group {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -945,26 +895,26 @@ textarea {
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    background-color: rgba(72, 41, 37, 0.7); /* Тёмно-зелёный фон */
-    border: 2px solid var(--medium-beige); /* Бежевая рамка */
+    background-color: rgba(72, 41, 37, 0.7);
+    border: 2px solid var(--medium-beige);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .checkbox-option:hover {
-    border-color: var(--light-beige);  /* Светло-бежевая при наведении */
+    border-color: var(--light-beige);
     background-color: rgba(72, 41, 37, 0.9);
 }
 
 .checkbox-option input[type="checkbox"] {
-    display: none; /* Скрываем стандартный checkbox */
+    display: none;
 }
 
 .checkbox-custom {
     width: 22px;
     height: 22px;
-    border: 2px solid var(--beige);    /* Бежевая рамка */
+    border: 2px solid var(--beige);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -975,7 +925,7 @@ textarea {
 
 .checkbox-custom:after {
     content: '✓';
-    color: var(--dark-green);          /* Тёмно-зелёная галочка */
+    color: var(--chocolate);
     font-size: 14px;
     font-weight: bold;
     opacity: 0;
@@ -983,8 +933,8 @@ textarea {
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
-    background-color: var(--beige);    /* Бежевый фон */
-    border-color: var(--light-beige);  /* Светло-бежевая рамка */
+    background-color: var(--beige);
+    border-color: var(--light-beige);
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-custom:after {
@@ -992,17 +942,16 @@ textarea {
 }
 
 .checkbox-label {
-
     font-weight: 500;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     font-size: 1.2rem;
 }
 
 /* ==================== КНОПКА ОТПРАВКИ ==================== */
- #rsvp-form .submit-btn,
-#rsvp-form button[type="submit"]   {
-    background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%); /* Бежевый градиент */
-    color: var(--dark-green);          /* Тёмно-зелёный текст */
+#rsvp-form .submit-btn,
+#rsvp-form button[type="submit"] {
+    background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%);
+    color: var(--chocolate);
     border: none;
     padding: 1.2rem 3rem;
     font-size: 1.2rem;
@@ -1027,12 +976,12 @@ textarea {
     background: linear-gradient(135deg, var(--light-beige) 0%, #f5f0e4 100%);
 }
 
- #rsvp-form .submit-btn:hover,
+#rsvp-form .submit-btn:active,
 #rsvp-form button[type="submit"]:active {
     transform: translateY(-1px);
 }
 
-/* ==================== ФИДБЭК И ПРИМЕЧАНИЯ ==================== */
+/* ==================== ФИДБЭК ==================== */
 .form-feedback {
     text-align: center;
     margin-top: 1.5rem;
@@ -1059,30 +1008,30 @@ textarea {
 .form-note {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: rgba(72, 41, 37, 0.9); /* Тёмно-зелёный фон */
+    background-color: rgba(72, 41, 37, 0.9);
     border-radius: 8px;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
     font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 10px;
-    border-left: 4px solid var(--beige); /* Бежевая акцентная линия */
+    border-left: 4px solid var(--beige);
 }
 
 .form-note i {
-    color: var(--beige);               /* Бежевая иконка */
+    color: var(--beige);
     flex-shrink: 0;
 }
 
 /* ==================== ФУТЕР ==================== */
 footer {
     text-align: center;
-     font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     padding: 3rem 1rem;
-    border-top: 1px solid var(--medium-beige); /* Бежевая граница */
+    border-top: 1px solid var(--medium-beige);
     margin-top: 2rem;
     font-size: 1.3rem;
-    color: var(--beige);               /* Бежевый текст */
+    color: var(--beige);
 }
 
 .footer-contacts {
@@ -1092,7 +1041,7 @@ footer {
 
 .footer-contacts i {
     margin-right: 0.5rem;
-    color: var(--beige);               /* Бежевые иконки */
+    color: var(--beige);
 }
 
 /* ==================== АДАПТИВНОСТЬ ==================== */
@@ -1117,8 +1066,6 @@ footer {
     .hero-date {
         font-size: 1.5rem;
     }
-
-  
     
     #timer { 
         gap: 0.8rem; 
@@ -1138,7 +1085,6 @@ footer {
         gap: 1.5rem;
     }
     
-    /* Тайминг адаптивность */
     .timing-section {
         padding: 2.5rem 1rem;
         margin: 2rem 0;
@@ -1183,7 +1129,6 @@ footer {
         margin-bottom: 2rem;
     }
     
-    /* Форма RSVP адаптивность */
     .rsvp-section {
         padding: 2.5rem 1rem;
         margin: 2rem 0;
@@ -1199,10 +1144,10 @@ footer {
     
     .radio-group,
     .checkbox-group {
-         display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
     }
     
     .radio-option,
@@ -1243,8 +1188,6 @@ footer {
         font-size: 0.7rem; 
     }
     
-   
-    
     .timeline-icon {
         font-size: 1.5rem;
     }
@@ -1271,11 +1214,12 @@ footer {
         font-size: 1rem;
         flex-wrap: wrap;
     }
+    
     .form-group label[required]::after {
-    content: " *";
-    color: #e74c3c;
-}
-   
+        content: " *";
+        color: #e74c3c;
+    }
+    
     .checkbox-label {
         font-size: 1rem;
     }
@@ -1295,7 +1239,6 @@ footer {
     animation: fadeIn 0.8s ease-out;
 }
 
-/* Задержки для последовательного появления */
 .countdown { animation-delay: 0.2s; }
 .details-grid > *:nth-child(1) { animation-delay: 0.4s; }
 .details-grid > *:nth-child(2) { animation-delay: 0.6s; }
