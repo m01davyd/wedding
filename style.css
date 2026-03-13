@@ -465,10 +465,11 @@ a:hover {
 }
 
 .timing-intro {
+    max-width: 900px;
     text-align: center;
     max-width: 600px;
     margin: 0 auto 3rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--beige);
     line-height: 1.6;
 }
@@ -522,7 +523,7 @@ a:hover {
     text-align: right;
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--beige);
     background-color: rgba(17, 8, 3, 0.9);
     padding: 5px 10px;
@@ -560,7 +561,7 @@ a:hover {
 }
 
 .timeline-content p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--beige);
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -570,7 +571,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--beige);
     background-color: rgba(216, 204, 180, 0.1);
     padding: 0.6rem 1rem;
@@ -645,7 +646,29 @@ a:hover {
     font-size: 1.8rem;
     font-weight: 100;
 }
+.full-width-photo-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin: 3rem 0;
+    overflow: hidden;
+}
 
+.full-width-photo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .full-width-photo {
+        height: 250px;
+    }
+}
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
     background-color: rgba(17, 8, 3,0.7);
@@ -843,6 +866,7 @@ a:hover {
 }
 
 .form-group label {
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -862,7 +886,7 @@ a:hover {
 input[type="text"],
 textarea {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     border: 2px solid var(--medium-beige);
     border-radius: 8px;
@@ -887,7 +911,7 @@ textarea::placeholder {
 }
 
 textarea {
-    font-size: 1.2rem;
+    font-size: 1.rem;
     min-height: 120px;
     resize: vertical;
     line-height: 1.5;
@@ -954,7 +978,7 @@ textarea {
 }
 
 .radio-label {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--beige);
     font-family: 'Cormorant Garamond', serif;
@@ -1021,7 +1045,7 @@ textarea {
 .checkbox-label {
     font-weight: 500;
     color: var(--beige);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* ==================== КНОПКА ОТПРАВКИ ==================== */
@@ -1031,7 +1055,7 @@ textarea {
     color: var(--chocolate);
     border: none;
     padding: 1.2rem 3rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
@@ -1070,7 +1094,7 @@ textarea {
 
 .form-feedback.success {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.5em;
     background-color: rgba(216, 204, 180, 0.15);
     color: var(--beige);
     border: 1px solid var(--medium-beige);
