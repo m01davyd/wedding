@@ -50,7 +50,7 @@ h1 {
 }
 
 h2 { 
-    font-size: 2.5rem; 
+    font-size: 5rem; 
     margin-top: 0rem; 
 }
 
@@ -87,7 +87,7 @@ a:hover {
 
 .hero-names {
     font-family: 'Atziluth-Script', 'Cormorant Garamond', serif;
-    font-size: 5rem;
+    font-size: 9rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
     margin: 1.5rem 0;
@@ -112,7 +112,7 @@ a:hover {
 
 .wedding-photo {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     height: auto;
     border-radius: 10px;
     transform: rotate(0deg);
@@ -124,7 +124,7 @@ a:hover {
     margin: 3rem auto;
     align-items: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     height: auto;
     border-radius: 10px;
 }
@@ -265,9 +265,9 @@ a:hover {
 }
 
 .hero-date.wedding-day {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 6rem;
-    letter-spacing: 2px;
+    font-family: 'Atziluth-Script','Cormorant Garamond', serif;
+    font-size: 8rem;
+    letter-spacing: 30px;
     margin-top: 1rem;
     color: var(--beige);
 }
@@ -417,7 +417,12 @@ a:hover {
     margin: 2rem 0;
   /*  border: 1px solid var(--medium-beige);*/
 }
-
+.count {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
 #timer {
     display: flex;
     justify-content: center;
@@ -425,6 +430,8 @@ a:hover {
     margin-top: 1.5rem;
     flex-wrap: wrap;
      background: rgbargba(17, 8, 3, 0.9);
+         align-content: flex-start;
+    flex-direction: column;
 }
 
 .timer-unit {
@@ -655,6 +662,7 @@ a:hover {
     font-weight: 100;
 }
 .full-width-photo-container {
+    margin-top: -15vw;
     width: 100vw;
        position: absolute;
     left: 50%;
@@ -664,6 +672,21 @@ a:hover {
     overflow: hidden;
 }
 
+.bits-one-container{
+    margin-top: -15vw;
+    width: 100vw;
+       position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+.bits-one-photo {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
 .full-width-photo {
     width: 100%;
     object-fit: cover;
@@ -679,6 +702,7 @@ a:hover {
 .dress-code-section {
     background-color: rgba(17, 8, 3,0.7);
     padding: 2rem 1rem;
+    padding-top: 28rem;
     margin: 3rem 0;
     border-radius: 15px;
     text-align: center;
@@ -1134,11 +1158,11 @@ textarea {
 /* ==================== ФУТЕР ==================== */
 footer {
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
     padding: 3rem 1rem;
     border-top: 1px solid var(--medium-beige);
     margin-top: 2rem;
-    font-size: 1.3rem;
+        font-family: 'Atziluth-Script','Cormorant Garamond', serif;
+    font-size: 3rem;
     color: var(--beige);
 }
 
