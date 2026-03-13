@@ -55,7 +55,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
 }
 
@@ -273,7 +273,7 @@ a:hover {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     letter-spacing: 1px;
@@ -417,6 +417,9 @@ a:hover {
     margin: 2rem 0;
   /*  border: 1px solid var(--medium-beige);*/
 }
+.photo-hands-container{
+    margin-top: 6rem;
+}
 .count {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -430,7 +433,7 @@ a:hover {
     margin-top: 1.5rem;
     flex-wrap: wrap;
      background: rgbargba(17, 8, 3, 0.9);
-         align-content: flex-start;
+         align-content: space-around;
     flex-direction: column;
 }
 
@@ -468,7 +471,7 @@ a:hover {
 .timing-section {
     background-color: rgba(17, 8, 3, 0.7);
     padding: 3rem 1rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
     border-radius: 15px;
    /* border: 1px solid var(--medium-beige);*/
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -664,7 +667,18 @@ a:hover {
 .full-width-photo-container {
     margin-top: -15vw;
     width: 100vw;
-       position: absolute;
+       position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+.full-width-photo-container-two {
+    margin-top: -15vw;
+    width: 100vw;
+     position: relative;
+    transform: scaleX(-1);
     left: 50%;
     right: 50%;
     margin-left: -50vw;
@@ -674,8 +688,8 @@ a:hover {
 
 .bits-one-container{
     margin-top: -15vw;
-    width: 100vw;
-       position: absolute;
+    width: 12vw;
+    position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
