@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Atziluth-Script';
+    src: 
+         url('Atziluth Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;  /* Оптимизация загрузки */
+}
 /* ==================== ИНВЕРТИРОВАННАЯ ЦВЕТОВАЯ ПАЛИТРА ==================== */
 :root {
     --chocolate: #110803;       /* Тёмный шоколадный - для фона */
@@ -30,7 +38,7 @@ body {
 
 /* Заголовки - БЕЖЕВЫЕ */
 h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Atziluth-Script','Cormorant Garamond', serif;
     color: var(--beige);
     text-align: center;
     margin-bottom: 1rem;
