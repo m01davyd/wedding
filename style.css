@@ -981,10 +981,13 @@ a:hover {
 }
 
 .telegram-description {
+     text-align: justify;        /* Выравнивание по ширине */
+    text-justify: inter-word;   /* Улучшенное выравнивание для веба */
+    hyphens: auto;
     margin-top: 110px;
         margin-bottom: 60px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: var(--beige);
     line-height: 1.6;
     max-width: 450px;
@@ -1049,7 +1052,7 @@ a:hover {
 
 .telegram-note {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--dark-beige);
     font-style: italic;
     margin-top: 10px;
