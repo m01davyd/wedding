@@ -123,6 +123,7 @@ a:hover {
     position: relative;
     display: inline-block;
 }
+
 .photo-hands {
     transform: rotate(90deg);
     margin: 3rem auto;
@@ -130,24 +131,30 @@ a:hover {
     width: 100%;
     max-width: 800px;
     height: auto;
-    border-radius: 15px;  /* Увеличили скругление */
-    
-    /* Рамка как в Telegram */
+    border-radius: 10px;
     border: 3px solid var(--medium-beige);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    
-    /* Добавляем внутреннюю тень для объема */
-    box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.4),
-        inset 0 0 0 1px rgba(216, 204, 180, 0.2);
-    
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
-.photo-hands:hover {
-    transform: rotate(90deg) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-} 
+/* Декоративная рамка как в Telegram */
+.photo-hands-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid var(--beige);
+    border-radius: 15px;  /* Чуть меньше, чем у фото */
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+    transform: rotate(90deg);  /* Учитываем поворот фото */
+    transform-origin: center;
+}
 
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
@@ -720,7 +727,21 @@ a:hover {
     margin-right: -50vw;
     overflow: hidden;
 }
+.beads-container {
+    position: relative;  /* Добавлено! */
+    width: 100%;
+    height: 0;  /* Не занимает места */
+    pointer-events: none;
+    z-index: 5;
+}
 
+/* Общие стили для всех бусин */
+.bead {
+    position: absolute;  /* Добавлено! Теперь top/right работают */
+    width: 250px;
+    max-width: 20vw;
+    overflow: hidden;
+}
 /* Для точной подстройки под ваше фото */
 .bead-1 {
     top: 80px;        /* Отодвиньте выше/ниже */
