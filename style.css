@@ -911,6 +911,7 @@ a:hover {
 }
 
 .telegram-container {
+    margin-top: 50px;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -955,7 +956,7 @@ a:hover {
 }
 
 .telegram-description {
-    margin-top: 140px;
+    margin-top: 110px;
         margin-bottom: 60px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
