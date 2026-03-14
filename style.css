@@ -133,10 +133,15 @@ a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
     display: block;
+    
+    position: relative;
+    z-index: 1;  /* Фото под рамкой в спокойном состоянии */
 }
 
 .photo-hands:hover {
     transform: scale(1.02) translateX(3px);
+    
+    z-index: 3;  /* Фото выше рамки при наведении */
 }
 
 /* Рамка как в Telegram */
@@ -151,13 +156,14 @@ a:hover {
     border-radius: 15px;
     opacity: 0.3;
     pointer-events: none;
-    z-index: 1;
+     z-index: 2;  /* Рамка выше фото в спокойном состоянии */
 }
 
 /* Если хочешь, чтобы рамка тоже двигалась */
 .photo-hands-container:hover::before {
    opacity: 0.3;  /* Оставляем ту же прозрачность */
     transform: none;  /* Убираем возможные трансформации */
+
 }
 
 /* Для мобильных корректируем рамку */
