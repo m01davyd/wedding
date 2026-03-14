@@ -139,23 +139,21 @@ a:hover {
     z-index: 2;
 }
 
-/* Декоративная рамка как в Telegram */
-.photo-hands-container::before {
+/* Рамка применяется к фото, а не к контейнеру */
+.photo-hands::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: 10px;
-    bottom: 10px;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
     border: 2px solid var(--beige);
-    border-radius: 15px;  /* Чуть меньше, чем у фото */
+    border-radius: 20px;
     opacity: 0.3;
     pointer-events: none;
     z-index: 1;
-    transform: rotate(90deg);  /* Учитываем поворот фото */
-    transform-origin: center;
+    transform: rotate(0deg);  /* Не поворачиваем рамку отдельно */
 }
-
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
     .photo-hands-container::before {
