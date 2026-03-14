@@ -505,7 +505,7 @@ a:hover {
 .timing-section {
     background-color: rgba(17, 8, 3, 0.7);
     padding: 3rem 1rem;
-    padding-top: 15rem;
+    padding-top: 5rem;
     margin: 2rem 0;
     border-radius: 15px;
    /* border: 1px solid var(--medium-beige);*/
@@ -721,7 +721,41 @@ a:hover {
     overflow: hidden;
 }
 
-.bits-one-container{
+/* Для точной подстройки под ваше фото */
+.bead-1 {
+    top: 80px;        /* Отодвиньте выше/ниже */
+    right: -40px;     /* Чем меньше отрицательное число, тем меньше обрезано */
+    width: 260px;
+    transform: rotate(8deg);
+}
+
+.bead-2 {
+    top: 30px;
+    right: 180px;
+    width: 210px;
+    transform: rotate(-5deg);
+}
+
+.bead-3 {
+    top: 180px;
+    left: 50px;
+    width: 230px;
+    transform: rotate(-10deg);
+}
+
+/* Настройка обрезки через clip-path */
+.bead-1 .bead-img {
+    clip-path: inset(0 15% 0 0);  /* Меньше значение = меньше обрезки */
+}
+
+.bead-2 .bead-img {
+    clip-path: inset(5% 0 5% 5%);
+}
+
+.bead-3 .bead-img {
+    clip-path: inset(10% 15% 10% 0);
+}
+.ainer{
     margin-top: -15vw;
     width: 12vw;
     position: relative;
@@ -943,15 +977,13 @@ a:hover {
     width: 800px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 0.5fr 0.7fr;
+    grid-template-columns: 0.6fr 0.7fr;
     gap: 3rem;
     align-items: center;
 }
 
 .telegram-content {
-        height: 550px;
     text-align: center;
-    padding-right: 20px;
 }
 
 .telegram-icon {
@@ -990,7 +1022,7 @@ a:hover {
     margin-top: 80px;
         margin-bottom: 60px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: var(--beige);
     line-height: 1.6;
     max-width: 450px;
