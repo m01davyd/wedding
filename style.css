@@ -124,7 +124,7 @@ a:hover {
     display: inline-block;
 }
 
-.photo-hands {
+.photo-han.photo-hands {
     transform: rotate(90deg);
     margin: 3rem auto;
     align-items: center;
@@ -132,35 +132,38 @@ a:hover {
     max-width: 800px;
     height: auto;
     border-radius: 10px;
-    border: 3px solid var(--medium-beige);
+    /* Убрана основная рамка border: 3px solid var(--medium-beige); */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
 }
 
-/* Рамка применяется к фото, а не к контейнеру */
-.photo-hands::before {
+/* Тонкая декоративная рамка как в Telegram */
+.photo-hands-container::before {
     content: '';
     position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    border: 2px solid var(--beige);
-    border-radius: 20px;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--beige);  /* Тоньше - 1px вместо 2px */
+    border-radius: 20px;  /* Немного меньше скругление под размер фото */
     opacity: 0.3;
     pointer-events: none;
     z-index: 1;
-    transform: rotate(0deg);  /* Не поворачиваем рамку отдельно */
+    transform: rotate(90deg);  /* Учитываем поворот фото */
+    transform-origin: center;
 }
-/* Для мобильных корректируем рамку */
+
+/* Для мобильных устройств */
 @media (max-width: 768px) {
     .photo-hands-container::before {
-        top: -5px;
-        left: -5px;
-        right: 5px;
-        bottom: 5px;
+        top: -8px;
+        left: -8px;
+        right: 8px;
+        bottom: 8px;
+        border-width: 0.5px;
     }
 }
 .hands-section {
