@@ -471,6 +471,7 @@ a:hover {
 .timing-section {
     background-color: rgba(17, 8, 3, 0.7);
     padding: 3rem 1rem;
+    padding-top: 15rem;
     margin: 2rem 0;
     border-radius: 15px;
    /* border: 1px solid var(--medium-beige);*/
@@ -716,7 +717,7 @@ a:hover {
 .dress-code-section {
     background-color: rgba(17, 8, 3,0.7);
     padding: 2rem 1rem;
-    padding-top: 28rem;
+    padding-top: 2rem;
     margin: 3rem 0;
     border-radius: 15px;
     text-align: center;
@@ -1131,6 +1132,7 @@ textarea {
     text-align: center;
     margin-top: 1.5rem;
     padding: 1rem;
+    
     border-radius: 8px;
     font-weight: 500;
     display: none;
@@ -1176,7 +1178,7 @@ footer {
     border-top: 1px solid var(--medium-beige);
     margin-top: 2rem;
         font-family: 'Atziluth-Script','Cormorant Garamond', serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--beige);
 }
 
