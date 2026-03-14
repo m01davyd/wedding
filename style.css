@@ -136,7 +136,7 @@ a:hover {
 }
 
 .photo-hands:hover {
-    transform: scale(1.1) translateX(5px);
+    transform: scale(1.02) translateX(3px);
 }
 
 /* Рамка как в Telegram */
@@ -152,13 +152,12 @@ a:hover {
     opacity: 0.3;
     pointer-events: none;
     z-index: 1;
-    transition: all 0.3s ease;
 }
 
 /* Если хочешь, чтобы рамка тоже двигалась */
 .photo-hands-container:hover::before {
-    transform: scale(1.1) translateX(5px);
-    opacity: 0.5;
+   opacity: 0.3;  /* Оставляем ту же прозрачность */
+    transform: none;  /* Убираем возможные трансформации */
 }
 
 /* Для мобильных корректируем рамку */
