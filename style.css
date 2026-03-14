@@ -119,6 +119,8 @@ a:hover {
     margin: 0rem auto;
 }
 
+
+
 .photo-hands {
         transform: rotate(90deg);
     margin: 3rem auto;
@@ -419,6 +421,8 @@ a:hover {
 }
 .photo-hands-container{
     margin-top: 6rem;
+        position: relative;
+    left: 38%;
 }
 .count {
     display: grid;
@@ -427,6 +431,8 @@ a:hover {
     margin-top: 2rem;
 }
 #timer {
+    
+        max-width: 400px;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -895,7 +901,227 @@ a:hover {
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
+/* ==================== БЛОК TELEGRAM С ФОТО ==================== */
+.telegram-section {
+    background-color: rgba(17, 8, 3, 0.7);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    border-radius: 20px;
+    border: 1px solid var(--medium-beige);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
 
+.telegram-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;  /* Контент слева, фото справа */
+    gap: 3rem;
+    align-items: center;
+}
+
+.telegram-content {
+    text-align: center;
+    padding-right: 20px;
+}
+
+.telegram-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #b5a782, #d8ccb4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #110803;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: telegramPulse 2s infinite;
+}
+
+@keyframes telegramPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.telegram-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--light-beige);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.telegram-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--beige);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.telegram-details {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.detail-badge {
+    background: rgba(181, 167, 130, 0.15);
+    border: 1px solid var(--medium-beige);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--beige);
+    backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+.detail-badge:hover {
+    background: rgba(181, 167, 130, 0.3);
+    transform: translateY(-2px);
+}
+
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #b5a782, #c4baa4);
+    color: #110803;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 20px 0 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(181, 167, 130, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.telegram-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(181, 167, 130, 0.5);
+    background: linear-gradient(135deg, #c4baa4, #d8ccb4);
+}
+
+.telegram-button i {
+    font-size: 1.5rem;
+}
+
+.telegram-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--dark-beige);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Фото справа */
+.telegram-photo {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    justify-self: end;  /* Прижимаем фото к правому краю */
+}
+
+.telegram-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--medium-beige);
+    transition: transform 0.3s ease;
+}
+
+.telegram-img:hover {
+    transform: scale(1.02);
+}
+
+/* Декоративная рамка для фото */
+.telegram-photo::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid var(--beige);
+    border-radius: 25px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .telegram-container {
+        grid-template-columns: 1fr;  /* В одну колонку на планшетах */
+        gap: 2rem;
+    }
+    
+    .telegram-photo {
+        justify-self: center;
+        max-width: 350px;
+        order: -1;  /* Фото сверху на мобильных */
+    }
+}
+
+@media (max-width: 768px) {
+    .telegram-section {
+        padding: 2rem 1rem;
+    }
+    
+    .telegram-content h3 {
+        font-size: 2rem;
+    }
+    
+    .telegram-description {
+        font-size: 1.1rem;
+    }
+    
+    .telegram-button {
+        padding: 14px 25px;
+        font-size: 1.1rem;
+    }
+    
+    .detail-badge {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+    
+    .telegram-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .telegram-photo {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .telegram-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .detail-badge {
+        width: fit-content;
+    }
+}
 /* ==================== ФОРМА RSVP ==================== */
 #rsvp-form {
     background: rgba(17, 8, 3, 0.9);
