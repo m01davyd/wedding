@@ -1118,7 +1118,7 @@ a:hover {
 
 .telegram-note {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--dark-beige);
     font-style: italic;
     margin-top: 10px;
@@ -1496,11 +1496,11 @@ textarea {
 /* ==================== ФУТЕР ==================== */
 footer {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     border-top: 1px solid var(--medium-beige);
     margin-top: 2rem;
         font-family: 'Atziluth-Script','Cormorant Garamond', serif;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--beige);
 }
 
