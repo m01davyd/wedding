@@ -800,9 +800,9 @@ a:hover {
 
 /* Для точной подстройки под ваше фото */
 .bead-1-time {
-    top: -250px;
-    right: -270px;
-    width: 105px;
+      top: 200px;
+    right: -300px;
+    width: 150px;
     transform: rotate(0deg);
 }
 
@@ -814,8 +814,8 @@ a:hover {
 }
 
 .bead-3-time {
-    top: 10px;
-    left: -190px;
+  top: -100px;
+    left: -150px;
     width: 230px;
     transform: rotate(-10deg);
 }
@@ -832,7 +832,7 @@ a:hover {
 
 .bead-3-time .bead-img {
     clip-path: inset(10% 15% 10% 0);
-        width: 170px;
+            width: 250px;
 }
 
 .ainer{
@@ -1765,3 +1765,423 @@ footer {
 #rsvp-form { animation-delay: 1s; }
 .timing-section { animation-delay: 0.5s; }
 .dress-code-section { animation-delay: 0.7s; }
+
+/* ==================== ДОПОЛНИТЕЛЬНАЯ АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ ==================== */
+
+/* Для планшетов (до 1024px) */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 3.5rem;  /* Уменьшаем с 5rem */
+    }
+    
+    h3 {
+        font-size: 2.5rem;  /* Уменьшаем с 4rem */
+    }
+    
+    .hero-names {
+        font-size: 6rem;  /* Уменьшаем с 9rem */
+    }
+    
+    .hero-date.wedding-day {
+        font-size: 5rem;  /* Уменьшаем с 8rem */
+        letter-spacing: 15px;
+    }
+    
+    .count {
+        grid-template-columns: 1fr;  /* В одну колонку */
+    }
+    
+    .photo-hands-container {
+        left: 0 !important;  /* Убираем смещение */
+        margin: 0 auto;
+    }
+    
+    #timer {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .bead-1, .bead-2, .bead-3,
+    .bead-1-time, .bead-2-time, .bead-3-time {
+        display: none;  /* Прячем бусины на планшетах, слишком много */
+    }
+    
+    /* Показываем только одну-две бусины */
+    .bead-1 {
+        display: block;
+        top: -100px;
+        right: -50px;
+        width: 80px;
+    }
+    
+    .bead-3-time {
+        display: block;
+        top: -50px;
+        left: -50px;
+        width: 100px;
+    }
+}
+
+/* Для мобильных (до 768px) - расширяем существующий медиазапрос */
+@media (max-width: 768px) {
+    /* Общие настройки */
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.8rem !important;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    /* Hero секция */
+    .hero-names {
+        font-size: 2.5rem !important;
+        letter-spacing: 0.2rem;
+        word-break: break-word;
+    }
+    
+    .hero-date.wedding-day {
+        font-size: 2.5rem !important;
+        letter-spacing: 5px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Календарь */
+    .week-calendar {
+        padding: 0.8rem;
+    }
+    
+    .week-grid {
+        gap: 5px;
+    }
+    
+    .month-label {
+        font-size: 1.5rem;
+    }
+    
+    .day-name {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem;
+        height: auto;
+    }
+    
+    .day-number {
+        font-size: 1.2rem !important;
+        height: 40px;
+    }
+    
+    .weekday {
+        min-height: 80px;
+        padding: 0.5rem 0.2rem;
+    }
+    
+    .heart-shape {
+        width: 50px;
+        height: 45px;
+    }
+    
+    .heart-shape::before,
+    .heart-shape::after {
+        width: 25px;
+        height: 40px;
+    }
+    
+    .heart-shape::before {
+        left: 25px;
+    }
+    
+    .heart-text {
+        font-size: 1.2rem;
+    }
+    
+    /* Таймер */
+    .countdown {
+        padding: 2rem 0.5rem;
+    }
+    
+    .photo-hands-container {
+        left: 0 !important;
+        max-width: 280px;
+    }
+    
+    #timer {
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+    
+    .timer-unit {
+        min-width: 60px;
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .timer-number {
+        font-size: 1.5rem;
+    }
+    
+    .timer-label {
+        font-size: 0.6rem;
+    }
+    
+    /* Детали события */
+    .details-grid {
+        gap: 1rem;
+    }
+    
+    .detail-card {
+        padding: 1rem;
+    }
+    
+    .detail-card p,
+    .detail-card strong {
+        font-size: 1rem !important;
+    }
+    
+    .icon {
+        font-size: 2rem;
+    }
+    
+    /* Таймлайн */
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline-time {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content p {
+        font-size: 1rem;
+    }
+    
+    .timeline-location {
+        font-size: 0.9rem;
+    }
+    
+    /* Telegram секция */
+    .telegram-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .telegram-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .telegram-description {
+        font-size: 1rem;
+        margin: 20px auto;
+    }
+    
+    .telegram-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .telegram-photo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .detail-badge {
+        padding: 5px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Форма RSVP */
+    #rsvp-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group label {
+        font-size: 1.1rem;
+    }
+    
+    input[type="text"],
+    textarea {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Цветовая палитра */
+    .color-palette {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .color-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .color-name {
+        font-size: 0.8rem;
+    }
+    
+    /* Футер */
+    footer {
+        font-size: 1.5rem;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .footer-contacts {
+        font-size: 0.9rem;
+    }
+    
+    /* Бусины - скрываем большинство на мобильных */
+    .bead-1, .bead-2, .bead-3,
+    .bead-1-time, .bead-2-time, .bead-3-time {
+        display: none;
+    }
+    
+    /* Оставляем только одну маленькую бусину */
+    .bead-1-time {
+        display: block;
+        top: 50px;
+        right: -30px;
+        width: 60px;
+    }
+    
+    .bead-1-time .bead-img {
+        width: 60px;
+        clip-path: inset(0 10% 0 0);
+    }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-names {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-date.wedding-day {
+        font-size: 2rem !important;
+        letter-spacing: 3px;
+    }
+    
+    .week-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+    }
+    
+    .day-name {
+        font-size: 0.8rem !important;
+    }
+    
+    .day-number {
+        font-size: 1rem !important;
+    }
+    
+    .heart-shape {
+        width: 40px;
+        height: 35px;
+    }
+    
+    .heart-shape::before,
+    .heart-shape::after {
+        width: 20px;
+        height: 32px;
+    }
+    
+    .heart-shape::before {
+        left: 20px;
+    }
+    
+    .heart-text {
+        font-size: 1rem;
+    }
+    
+    .timer-unit {
+        min-width: 50px;
+        padding: 0.5rem 0.2rem;
+    }
+    
+    .timer-number {
+        font-size: 1.2rem;
+    }
+    
+    .timer-label {
+        font-size: 0.5rem;
+    }
+    
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .color-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Скрываем все бусины на очень маленьких экранах */
+    .bead-1-time {
+        display: none;
+    }
+}
+
+/* Исправление проблем с позиционированием */
+.photo-hands-container {
+    left: 0;  /* Убираем 38% - это ломало верстку */
+    margin: 0 auto;
+}
+
+/* Фикс для полной ширины на мобильных */
+.full-width-photo-container,
+.full-width-photo-container-two {
+    margin-top: 0;  /* Убираем отрицательный margin */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+@media (max-width: 768px) {
+    .full-width-photo-container,
+    .full-width-photo-container-two {
+        margin-top: 1rem;
+    }
+    
+    .full-width-photo {
+        height: 200px;  /* Меньше на мобильных */
+    }
+}
