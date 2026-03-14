@@ -119,19 +119,28 @@ a:hover {
     margin: 0rem auto;
 }
 
-
+.photo-hands-container {
+    position: relative;
+    display: inline-block;
+}
 
 .photo-hands {
-        transform: rotate(90deg);
+    transform: rotate(90deg);
     margin: 3rem auto;
     align-items: center;
     width: 100%;
     max-width: 800px;
     height: auto;
     border-radius: 10px;
+    border: 3px solid var(--medium-beige);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
-.photo-hands::before {
+/* Декоративная рамка как в Telegram */
+.photo-hands-container::before {
     content: '';
     position: absolute;
     top: -10px;
@@ -139,21 +148,22 @@ a:hover {
     right: 10px;
     bottom: 10px;
     border: 2px solid var(--beige);
-    border-radius: 25px;
+    border-radius: 15px;  /* Чуть меньше, чем у фото */
     opacity: 0.3;
     pointer-events: none;
+    z-index: 1;
+    transform: rotate(90deg);  /* Учитываем поворот фото */
+    transform-origin: center;
 }
-.photo-hands::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: 10px;
-    bottom: 10px;
-    border: 2px solid var(--beige);
-    border-radius: 25px;
-    opacity: 0.3;
-    pointer-events: none;
+
+/* Для мобильных корректируем рамку */
+@media (max-width: 768px) {
+    .photo-hands-container::before {
+        top: -5px;
+        left: -5px;
+        right: 5px;
+        bottom: 5px;
+    }
 }
 .hands-section {
     background-color: rgba(17, 8, 3, 0.7);
@@ -940,7 +950,7 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 0.8fr;  /* Контент слева, фото справа */
+    grid-template-columns: 0.5fr 0.7fr;
     gap: 3rem;
     align-items: center;
 }
@@ -984,7 +994,7 @@ a:hover {
      text-align: justify;        /* Выравнивание по ширине */
     text-justify: inter-word;   /* Улучшенное выравнивание для веба */
     hyphens: auto;
-    margin-top: 110px;
+    margin-top: 80px;
         margin-bottom: 60px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
