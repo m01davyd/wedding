@@ -907,8 +907,6 @@ a:hover {
     padding: 3rem 2rem;
     margin: 3rem 0;
     border-radius: 20px;
-    border: 1px solid var(--medium-beige);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
 
@@ -922,6 +920,7 @@ a:hover {
 }
 
 .telegram-content {
+        height: 550px;
     text-align: center;
     padding-right: 20px;
 }
@@ -956,13 +955,13 @@ a:hover {
 }
 
 .telegram-description {
-    
+    margin-top: 140px;
+        margin-bottom: 60px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
     color: var(--beige);
     line-height: 1.6;
-    margin-bottom: 25px;
-    max-width: 550px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1024,7 +1023,7 @@ a:hover {
 
 .telegram-note {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--dark-beige);
     font-style: italic;
     margin-top: 10px;
