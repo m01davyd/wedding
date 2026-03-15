@@ -168,15 +168,8 @@ a:hover {
 
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
-        .timing-note {
-        margin-top: 2rem;
-        padding: 1.2rem;
-        font-size: 0.9rem;
-    }
 
-    .timing-note p {
-        font-size: 0.9rem;
-    }
+    
     /* Общие настройки */
     h1 {
         font-size: 2rem !important;
@@ -304,34 +297,12 @@ a:hover {
         font-size: 2rem;
     }
     
-    /* Таймлайн */
-    .timeline {
-        padding-left: 20px;
-    }
+  
     
-    .timeline-time {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.8rem;
-    }
     
-    .timeline-content {
-             background: transparent;
-        padding: 0;
-        border-left: none;
-        box-shadow: none;
-        width: 100%;
-    }
     
-    .timeline-content h3 {
-        font-size: 1.3rem;
-    }
     
-    .timeline-content p {
-       font-size: 1rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.5;
-    }
-    
+   
     .timeline-location {
          font-size: 0.95rem;
         padding: 0.5rem 0.75rem;
@@ -493,57 +464,14 @@ a:hover {
         grid-template-columns: 1fr; 
         gap: 1.5rem;
     }
+   
     
-   .timing-section {
-        padding: 2rem 1rem;
-        margin: 1.5rem 0;
-    }
-
-        .timing-intro {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        padding: 0 0.5rem;
-    }
+ 
+  
     
- .timeline {
-        padding-left: 0; /* Убираем большой отступ */
-    }
-   .timeline:before {
-        display: none;
-    }
     
-    .timeline-item:before {
-        display: none;
-    }
-    
-    .timeline-item {
- display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        padding-left: 0;
-        position: relative;
-        background: rgba(17, 8, 3, 0.6);
-        border-radius: 16px;
-        padding: 1.2rem;
-        border: 1px solid var(--medium-beige);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    
-    .timeline-content {
-        background: transparent;
-        padding: 0;
-        border-left: none;
-        box-shadow: none;
-        width: 100%;
-    }
-     .timeline-content:hover {
-        transform: none;
-        box-shadow: none;
-    }
-    .timeline-content h3 {
-        font-size: 1.6rem;
-    }
+ 
+   
    
     
     .rsvp-section {
@@ -722,34 +650,9 @@ a:hover {
         max-width: 300px;  /* Уменьшить фото */
         margin: 1rem auto;
     }
-     .timeline-content p {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-    }
-    
-    .timeline-location {
-        font-size: 0.95rem;
-        padding: 0.5rem 0.75rem;
-        background: rgba(216, 204, 180, 0.08);
-        border-left: 2px solid var(--beige);
-    }
-      .timeline-location i {
-        font-size: 0.9rem;
-    }
- .timeline-time {
-        position: static;
-        width: auto;
-        text-align: left;
-        background: transparent;
-        border: none;
-        padding: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--light-beige);
-        margin-bottom: 0.5rem;
-        display: inline-block;
-        border-left: 3px solid var(--beige);
-        padding-left: 0.75rem;
-    }
+
+     
+
 
     .full-width-photo {
         height: 250px;
@@ -1413,26 +1316,7 @@ a:hover {
 
 /* Адаптивность для очень маленьких экранов */
 @media (max-width: 480px) {
-     .timeline-item {
-        padding: 1rem;
-    }
-
-    .timeline-time {
-        font-size: 1rem;
-    }
-
-    .timeline-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.9rem;
-    }
-
-    .timeline-location {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
-    }
+  
     .color-palette {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -2227,6 +2111,30 @@ footer {
     /* Скрываем все бусины на очень маленьких экранах */
     .bead-1-time {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline:before {
+        left: 15px;
+        width: 2px;
+    }
+
+    .timeline-item {
+        padding-left: 15px;
+        margin-bottom: 1.8rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
     }
 }
 
