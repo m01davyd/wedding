@@ -1699,7 +1699,7 @@ textarea::placeholder {
 }
 
 textarea {
-    font-size: 1.rem;
+    font-size: 1.4rem;
     min-height: 120px;
     resize: vertical;
     line-height: 1.5;
@@ -2277,7 +2277,7 @@ footer {
 
 @media (max-width: 480px) {
 .hero-names {
-        font-size: 2.8rem!important;;
+        font-size: 3.2rem!important;;
 
 }
     .hero-date.wedding-day {
@@ -2390,7 +2390,6 @@ footer {
         font-size: 1rem;
     }
 .telegram-button {
-    padding: 0rem;
      font-size: 1.1rem;
 }
 .footer-p-p {
@@ -2406,7 +2405,7 @@ footer {
 }
 
 .textarea {
-   font-size: 1.2rem; 
+   font-size: 1.2rem!important; 
 }
 #rsvp-form .submit-btn,
 #rsvp-form button[type="submit"] {
@@ -2426,4 +2425,45 @@ footer {
         .timeline-content h3 {
         font-size: 1.3rem;
     }
+    .timeline-time {
+        left:-50px;
+    }
+    .radio-label,
+    .checkbox-label {
+        font-size: 1.2rem;
+    }
+        .timing-section h2 {
+        font-size: 2.8rem !important;
+        }
+            .color-palette {
+               grid-template-columns: repeat(5, 1fr);}
+
+    @media (max-width: 480px) {
+    .bead-1 {
+        top: -50px;
+        right: -40px;
+        width: 50px;
+    }
+    
+    .bead-2 {
+        top: 60px;
+        right: -35px;
+        width: 45px;
+        transform: rotate(-5deg);
+        display: block;  /* Показываем */
+    }
+    
+    .bead-3 {
+        top: 80px;
+        left: -40px;
+        width: 55px;
+        transform: rotate(-8deg);
+    }
+    
+    .bead-1 .bead-img,
+    .bead-2 .bead-img,
+    .bead-3 .bead-img {
+        width: 100%;
+    }
+}
 }
