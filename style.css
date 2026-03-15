@@ -1316,6 +1316,34 @@ a:hover {
 
 /* Адаптивность для очень маленьких экранов */
 @media (max-width: 480px) {
+    .timeline-time {
+        left: -35px;        /* Ещё немного смещаем */
+        width: 45px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        padding-left: 15px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .timing-section h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .timing-intro {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
   
     .color-palette {
         grid-template-columns: repeat(2, 1fr);
@@ -2116,7 +2144,7 @@ footer {
 
 @media (max-width: 768px) {
     .timeline {
-        padding-left: 25px;
+        padding-left: 30px;
     }
 
     .timeline:before {
@@ -2125,9 +2153,76 @@ footer {
     }
 
     .timeline-item {
-        padding-left: 15px;
+        padding-left: 20px;
         margin-bottom: 1.8rem;
     }
+
+.timeline-item:before {
+        left: 9px;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+  .timing-section h2 {
+        font-size: 2.2rem !important;  /* Крупнее */
+        margin-bottom: 0.5rem;
+    }
+
+    .timing-intro {
+        font-size: 1.4rem !important;  /* Крупнее */
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Заголовки событий (например, "Сбор гостей") — нормальные */
+    .timeline-content h3 {
+        font-size: 1.3rem;
+        margin: 0 0 0.5rem 0;
+        text-align: left;
+        color: var(--light-beige);
+    }
+
+    /* Описание событий */
+    .timeline-content p {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+
+    /* Локация */
+    .timeline-location {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* Важное примечание */
+    .timing-note {
+        margin-top: 2rem;
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .timing-note p {
+        font-size: 0.9rem;
+    }
+
+    /* ✅ ВРЕМЯ — ПРАВЕЕ И ЧИТАЕМОЕ */
+    .timeline-time {
+        position: absolute;         /* Оставляем абсолютное позиционирование */
+        left: -40px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
+        top: 0;
+        width: 50px;                /* Чуть шире, чтобы текст вмещался */
+        text-align: right;
+        font-size: 1rem;
+        background: transparent;    /* Убрал фон, чтобы не перекрывал */
+        border: none;
+        padding: 0;
+        color: var(--light-beige);
+        font-weight: 600;
+        white-space: nowrap;        /* Запрещаем перенос строки */
+    }
+
 
     .timeline-content h3 {
         font-size: 1.3rem;
