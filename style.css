@@ -2013,7 +2013,7 @@ footer {
     }
     
     .hero-names {
-        font-size: 3rem;  /* Уменьшаем с 9rem */
+        font-size: 3rem!important;  /* Уменьшаем с 9rem */
     }
     
     .hero-date.wedding-day {
