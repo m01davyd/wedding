@@ -1938,14 +1938,7 @@ footer {
         min-width: 60px; 
         padding: 0.8rem; 
     }
-    
-    .timer-number { 
-        font-size: 1.8rem; 
-    }
-    
-    .timer-label { 
-        font-size: 0.7rem; 
-    }
+  
     
      .timeline-icon {
         font-size: 1.4rem;
@@ -2453,13 +2446,14 @@ footer {
     }
 
 .bead-1-time {
-     top: -90px;
+        top: 10px;
         right: -10px;
         width: 50px;
+        display: block;
 }
 
 .bead-2-time {
- top: 10px;
+        top: 50px;
         right: -45px;
         width: 75px;
         transform: rotate(-5deg);
@@ -2467,11 +2461,20 @@ footer {
 }
 
 .bead-3-time {
- display: block;
+        display: block;
         top: -30px;
-            left: 250px;
+        left: 10px;
             width: 95px;
         transform: rotate(-8deg);
 }
+.beads-container-time {
+        margin-bottom: 5rem;
+}
 
+    .timer-label { 
+                font-size: 0.6rem;
+    }
+    .textarea {
+    font-size: 1.2rem;
+    }
 }
