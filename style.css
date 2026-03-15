@@ -415,24 +415,7 @@ a:hover {
         font-size: 0.9rem;
     }
     
-    /* Бусины - скрываем большинство на мобильных */
-    .bead-1, .bead-2, .bead-3,
-    .bead-1-time, .bead-2-time, .bead-3-time {
-        display: none;
-    }
     
-    /* Оставляем только одну маленькую бусину */
-    .bead-1-time {
-        display: block;
-        top: 50px;
-        right: -30px;
-        width: 60px;
-    }
-    
-    .bead-1-time .bead-img {
-        width: 60px;
-        clip-path: inset(0 10% 0 0);
-    }
     body {
         padding: 10px;
     }
@@ -2366,7 +2349,7 @@ footer {
         margin-bottom: 0rem;
     }
 
-      .timing-section {  padding-top: 0rem; 
+      .timing-section {  padding-top: 3rem; 
     margin: 2rem 0;
       }
       .timing-intro p {
@@ -2438,32 +2421,57 @@ footer {
             .color-palette {
                grid-template-columns: repeat(5, 1fr);}
 
-    @media (max-width: 480px) {
     .bead-1 {
-        top: -50px;
-        right: -40px;
+        top: -90px;
+        right: -10px;
         width: 50px;
     }
     
     .bead-2 {
-        top: 60px;
-        right: -35px;
-        width: 45px;
+        top: 10px;
+        right: -45px;
+        width: 75px;
         transform: rotate(-5deg);
         display: block;  /* Показываем */
     }
     
     .bead-3 {
-        top: 80px;
-        left: -40px;
-        width: 55px;
+        display: block;
+        top: -30px;
+            left: 250px;
+            width: 95px;
         transform: rotate(-8deg);
     }
     
     .bead-1 .bead-img,
     .bead-2 .bead-img,
-    .bead-3 .bead-img {
+    .bead-3 .bead-img,
+    .bead-1-time .bead-img,
+    .bead-2-time .bead-img,
+    .bead-3-time .bead-img {
         width: 100%;
     }
+
+.bead-1-time {
+     top: -90px;
+        right: -10px;
+        width: 50px;
 }
+
+.bead-2-time {
+ top: 10px;
+        right: -45px;
+        width: 75px;
+        transform: rotate(-5deg);
+        display: block;  /* Показываем */
+}
+
+.bead-3-time {
+ display: block;
+        top: -30px;
+            left: 250px;
+            width: 95px;
+        transform: rotate(-8deg);
+}
+
 }
