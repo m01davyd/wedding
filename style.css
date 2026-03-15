@@ -2032,7 +2032,8 @@ footer {
         margin: 0 auto;
     }
        #timer {
-        grid-template-columns: repeat(2, 1fr);  /* На маленьких 2 колонки */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  /* На маленьких 2 колонки */
         gap: 0.3rem;
     }
  
@@ -2043,19 +2044,9 @@ footer {
     }
     
     /* Показываем только одну-две бусины */
-    .bead-1 {
-        display: block;
-        top: -100px;
-        right: -50px;
-        width: 80px;
-    }
     
-    .bead-3-time {
-        display: block;
-        top: -50px;
-        left: -50px;
-        width: 100px;
-    }
+    
+    
 }
 
 
@@ -2399,7 +2390,7 @@ footer {
         font-size: 1.1rem;
     }
         .timeline-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem !important
     }
     .timeline-time {
         left:-50px;
@@ -2415,6 +2406,7 @@ footer {
                grid-template-columns: repeat(5, 1fr);}
 
     .bead-1 {
+        display: block;
         top: -90px;
         right: -10px;
         width: 50px;
