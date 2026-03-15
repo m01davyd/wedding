@@ -35,6 +35,18 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+.footer-p{
+    font-size: 3rem;
+}
+.footer-p-p{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+.fas fa-phone{
+   margin-right: 0.5rem;
+   font-size: 2rem;
+}
+
 
 /* Заголовки - БЕЖЕВЫЕ */
 h1, h2, h3, h4 {
@@ -168,7 +180,17 @@ a:hover {
 
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
-
+.footer-p{
+    font-size: 2rem;
+}
+.footer-p-p{
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+}
+.fas fa-phone{
+   margin-right: 0.5rem;
+   font-size: 1.4rem;
+}
     
     /* Общие настройки */
     h1 {
@@ -2212,7 +2234,7 @@ footer {
     /* ✅ ВРЕМЯ — ПРАВЕЕ И ЧИТАЕМОЕ */
     .timeline-time {
         position: absolute;         /* Оставляем абсолютное позиционирование */
-        left: -60px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
+        left: -40px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
         top: 0;
         width: 50px;                /* Чуть шире, чтобы текст вмещался */
         text-align: right;
