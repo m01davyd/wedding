@@ -284,6 +284,7 @@ a:hover {
     }
     
     #timer {
+            margin-left: 2rem;
         gap: 0.5rem;
         padding: 1rem 0.5rem;
     }
@@ -461,7 +462,7 @@ a:hover {
     }
     
     .timer-number { 
-        font-size: 2.2rem; 
+        font-size: 2.2rem!important;
     }
     
     .details-grid { 
@@ -522,7 +523,9 @@ a:hover {
     }
     
     .telegram-description {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
+        margin-top: 0px; 
+     margin-bottom: 0px;
     }
     
     .telegram-button {
@@ -640,7 +643,7 @@ a:hover {
     
     .radio-label,
     .checkbox-label {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
+        font-size: 1rem!important;  /* Уменьшить с 1.2rem */
     }
         footer {
         font-size: 1rem;  /* Уменьшить с 1.3rem */
@@ -2032,6 +2035,7 @@ footer {
         margin: 0 auto;
     }
        #timer {
+            margin-left: 2rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);  /* На маленьких 2 колонки */
         gap: 0.3rem;
@@ -2125,10 +2129,11 @@ footer {
 @media (max-width: 768px) {
     .timeline {
         padding-left: 50px;
+        
     }
 
-    .timeline:before {
-        left: 15px;
+       .timeline:before {
+        left: 65px;
         width: 2px;
     }
 
@@ -2190,7 +2195,7 @@ footer {
     /* ✅ ВРЕМЯ — ПРАВЕЕ И ЧИТАЕМОЕ */
     .timeline-time {
         position: absolute;         /* Оставляем абсолютное позиционирование */
-        left: -40px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
+        left: -50px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
         top: 0;
         width: 50px;                /* Чуть шире, чтобы текст вмещался */
         text-align: right;
@@ -2205,7 +2210,7 @@ footer {
 
 
     .timeline-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem!important;
     }
 
     .timeline-content p {
@@ -2238,7 +2243,7 @@ footer {
     }
     
     .full-width-photo {
-        height: 200px;  /* Меньше на мобильных */
+        height: 220px;  /* Меньше на мобильных */
     }
 }
 
