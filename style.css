@@ -298,7 +298,9 @@ a:hover {
     }
     
   
-    
+    .timeline-content {
+        padding-left: 20px;
+    }
     
     
     
@@ -2144,7 +2146,7 @@ footer {
 
 @media (max-width: 768px) {
     .timeline {
-        padding-left: 30px;
+        padding-left: 50px;
     }
 
     .timeline:before {
@@ -2153,7 +2155,7 @@ footer {
     }
 
     .timeline-item {
-        padding-left: 20px;
+        padding-left: 40px;
         margin-bottom: 1.8rem;
     }
 
@@ -2210,7 +2212,7 @@ footer {
     /* ✅ ВРЕМЯ — ПРАВЕЕ И ЧИТАЕМОЕ */
     .timeline-time {
         position: absolute;         /* Оставляем абсолютное позиционирование */
-        left: -40px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
+        left: -60px;                /* Сдвигаем правее (было -90px, -70px и т.д.) */
         top: 0;
         width: 50px;                /* Чуть шире, чтобы текст вмещался */
         text-align: right;
