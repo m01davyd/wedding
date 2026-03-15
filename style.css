@@ -206,7 +206,7 @@ a:hover {
     }
     
     p {
-        font-size: 1rem!important;
+        font-size: 1rem;
     }
     
     /* Hero секция */
@@ -343,7 +343,7 @@ a:hover {
     }
     
     .telegram-description {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: 20px auto;
     }
     
@@ -427,7 +427,7 @@ a:hover {
     }
     
     .hero-date {
-        font-size: 1.5rem!important;
+        font-size: 1.2rem!important;
     }
     
     #timer { 
@@ -585,7 +585,7 @@ a:hover {
     }
     
     .heart-text {
-        font-size: 1.5rem;
+        font-size: 1.2rem!important;
     }
     
     .week-grid {
@@ -603,7 +603,7 @@ a:hover {
     }
 
         .day-name {
-        font-size: 2.5rem !important;  /* Уменьшить с 2.5rem */
+        font-size: 1.2rem !important;  /* Уменьшить с 2.5rem */
         margin-bottom: 0.5rem!important;
     }
     
@@ -624,7 +624,7 @@ a:hover {
         font-size: 2rem;  /* Уменьшить иконки */
     }
         .dress-code-text {
-        font-size: 1.2rem;  /* Уменьшить с 1.8rem */
+        font-size: 1.2rem!important;  /* Уменьшить с 1.8rem */
     }
         .form-group label {
         font-size: 1rem;  /* Уменьшить с 1.3rem */
@@ -1257,6 +1257,7 @@ a:hover {
 }
 
 .dress-code-text p {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--beige);
 }
