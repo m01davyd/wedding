@@ -181,15 +181,15 @@ a:hover {
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
 .footer-p{
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .footer-p-p{
     margin-top: 0.5rem;
-    font-size: 1.4rem;
+    font-size: 2.0rem;
 }
 .fas fa-phone{
    margin-right: 0.5rem;
-   font-size: 1.4rem;
+   font-size: 2rem;
 }
     
     /* Общие настройки */
