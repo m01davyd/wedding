@@ -168,6 +168,592 @@ a:hover {
 
 /* Для мобильных корректируем рамку */
 @media (max-width: 768px) {
+        .timing-note {
+        margin-top: 2rem;
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .timing-note p {
+        font-size: 0.9rem;
+    }
+    /* Общие настройки */
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.8rem !important;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    /* Hero секция */
+    .hero-names {
+        font-size: 2.5rem !important;
+        letter-spacing: 0.2rem;
+        word-break: break-word;
+    }
+    
+    .hero-date.wedding-day {
+        font-size: 2.5rem !important;
+        letter-spacing: 5px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Календарь */
+    .week-calendar {
+        padding: 0.8rem;
+    }
+    
+    .week-grid {
+        gap: 5px;
+    }
+    
+    .month-label {
+        font-size: 1.5rem;
+    }
+    
+    .day-name {
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem;
+        height: auto;
+    }
+    
+    .day-number {
+        font-size: 1.2rem !important;
+        height: 40px;
+    }
+    
+    .weekday {
+        min-height: 80px;
+        padding: 0.5rem 0.2rem;
+    }
+    
+    .heart-shape {
+        width: 50px;
+        height: 45px;
+    }
+    
+    .heart-shape::before,
+    .heart-shape::after {
+        width: 25px;
+        height: 40px;
+    }
+    
+    .heart-shape::before {
+        left: 25px;
+    }
+    
+    .heart-text {
+        font-size: 1.2rem;
+    }
+    
+    /* Таймер */
+    .countdown {
+        padding: 2rem 0.5rem;
+    }
+    
+    .photo-hands-container {
+        left: 0 !important;
+        max-width: 280px;
+    }
+    
+    #timer {
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+    
+    .timer-unit {
+        min-width: 60px;
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .timer-number {
+        font-size: 1.5rem;
+    }
+    
+    .timer-label {
+        font-size: 0.6rem;
+    }
+    
+    /* Детали события */
+    .details-grid {
+        gap: 1rem;
+    }
+    
+    .detail-card {
+        padding: 1rem;
+    }
+    
+    .detail-card p,
+    .detail-card strong {
+        font-size: 1rem !important;
+    }
+    
+    .icon {
+        font-size: 2rem;
+    }
+    
+    /* Таймлайн */
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline-time {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .timeline-content {
+             background: transparent;
+        padding: 0;
+        border-left: none;
+        box-shadow: none;
+        width: 100%;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content p {
+       font-size: 1rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .timeline-location {
+         font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+        background: rgba(216, 204, 180, 0.08);
+        border-left: 2px solid var(--beige);
+    }
+    
+    /* Telegram секция */
+    .telegram-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .telegram-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .telegram-description {
+        font-size: 1rem;
+        margin: 20px auto;
+    }
+    
+    .telegram-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .telegram-photo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .detail-badge {
+        padding: 5px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Форма RSVP */
+    #rsvp-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group label {
+        font-size: 1.1rem;
+    }
+    
+    input[type="text"],
+    textarea {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Цветовая палитра */
+    .color-palette {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .color-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .color-name {
+        font-size: 0.8rem;
+    }
+    
+    /* Футер */
+    footer {
+        font-size: 1.5rem;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .footer-contacts {
+        font-size: 0.9rem;
+    }
+    
+    /* Бусины - скрываем большинство на мобильных */
+    .bead-1, .bead-2, .bead-3,
+    .bead-1-time, .bead-2-time, .bead-3-time {
+        display: none;
+    }
+    
+    /* Оставляем только одну маленькую бусину */
+    .bead-1-time {
+        display: block;
+        top: 50px;
+        right: -30px;
+        width: 60px;
+    }
+    
+    .bead-1-time .bead-img {
+        width: 60px;
+        clip-path: inset(0 10% 0 0);
+    }
+    body {
+        padding: 10px;
+    }
+    
+    h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    h2 { 
+        font-size: 2rem; 
+    }
+    
+    .hero-names { 
+        font-size: 2.8rem; 
+        letter-spacing: 0.2rem; 
+    }
+    
+    .hero-date {
+        font-size: 1.5rem;
+    }
+    
+    #timer { 
+        gap: 0.8rem; 
+    }
+
+
+
+    #timer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  /* 4 колонки */
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .timer-unit {
+        min-width: auto;  /* Убираем min-width */
+        padding: 0.8rem 0.2rem;
+    }
+
+
+
+    
+    .timer-unit { 
+        min-width: 70px; 
+        padding: 1rem; 
+    }
+    
+    .timer-number { 
+        font-size: 2.2rem; 
+    }
+    
+    .details-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    
+   .timing-section {
+        padding: 2rem 1rem;
+        margin: 1.5rem 0;
+    }
+
+        .timing-intro {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+ .timeline {
+        padding-left: 0; /* Убираем большой отступ */
+    }
+   .timeline:before {
+        display: none;
+    }
+    
+    .timeline-item:before {
+        display: none;
+    }
+    
+    .timeline-item {
+ display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-left: 0;
+        position: relative;
+        background: rgba(17, 8, 3, 0.6);
+        border-radius: 16px;
+        padding: 1.2rem;
+        border: 1px solid var(--medium-beige);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .timeline-content {
+        background: transparent;
+        padding: 0;
+        border-left: none;
+        box-shadow: none;
+        width: 100%;
+    }
+     .timeline-content:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .timeline-content h3 {
+        font-size: 1.6rem;
+    }
+   
+    
+    .rsvp-section {
+        padding: 2.5rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    #rsvp-form {
+        padding: 1.8rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+    }
+    
+    .radio-option,
+    .checkbox-option {
+        padding: 12px 15px;
+    }
+    
+    .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .detail-card, #rsvp-form {
+        padding: 1.5rem;
+    }
+
+    .telegram-section {
+        padding: 2rem 1rem;
+    }
+    
+    .telegram-content h3 {
+        font-size: 2rem;
+    }
+    
+    .telegram-description {
+        font-size: 1.1rem;
+    }
+    
+    .telegram-button {
+        padding: 14px 25px;
+        font-size: 1.1rem;
+    }
+    
+    .detail-badge {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+    
+    .telegram-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .telegram-photo {
+        max-width: 300px;
+    }
+    .color-palette {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+    .color-circle {
+        width: 90px;
+        height: 90px;
+    }
+    .color-name {
+        font-size: 1.15rem;
+        font-weight: 500;
+    }
+    .week-calendar {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    .month-label {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .day-number {
+        font-size: 2rem;
+    }
+    
+    .heart-shape {
+        width: 60px;
+        height: 52px;
+    }
+    
+    .heart-shape::before,
+    .heart-shape::after {
+        width: 30px;
+        height: 48px;
+    }
+    
+    .heart-shape::before {
+        left: 30px;
+    }
+    
+    .heart-text {
+        font-size: 1.5rem;
+    }
+    
+    .week-grid {
+        gap: 10px;
+    }
+    
+    .hero-names {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+        margin: 1rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+        .day-name {
+        font-size: 1.2rem !important;  /* Уменьшить с 2.5rem */
+        margin-bottom: 0.5rem;
+    }
+    
+    .day-number {
+        font-size: 1.5rem !important;  /* Уменьшить с 2rem */
+    }
+    
+    .weekday {
+        min-height: 100px;  /* Уменьшить высоту */
+        padding: 0.8rem 0.3rem;
+    }
+        .detail-card p,
+    .detail-card strong {
+        font-size: 1.2rem !important;  /* Уменьшить с 1.8rem */
+    }
+    
+    .icon {
+        font-size: 2rem;  /* Уменьшить иконки */
+    }
+        .dress-code-text {
+        font-size: 1.2rem;  /* Уменьшить с 1.8rem */
+    }
+        .form-group label {
+        font-size: 1rem;  /* Уменьшить с 1.3rem */
+    }
+    
+    input[type="text"],
+    textarea {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+        padding: 0.8rem;
+    }
+    
+    .radio-label,
+    .checkbox-label {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+    }
+        footer {
+        font-size: 1rem;  /* Уменьшить с 1.3rem */
+        padding: 2rem 0.5rem;
+    }
+        .hands-section {
+        padding: 2rem 1rem;  /* Уменьшить отступы */
+    }
+    
+    .photo-hands {
+        max-width: 300px;  /* Уменьшить фото */
+        margin: 1rem auto;
+    }
+     .timeline-content p {
+        font-size: 1rem;  /* Уменьшить с 1.2rem */
+    }
+    
+    .timeline-location {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+        background: rgba(216, 204, 180, 0.08);
+        border-left: 2px solid var(--beige);
+    }
+      .timeline-location i {
+        font-size: 0.9rem;
+    }
+ .timeline-time {
+        position: static;
+        width: auto;
+        text-align: left;
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--light-beige);
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        border-left: 3px solid var(--beige);
+        padding-left: 0.75rem;
+    }
+
+    .full-width-photo {
+        height: 250px;
+    }
     .photo-hands-container::before {
         top: -5px;
         left: -5px;
@@ -334,120 +920,6 @@ a:hover {
 }
 
 /* Адаптация под мобильные */
-@media (max-width: 768px) {
-    .week-calendar {
-        max-width: 100%;
-        padding: 1rem;
-    }
-    
-    .month-label {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .day-number {
-        font-size: 2rem;
-    }
-    
-    .heart-shape {
-        width: 60px;
-        height: 52px;
-    }
-    
-    .heart-shape::before,
-    .heart-shape::after {
-        width: 30px;
-        height: 48px;
-    }
-    
-    .heart-shape::before {
-        left: 30px;
-    }
-    
-    .heart-text {
-        font-size: 1.5rem;
-    }
-    
-    .week-grid {
-        gap: 10px;
-    }
-    
-    .hero-names {
-        font-size: 2.5rem;
-        letter-spacing: 0.2rem;
-        margin: 1rem 0;
-    }
-    
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-        .day-name {
-        font-size: 1.2rem !important;  /* Уменьшить с 2.5rem */
-        margin-bottom: 0.5rem;
-    }
-    
-    .day-number {
-        font-size: 1.5rem !important;  /* Уменьшить с 2rem */
-    }
-    
-    .weekday {
-        min-height: 100px;  /* Уменьшить высоту */
-        padding: 0.8rem 0.3rem;
-    }
-        .detail-card p,
-    .detail-card strong {
-        font-size: 1.2rem !important;  /* Уменьшить с 1.8rem */
-    }
-    
-    .icon {
-        font-size: 2rem;  /* Уменьшить иконки */
-    }
-        .dress-code-text {
-        font-size: 1.2rem;  /* Уменьшить с 1.8rem */
-    }
-        .form-group label {
-        font-size: 1rem;  /* Уменьшить с 1.3rem */
-    }
-    
-    input[type="text"],
-    textarea {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-        padding: 0.8rem;
-    }
-    
-    .radio-label,
-    .checkbox-label {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-    }
-        footer {
-        font-size: 1rem;  /* Уменьшить с 1.3rem */
-        padding: 2rem 0.5rem;
-    }
-        .hands-section {
-        padding: 2rem 1rem;  /* Уменьшить отступы */
-    }
-    
-    .photo-hands {
-        max-width: 300px;  /* Уменьшить фото */
-        margin: 1rem auto;
-    }
-     .timeline-content p {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-    }
-    
-    .timeline-location {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .timeline-time {
-        font-size: 1rem;  /* Уменьшить с 1.2rem */
-        padding: 0.3rem 0.8rem;
-    }
-}
-
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
@@ -856,11 +1328,6 @@ a:hover {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .full-width-photo {
-        height: 250px;
-    }
-}
 /* ==================== СЕКЦИЯ ДРЕСС-КОДА ==================== */
 .dress-code-section {
     background-color: rgba(17, 8, 3,0.7);
@@ -943,23 +1410,29 @@ a:hover {
 }
 
 /* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .color-palette {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
-    }
-    .color-circle {
-        width: 90px;
-        height: 90px;
-    }
-    .color-name {
-        font-size: 1.15rem;
-        font-weight: 500;
-    }
-}
 
 /* Адаптивность для очень маленьких экранов */
 @media (max-width: 480px) {
+     .timeline-item {
+        padding: 1rem;
+    }
+
+    .timeline-time {
+        font-size: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-location {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
     .color-palette {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -1219,40 +1692,6 @@ a:hover {
         justify-self: center;
         max-width: 350px;
         order: -1;  /* Фото сверху на мобильных */
-    }
-}
-
-@media (max-width: 768px) {
-    .telegram-section {
-        padding: 2rem 1rem;
-    }
-    
-    .telegram-content h3 {
-        font-size: 2rem;
-    }
-    
-    .telegram-description {
-        font-size: 1.1rem;
-    }
-    
-    .telegram-button {
-        padding: 14px 25px;
-        font-size: 1.1rem;
-    }
-    
-    .detail-badge {
-        padding: 6px 12px;
-        font-size: 1rem;
-    }
-    
-    .telegram-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
-    }
-    
-    .telegram-photo {
-        max-width: 300px;
     }
 }
 
@@ -1564,125 +2003,10 @@ footer {
 }
 
 /* ==================== АДАПТИВНОСТЬ ==================== */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    h1 { 
-        font-size: 2.5rem; 
-    }
-    
-    h2 { 
-        font-size: 2rem; 
-    }
-    
-    .hero-names { 
-        font-size: 2.8rem; 
-        letter-spacing: 0.2rem; 
-    }
-    
-    .hero-date {
-        font-size: 1.5rem;
-    }
-    
-    #timer { 
-        gap: 0.8rem; 
-    }
-    
-    .timer-unit { 
-        min-width: 70px; 
-        padding: 1rem; 
-    }
-    
-    .timer-number { 
-        font-size: 2.2rem; 
-    }
-    
-    .details-grid { 
-        grid-template-columns: 1fr; 
-        gap: 1.5rem;
-    }
-    
-    .timing-section {
-        padding: 2.5rem 1rem;
-        margin: 2rem 0;
-    }
-    
-    .timeline {
-        padding-left: 30px;
-    }
-    
-    .timeline:before {
-        left: 18px;
-    }
-    
-    .timeline-item:before {
-        left: 12px;
-        width: 14px;
-        height: 14px;
-    }
-    
-    .timeline-time {
-        position: relative;
-        left: 0;
-        top: 0;
-        width: auto;
-        text-align: left;
-        margin-bottom: 0.8rem;
-        display: inline-block;
-        background-color: rgba(17, 8, 3, 0.9);
-        padding: 0.4rem 1.2rem;
-    }
-    
-    .timeline-content {
-        padding: 1.4rem;
-    }
-    
-    .timeline-content h3 {
-        font-size: 1.6rem;
-    }
-    
-    .timeline-item {
-        padding-left: 0;
-        margin-bottom: 2rem;
-    }
-    
-    .rsvp-section {
-        padding: 2.5rem 1rem;
-        margin: 2rem 0;
-    }
-    
-    #rsvp-form {
-        padding: 1.8rem;
-    }
-    
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-    
-    .radio-group,
-    .checkbox-group {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 8px;
-    }
-    
-    .radio-option,
-    .checkbox-option {
-        padding: 12px 15px;
-    }
-    
-    .submit-btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-    
-    .detail-card, #rsvp-form {
-        padding: 1.5rem;
-    }
-}
+
+
+
+
 
 @media (max-width: 480px) {
     h1 { 
@@ -1707,12 +2031,16 @@ footer {
         font-size: 0.7rem; 
     }
     
-    .timeline-icon {
-        font-size: 1.5rem;
+     .timeline-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0.3rem;
     }
     
     .timeline-content h3 {
         font-size: 1.4rem;
+        margin: 0 0 0.5rem 0;
+        text-align: left;
+        color: var(--light-beige);
         font-family: 'Cormorant Garamond', serif;
     }
     
@@ -1795,11 +2123,11 @@ footer {
         left: 0 !important;  /* Убираем смещение */
         margin: 0 auto;
     }
-    
-    #timer {
-        max-width: 100%;
-        margin: 0 auto;
+       #timer {
+        grid-template-columns: repeat(2, 1fr);  /* На маленьких 2 колонки */
+        gap: 0.3rem;
     }
+ 
     
     .bead-1, .bead-2, .bead-3,
     .bead-1-time, .bead-2-time, .bead-3-time {
@@ -1822,261 +2150,6 @@ footer {
     }
 }
 
-/* Для мобильных (до 768px) - расширяем существующий медиазапрос */
-@media (max-width: 768px) {
-    /* Общие настройки */
-    h1 {
-        font-size: 2rem !important;
-    }
-    
-    h2 {
-        font-size: 2.2rem !important;
-    }
-    
-    h3 {
-        font-size: 1.8rem !important;
-    }
-    
-    p {
-        font-size: 1rem;
-    }
-    
-    /* Hero секция */
-    .hero-names {
-        font-size: 2.5rem !important;
-        letter-spacing: 0.2rem;
-        word-break: break-word;
-    }
-    
-    .hero-date.wedding-day {
-        font-size: 2.5rem !important;
-        letter-spacing: 5px;
-    }
-    
-    .hero h1 {
-        font-size: 1.5rem !important;
-    }
-    
-    /* Календарь */
-    .week-calendar {
-        padding: 0.8rem;
-    }
-    
-    .week-grid {
-        gap: 5px;
-    }
-    
-    .month-label {
-        font-size: 1.5rem;
-    }
-    
-    .day-name {
-        font-size: 1rem !important;
-        margin-bottom: 0.3rem;
-        height: auto;
-    }
-    
-    .day-number {
-        font-size: 1.2rem !important;
-        height: 40px;
-    }
-    
-    .weekday {
-        min-height: 80px;
-        padding: 0.5rem 0.2rem;
-    }
-    
-    .heart-shape {
-        width: 50px;
-        height: 45px;
-    }
-    
-    .heart-shape::before,
-    .heart-shape::after {
-        width: 25px;
-        height: 40px;
-    }
-    
-    .heart-shape::before {
-        left: 25px;
-    }
-    
-    .heart-text {
-        font-size: 1.2rem;
-    }
-    
-    /* Таймер */
-    .countdown {
-        padding: 2rem 0.5rem;
-    }
-    
-    .photo-hands-container {
-        left: 0 !important;
-        max-width: 280px;
-    }
-    
-    #timer {
-        gap: 0.5rem;
-        padding: 1rem 0.5rem;
-    }
-    
-    .timer-unit {
-        min-width: 60px;
-        padding: 0.8rem 0.3rem;
-    }
-    
-    .timer-number {
-        font-size: 1.5rem;
-    }
-    
-    .timer-label {
-        font-size: 0.6rem;
-    }
-    
-    /* Детали события */
-    .details-grid {
-        gap: 1rem;
-    }
-    
-    .detail-card {
-        padding: 1rem;
-    }
-    
-    .detail-card p,
-    .detail-card strong {
-        font-size: 1rem !important;
-    }
-    
-    .icon {
-        font-size: 2rem;
-    }
-    
-    /* Таймлайн */
-    .timeline {
-        padding-left: 20px;
-    }
-    
-    .timeline-time {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.8rem;
-    }
-    
-    .timeline-content {
-        padding: 1rem;
-    }
-    
-    .timeline-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .timeline-content p {
-        font-size: 1rem;
-    }
-    
-    .timeline-location {
-        font-size: 0.9rem;
-    }
-    
-    /* Telegram секция */
-    .telegram-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 100%;
-        padding: 0 1rem;
-    }
-    
-    .telegram-content h3 {
-        font-size: 1.5rem;
-    }
-    
-    .telegram-description {
-        font-size: 1rem;
-        margin: 20px auto;
-    }
-    
-    .telegram-button {
-        padding: 12px 20px;
-        font-size: 1rem;
-    }
-    
-    .telegram-photo {
-        max-width: 250px;
-        margin: 0 auto;
-    }
-    
-    .detail-badge {
-        padding: 5px 12px;
-        font-size: 0.9rem;
-    }
-    
-    /* Форма RSVP */
-    #rsvp-form {
-        padding: 1.5rem;
-    }
-    
-    .form-group label {
-        font-size: 1.1rem;
-    }
-    
-    input[type="text"],
-    textarea {
-        font-size: 1rem;
-        padding: 0.8rem;
-    }
-    
-    .radio-label,
-    .checkbox-label {
-        font-size: 1rem;
-    }
-    
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Цветовая палитра */
-    .color-palette {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
-    }
-    
-    .color-circle {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .color-name {
-        font-size: 0.8rem;
-    }
-    
-    /* Футер */
-    footer {
-        font-size: 1.5rem;
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .footer-contacts {
-        font-size: 0.9rem;
-    }
-    
-    /* Бусины - скрываем большинство на мобильных */
-    .bead-1, .bead-2, .bead-3,
-    .bead-1-time, .bead-2-time, .bead-3-time {
-        display: none;
-    }
-    
-    /* Оставляем только одну маленькую бусину */
-    .bead-1-time {
-        display: block;
-        top: 50px;
-        right: -30px;
-        width: 60px;
-    }
-    
-    .bead-1-time .bead-img {
-        width: 60px;
-        clip-path: inset(0 10% 0 0);
-    }
-}
 
 /* Для очень маленьких экранов (до 480px) */
 @media (max-width: 480px) {
